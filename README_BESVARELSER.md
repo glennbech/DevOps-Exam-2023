@@ -1,4 +1,5 @@
 ## Oppgave 1
+    A.
     Fixed variables, deployed app to aws with sam deploy --guided.
         * Changed name for hello_world folder to ppe_detection
         * Updated template.yaml to:
@@ -45,8 +46,8 @@
         
         Now everything should be able to run after the configuation here.
                     
-            
-            
+    B.
+    
 
 
 
