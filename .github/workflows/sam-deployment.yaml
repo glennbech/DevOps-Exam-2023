@@ -13,9 +13,7 @@ defaults:
 jobs:
   deploy-build-sam:
     runs-on: ubuntu-latest
-    env:
-      DEPLOYMENT_S3_BUCKET: deployment-s3-test-asdasdasd   # Change this to a unique name
-      SAM_APP: deploy-sam-app                     # Change this to your app name
+
 
     steps:
       - uses: actions/checkout@v2
@@ -27,16 +25,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}   # These are taken from Github secrets
           aws-region: eu-west-1
 
-      - name: Create Deployment S3 Bucket
-        run:
-          aws s3 mb s3://${DEPLOYMENT_S3_BUCKET} --region eu-west-1
-
       - name: Sam build and deploy on main branch
         if: github.ref == 'refs/heads/main'
         # set variable to get name instead, nicer.
         run: |
           sam build --use-container
-          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name $SAM_APP --s3-bucket $DEPLOYMENT_S3_BUCKET --capabilities CAPABILITY_IAM --region eu-west-1
+          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --capabilities CAPABILITY_IAM --region eu-west-1
 
       - name: Sam build only if not on main branch
         if: github.ref != 'refs/heads/main'
