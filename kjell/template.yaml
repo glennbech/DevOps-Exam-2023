@@ -15,7 +15,7 @@ Parameters:
   MyBucketName:
     Type: String
     Description: S3 Bucket name
-    Default: "2038"
+    Default: "kandidatnr-2038"
 
 Resources:
   Bucket:
