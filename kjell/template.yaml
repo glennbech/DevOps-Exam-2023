@@ -32,6 +32,9 @@ Resources:
         - x86_64
       Policies:
         - AmazonRekognitionFullAccess
+      Environment:
+        Variables:
+          MyBucketName: !Ref MyBucketName
       Events:
         HelloWorld:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api

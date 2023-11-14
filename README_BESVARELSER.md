@@ -1,7 +1,6 @@
 ## Oppgave 1
-    - Ändrat namn på mappen hello_world till ppe_detection
-    - Lagt till variables.tf
-        - Default satt till kanditatnr för S3-bucket namnet.
+    - Changed name for hello_world folder to ppe_detection
+    - Updated template.yaml to take value from env "MyBucketName". Default is set to "kandidatnr-2038".
 
 
 
