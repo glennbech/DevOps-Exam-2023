@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="test">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" afterDir="false" />
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Changed back">
+      <change afterPath="$PROJECT_DIR$/kjell/hello_world/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -321,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699987134928</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Changed back">
+      <option name="closed" value="true" />
+      <created>1699987510145</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1699987510145</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,7 +347,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Misread, changed .yaml to get variables from sam...&#10;Changed name on HelloWorldFunction to LambdaPPEDetection.&#10;Set default name on S3 bucket to kandidatnr" />
     <MESSAGE value="Changed name back to HelloWorldFunction to avoid errors for now" />
     <MESSAGE value="Changed default s3-bucket name" />
     <MESSAGE value="Hope env variable for bucket now works in aws lambda" />
@@ -364,7 +371,8 @@
     <MESSAGE value="Test push to main" />
     <MESSAGE value="Test push to main - fix" />
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="Changed back" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed back" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
