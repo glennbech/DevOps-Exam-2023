@@ -1,12 +1,19 @@
 FROM python:3.9-slim
 WORKDIR /app
-COPY . /spp
+COPY . /app
 
 RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 80
 
-ENV BUCKET_NAME="should be taken from input"
+ARG AWS_ACCESS_KEY_ID
+ARG AWS_SECRET_ACCESS_KEY
+ARG BUCKET_NAME
+
+ENV AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+ENV AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+ENV BUCKET_NAME=$BUCKET_NAME
+
 
 CMD ["python", "./app.py"]
 

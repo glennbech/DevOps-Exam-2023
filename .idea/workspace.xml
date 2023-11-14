@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Test">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" afterDir="false" />
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Changed back to separate S3 bucket again to use for now. Should probably not use it for github actions so sam deploy temp. files appear there.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kjell/hello_world/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/kjell/hello_world/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kjell/hello_world/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/kjell/hello_world/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -369,7 +370,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699995620776</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Changed back to separate S3 bucket again to use for now. Should probably not use it for github actions so sam deploy temp. files appear there.">
+      <option name="closed" value="true" />
+      <created>1699996873890</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1699996873890</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +396,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added github action workflows file for sam deployment" />
     <MESSAGE value="Wrong name s3 bucket and cloudformation stack" />
     <MESSAGE value="Pushing on branch to see if it github actions only builds" />
     <MESSAGE value="Did not run github actions if pushed to other than main." />
@@ -412,7 +420,8 @@
     <MESSAGE value="create own s3 instead in workflows" />
     <MESSAGE value="create own s3 instead in workflows. mispelling" />
     <MESSAGE value="Test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test" />
+    <MESSAGE value="Changed back to separate S3 bucket again to use for now. Should probably not use it for github actions so sam deploy temp. files appear there." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed back to separate S3 bucket again to use for now. Should probably not use it for github actions so sam deploy temp. files appear there." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

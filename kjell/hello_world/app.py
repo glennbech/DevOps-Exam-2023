@@ -18,6 +18,12 @@ rekognition_client = boto3.client('rekognition', region_name='eu-west-1')
 # Oppgave 1A
 BUCKET_NAME = os.environ.get("MyBucketName")
 
+if BUCKET_NAME is None:
+    BUCKET_NAME = os.environ.get('BUCKET_NAME')
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
 
 def lambda_handler(event, context):
 
