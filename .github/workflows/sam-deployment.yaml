@@ -27,5 +27,5 @@ jobs:
           sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name ppe-detection --s3-bucket kandidatnr-2038 --capabilities CAPABILITY_IAM --region eu-west-1
 
       - name: Sam build only if not main branch
-        if: github.ref != 'refs/heads/main'
+        if: github.event_name == 'push' && github.ref != 'refs/heads/main'
         run: sam build --use-container
