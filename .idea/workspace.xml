@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Did not run github actions if pushed to other than main.">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" afterDir="false" />
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Trying to set so push to any branches triggers github actions">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/sam-deploy-branch.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sam-deploy-main.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +88,7 @@
       <workItem from="1699961390379" duration="412000" />
       <workItem from="1699962048424" duration="1299000" />
       <workItem from="1699964147919" duration="294000" />
-      <workItem from="1699964509675" duration="15972000" />
+      <workItem from="1699964509675" duration="16194000" />
     </task>
     <task id="LOCAL-00001" summary="Clone from exam">
       <option name="closed" value="true" />
@@ -177,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699980391630</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Trying to set so push to any branches triggers github actions">
+      <option name="closed" value="true" />
+      <created>1699980829646</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1699980829646</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +215,8 @@
     <MESSAGE value="Wrong name s3 bucket and cloudformation stack" />
     <MESSAGE value="Pushing on branch to see if it github actions only builds" />
     <MESSAGE value="Did not run github actions if pushed to other than main." />
-    <option name="LAST_COMMIT_MESSAGE" value="Did not run github actions if pushed to other than main." />
+    <MESSAGE value="Trying to set so push to any branches triggers github actions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Trying to set so push to any branches triggers github actions" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
