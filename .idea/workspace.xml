@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Trying to set so push to any branches triggers github actions">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/sam-deploy-branch.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sam-deploy-main.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Testing with 2 separate .yaml">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/sam-deploy-branch.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sam-deploy-branch.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +86,7 @@
       <workItem from="1699961390379" duration="412000" />
       <workItem from="1699962048424" duration="1299000" />
       <workItem from="1699964147919" duration="294000" />
-      <workItem from="1699964509675" duration="16194000" />
+      <workItem from="1699964509675" duration="16242000" />
     </task>
     <task id="LOCAL-00001" summary="Clone from exam">
       <option name="closed" value="true" />
@@ -186,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699980829646</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Testing with 2 separate .yaml">
+      <option name="closed" value="true" />
+      <created>1699981052417</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1699981052417</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +222,8 @@
     <MESSAGE value="Pushing on branch to see if it github actions only builds" />
     <MESSAGE value="Did not run github actions if pushed to other than main." />
     <MESSAGE value="Trying to set so push to any branches triggers github actions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying to set so push to any branches triggers github actions" />
+    <MESSAGE value="Testing with 2 separate .yaml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing with 2 separate .yaml" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
