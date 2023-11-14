@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="create own s3 instead in workflows. mispelling">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Test">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -360,7 +361,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699994531409</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Test">
+      <option name="closed" value="true" />
+      <created>1699995620776</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1699995620776</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +387,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated readme" />
     <MESSAGE value="Added github action workflows file for sam deployment" />
     <MESSAGE value="Wrong name s3 bucket and cloudformation stack" />
     <MESSAGE value="Pushing on branch to see if it github actions only builds" />
@@ -403,7 +411,8 @@
     <MESSAGE value="Setup structure for Dockerfile with application.yml" />
     <MESSAGE value="create own s3 instead in workflows" />
     <MESSAGE value="create own s3 instead in workflows. mispelling" />
-    <option name="LAST_COMMIT_MESSAGE" value="create own s3 instead in workflows. mispelling" />
+    <MESSAGE value="Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
