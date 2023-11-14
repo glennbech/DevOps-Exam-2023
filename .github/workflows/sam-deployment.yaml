@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       S3_BUCKET_NAME: kandidatnr-2038   # Change this to your bucket name
-      SAM_APP: ppe-detection            # Change this to your app name
+      SAM_APP: ppe-detectionfgh            # Change this to your app name
 
     steps:
       - uses: actions/checkout@v2
