@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Testing with 2 separate .yaml">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Seeing if it runs when removing - '!main'">
       <change beforePath="$PROJECT_DIR$/.github/workflows/sam-deploy-branch.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sam-deploy-branch.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/sam-deploy-main.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sam-deploy-main.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +88,7 @@
       <workItem from="1699961390379" duration="412000" />
       <workItem from="1699962048424" duration="1299000" />
       <workItem from="1699964147919" duration="294000" />
-      <workItem from="1699964509675" duration="16242000" />
+      <workItem from="1699964509675" duration="16484000" />
     </task>
     <task id="LOCAL-00001" summary="Clone from exam">
       <option name="closed" value="true" />
@@ -192,7 +194,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699981052417</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Testing with 2 separate .yaml">
+      <option name="closed" value="true" />
+      <created>1699981091294</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1699981091294</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Seeing if it runs when removing - '!main'">
+      <option name="closed" value="true" />
+      <created>1699981238047</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1699981238047</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +241,8 @@
     <MESSAGE value="Did not run github actions if pushed to other than main." />
     <MESSAGE value="Trying to set so push to any branches triggers github actions" />
     <MESSAGE value="Testing with 2 separate .yaml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing with 2 separate .yaml" />
+    <MESSAGE value="Seeing if it runs when removing - '!main'" />
+    <option name="LAST_COMMIT_MESSAGE" value="Seeing if it runs when removing - '!main'" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
