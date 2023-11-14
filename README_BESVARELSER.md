@@ -12,11 +12,21 @@
     Create Github Actions workflow for sam.
         * Added workflows for Github Actions.
             - Added envs to repo with aws secrets.
-            - Push to main: should build and deploy
-            - Push to other branches: should only build.
-    
+            - Push to main: should build and deploy             - OK
+            - Push to other branches: should only build         - OK
 
-
+    How to get Github Actions workflow to run
+        * First you must create a S3 bucket and a CloudFormation stack. This can be done in AWS or by using the code in this project
+          Outside Cloud9 you might need AWS cli and sam cli installed.
+          In Cloud9:
+            1. Run sam deploy --guided
+            2. Enter name of your sam app
+            3. Enter name of your S3 bucket. (Currently this is set by default to 2038)
+                These two values are used in .github/workflows/sam-deployment.yaml
+            4. Change variable name of x, y
+            5. Get secrets from AWS and add to your Github repo in settings
+            
+            
 
 
 

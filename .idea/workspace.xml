@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Added github action workflows file for sam deployment">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" afterDir="false" />
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Testing with one .yaml again">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/sam-deploy-main.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +15,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -81,7 +88,7 @@
       <workItem from="1699961390379" duration="412000" />
       <workItem from="1699962048424" duration="1299000" />
       <workItem from="1699964147919" duration="294000" />
-      <workItem from="1699964509675" duration="14493000" />
+      <workItem from="1699964509675" duration="16997000" />
     </task>
     <task id="LOCAL-00001" summary="Clone from exam">
       <option name="closed" value="true" />
@@ -147,7 +154,71 @@
       <option name="project" value="LOCAL" />
       <updated>1699979018854</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Wrong name s3 bucket and cloudformation stack">
+      <option name="closed" value="true" />
+      <created>1699979490740</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1699979490740</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Pushing on branch to see if it github actions only builds">
+      <option name="closed" value="true" />
+      <created>1699979850369</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1699979850369</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Did not run github actions if pushed to other than main.">
+      <option name="closed" value="true" />
+      <created>1699980391630</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1699980391630</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Trying to set so push to any branches triggers github actions">
+      <option name="closed" value="true" />
+      <created>1699980829646</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1699980829646</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Testing with 2 separate .yaml">
+      <option name="closed" value="true" />
+      <created>1699981052417</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1699981052417</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Testing with 2 separate .yaml">
+      <option name="closed" value="true" />
+      <created>1699981091294</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1699981091294</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Seeing if it runs when removing - '!main'">
+      <option name="closed" value="true" />
+      <created>1699981238047</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1699981238047</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Testing with one .yaml again">
+      <option name="closed" value="true" />
+      <created>1699981356879</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1699981356879</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +244,14 @@
     <MESSAGE value="Hope env variable for bucket now works in aws lambda" />
     <MESSAGE value="Updated readme" />
     <MESSAGE value="Added github action workflows file for sam deployment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added github action workflows file for sam deployment" />
+    <MESSAGE value="Wrong name s3 bucket and cloudformation stack" />
+    <MESSAGE value="Pushing on branch to see if it github actions only builds" />
+    <MESSAGE value="Did not run github actions if pushed to other than main." />
+    <MESSAGE value="Trying to set so push to any branches triggers github actions" />
+    <MESSAGE value="Testing with 2 separate .yaml" />
+    <MESSAGE value="Seeing if it runs when removing - '!main'" />
+    <MESSAGE value="Testing with one .yaml again" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing with one .yaml again" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
