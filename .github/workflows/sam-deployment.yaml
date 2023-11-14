@@ -29,7 +29,7 @@ jobs:
 
       - name: Create Deployment S3 Bucket
         run:
-          aws s3 mb s3://${DEPLOYMENT_S3_BUCKET} -- region eu-west-1
+          aws s3 mb s3://${DEPLOYMENT_S3_BUCKET} --region eu-west-1
 
       - name: Sam build and deploy on main branch
         if: github.ref == 'refs/heads/main'
