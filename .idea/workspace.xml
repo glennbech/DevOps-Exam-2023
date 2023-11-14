@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Testing if python will use from variables.tf">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/outputs.tf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/variables.tf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kjell/ppe_detection/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/kjell/ppe_detection/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kjell/template.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kjell/template.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Misread, changed .yaml to get variables from sam...&#10;Changed name on HelloWorldFunction to LambdaPPEDetection.&#10;Set default name on S3 bucket to kandidatnr" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +79,7 @@
       <workItem from="1699961390379" duration="412000" />
       <workItem from="1699962048424" duration="1299000" />
       <workItem from="1699964147919" duration="294000" />
-      <workItem from="1699964509675" duration="4442000" />
+      <workItem from="1699964509675" duration="4919000" />
     </task>
     <task id="LOCAL-00001" summary="Clone from exam">
       <option name="closed" value="true" />
@@ -103,7 +97,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699967816232</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Misread, changed .yaml to get variables from sam...&#10;Changed name on HelloWorldFunction to LambdaPPEDetection.&#10;Set default name on S3 bucket to kandidatnr">
+      <option name="closed" value="true" />
+      <created>1699969000665</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699969000665</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,7 +125,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Clone from exam" />
     <MESSAGE value="Testing if python will use from variables.tf" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing if python will use from variables.tf" />
+    <MESSAGE value="Misread, changed .yaml to get variables from sam...&#10;Changed name on HelloWorldFunction to LambdaPPEDetection.&#10;Set default name on S3 bucket to kandidatnr" />
+    <option name="LAST_COMMIT_MESSAGE" value="Misread, changed .yaml to get variables from sam...&#10;Changed name on HelloWorldFunction to LambdaPPEDetection.&#10;Set default name on S3 bucket to kandidatnr" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
