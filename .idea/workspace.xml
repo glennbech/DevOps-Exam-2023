@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Pushing on branch to see if it github actions only builds">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Did not run github actions if pushed to other than main.">
       <change beforePath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -87,7 +87,7 @@
       <workItem from="1699961390379" duration="412000" />
       <workItem from="1699962048424" duration="1299000" />
       <workItem from="1699964147919" duration="294000" />
-      <workItem from="1699964509675" duration="15513000" />
+      <workItem from="1699964509675" duration="15972000" />
     </task>
     <task id="LOCAL-00001" summary="Clone from exam">
       <option name="closed" value="true" />
@@ -169,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699979850369</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Did not run github actions if pushed to other than main.">
+      <option name="closed" value="true" />
+      <created>1699980391630</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1699980391630</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,7 +205,8 @@
     <MESSAGE value="Added github action workflows file for sam deployment" />
     <MESSAGE value="Wrong name s3 bucket and cloudformation stack" />
     <MESSAGE value="Pushing on branch to see if it github actions only builds" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pushing on branch to see if it github actions only builds" />
+    <MESSAGE value="Did not run github actions if pushed to other than main." />
+    <option name="LAST_COMMIT_MESSAGE" value="Did not run github actions if pushed to other than main." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
