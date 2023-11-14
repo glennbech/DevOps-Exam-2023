@@ -36,7 +36,7 @@ jobs:
         # set variable to get name instead, nicer.
         run: |
           sam build --use-container
-          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name $SAM_APP --s3-bucket $$DEPLOYMENT_S3_BUCKET --capabilities CAPABILITY_IAM --region eu-west-1
+          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name $SAM_APP --s3-bucket $DEPLOYMENT_S3_BUCKET --capabilities CAPABILITY_IAM --region eu-west-1
 
       - name: Sam build only if not on main branch
         if: github.ref != 'refs/heads/main'

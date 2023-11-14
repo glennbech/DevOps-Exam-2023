@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Setup structure for Dockerfile with application.yml">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="create own s3 instead in workflows. mispelling">
       <change beforePath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kjell/hello_world/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/kjell/hello_world/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -339,7 +337,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699989078996</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="create own s3 instead in workflows">
+      <option name="closed" value="true" />
+      <created>1699993960222</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1699993960222</updated>
+    </task>
+    <task id="LOCAL-00033" summary="create own s3 instead in workflows. mispelling">
+      <option name="closed" value="true" />
+      <created>1699994093314</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1699994093314</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,8 +371,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changed default s3-bucket name" />
-    <MESSAGE value="Hope env variable for bucket now works in aws lambda" />
     <MESSAGE value="Updated readme" />
     <MESSAGE value="Added github action workflows file for sam deployment" />
     <MESSAGE value="Wrong name s3 bucket and cloudformation stack" />
@@ -382,7 +394,9 @@
     <MESSAGE value="test" />
     <MESSAGE value="Changed back" />
     <MESSAGE value="Setup structure for Dockerfile with application.yml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setup structure for Dockerfile with application.yml" />
+    <MESSAGE value="create own s3 instead in workflows" />
+    <MESSAGE value="create own s3 instead in workflows. mispelling" />
+    <option name="LAST_COMMIT_MESSAGE" value="create own s3 instead in workflows. mispelling" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
