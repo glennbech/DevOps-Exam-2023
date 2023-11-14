@@ -32,6 +32,7 @@ Resources:
         - x86_64
       Policies:
         - AmazonRekognitionFullAccess
+        - AmazonS3ReadOnlyAccess
       Environment:
         Variables:
           MyBucketName: !Ref MyBucketName
