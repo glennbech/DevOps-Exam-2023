@@ -16,7 +16,6 @@ jobs:
     env:
       S3_BUCKET_NAME: kandidatnr-2038   # Change this to your bucket name
       SAM_APP: ppe_detection            # Change this to your app name
-      AWS_REGION: eu-west-1
 
     steps:
       - uses: actions/checkout@v2
@@ -28,14 +27,13 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}   # These are taken from Github secrets
           aws-region: eu-west-1
 
-
       - name: Sam build and deploy on main branch
         if: github.ref == 'refs/heads/main'
         # set variable to get name instead, nicer.
         run: |
           sam build --use-container
-          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name $ppe_detection --s3-bucket $S3_BUCKET_NAME --capabilities CAPABILITY_IAM --region $AWS_REGION
+          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name $ppe_detection --s3-bucket $S3_BUCKET_NAME --capabilities CAPABILITY_IAM --region eu-west-1
 
-      - name: Sam build only if not main branch
+      - name: Sam build only if not on main branch
         if: github.ref != 'refs/heads/main'
         run: sam build --use-container
