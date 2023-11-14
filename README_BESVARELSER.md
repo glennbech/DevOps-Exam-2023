@@ -12,8 +12,9 @@
     Create Github Actions workflow for sam.
         * Added workflows for Github Actions.
             - Added envs to repo with aws secrets.
-            - Push to main: should build and deploy
-            - Push to other branches: should only build.
+            - Push to main: should build and deploy             - OK
+            - Push to other branches: should only build         - Should only build now.
+
     
 
 
