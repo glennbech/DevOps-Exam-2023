@@ -11,13 +11,18 @@ Globals:
     Timeout: 60
     MemorySize: 512
 
-Resources:
+Parameters:
+  MyBucketName:
+    Type: String
+    Description: S3 Bucket name
+    Default: "2038"
 
+Resources:
   Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: "kjellsimgebucket"
-  HelloWorldFunction:
+      BucketName: !Ref MyBucketName
+  LambdaPPEDetection:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
       CodeUri: ppe_detection/

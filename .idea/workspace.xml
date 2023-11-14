@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Clone from exam">
-      <change afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/outputs.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/variables.tf" afterDir="false" />
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Testing if python will use from variables.tf">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kjell/hello_world/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/kjell/ppe_detection/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kjell/hello_world/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/kjell/ppe_detection/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/outputs.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/variables.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kjell/ppe_detection/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/kjell/ppe_detection/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kjell/template.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kjell/template.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +85,7 @@
       <workItem from="1699961390379" duration="412000" />
       <workItem from="1699962048424" duration="1299000" />
       <workItem from="1699964147919" duration="294000" />
-      <workItem from="1699964509675" duration="3277000" />
+      <workItem from="1699964509675" duration="4442000" />
     </task>
     <task id="LOCAL-00001" summary="Clone from exam">
       <option name="closed" value="true" />
@@ -97,7 +95,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699961589634</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Testing if python will use from variables.tf">
+      <option name="closed" value="true" />
+      <created>1699967816232</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699967816232</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,7 +122,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Clone from exam" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clone from exam" />
+    <MESSAGE value="Testing if python will use from variables.tf" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing if python will use from variables.tf" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

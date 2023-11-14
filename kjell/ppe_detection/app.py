@@ -16,8 +16,7 @@ s3_client = boto3.client('s3', region_name='eu-west-1')
 rekognition_client = boto3.client('rekognition', region_name='eu-west-1')
 
 # Oppgave 1A
-s3_bucket = subprocess.check_output(['terraform', '../infra/output', 's3_bucket']).decode('utf-8').strip()
-BUCKET_NAME = s3_bucket
+BUCKET_NAME = os.environ.get("MyBucketName")
 
 
 def lambda_handler(event, context):
