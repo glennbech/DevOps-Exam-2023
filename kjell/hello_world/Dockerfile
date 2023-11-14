@@ -1,9 +1,12 @@
-FROM maven:3.6-jdk-11 as builder
+FROM python:3.9-slim
 WORKDIR /app
-COPY pom.xml .
-COPY src ./srcdock
-RUN mvn package
+COPY . /spp
 
-FROM adoptopenjdk/openjdk11:alpine-slim
-COPY --from=builder /app/target/*.jar /app/application.jar
-ENTRYPOINT ["java","-jar","/app/application.jar"]
+RUN pip install --no-cache-dir -r requirements.txt
+
+EXPOSE 80
+
+ENV BUCKET_NAME="should be taken from input"
+
+CMD ["python", "./app.py"]
+

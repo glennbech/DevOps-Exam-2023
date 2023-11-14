@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Changed back">
-      <change afterPath="$PROJECT_DIR$/kjell/hello_world/Dockerfile" afterDir="false" />
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Setup structure for Dockerfile with application.yml">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kjell/hello_world/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/kjell/hello_world/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -329,7 +331,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699987510145</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Setup structure for Dockerfile with application.yml">
+      <option name="closed" value="true" />
+      <created>1699989078996</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1699989078996</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,7 +357,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changed name back to HelloWorldFunction to avoid errors for now" />
     <MESSAGE value="Changed default s3-bucket name" />
     <MESSAGE value="Hope env variable for bucket now works in aws lambda" />
     <MESSAGE value="Updated readme" />
@@ -372,7 +381,8 @@
     <MESSAGE value="Test push to main - fix" />
     <MESSAGE value="test" />
     <MESSAGE value="Changed back" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed back" />
+    <MESSAGE value="Setup structure for Dockerfile with application.yml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Setup structure for Dockerfile with application.yml" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
