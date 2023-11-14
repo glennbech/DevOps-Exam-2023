@@ -1,6 +1,7 @@
 import json
 import boto3
 import os
+import subprocess
 
 # Denne koden kan også kjøres som en selvstendig applikasjon (Uten SAM) bare gjøre følgende
 # (dersom man har python på maskinen sin altså...)
@@ -9,14 +10,15 @@ import os
 #
 # pip3 install -r requirements.txt
 # python3 app.py
-#
-# Hilsen Kjell
+
 
 s3_client = boto3.client('s3', region_name='eu-west-1')
 rekognition_client = boto3.client('rekognition', region_name='eu-west-1')
 
 # Oppgave 1A
-BUCKET_NAME = "kjellsimagebucker"
+s3_bucket = subprocess.check_output(['terraform', '../infra/output', 's3_bucket']).decode('utf-8').strip()
+BUCKET_NAME = s3_bucket
+
 
 def lambda_handler(event, context):
 
