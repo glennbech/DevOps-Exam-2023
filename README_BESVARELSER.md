@@ -1,7 +1,6 @@
 ## Oppgave 1
     A.
     Fixed variables, deployed app to aws with sam deploy --guided.
-        * Changed name for hello_world folder to ppe_detection
         * Updated template.yaml to:
             - Use value from Parameter "MyBucketName" to BUCKET_NAME. Default is set to "kandidatnr-2038".
             - Added 
