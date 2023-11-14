@@ -1,15 +1,20 @@
 ## Oppgave 1
-    * Changed name for hello_world folder to ppe_detection
-    * Updated template.yaml to:
-        - Use value from Parameter "MyBucketName" to BUCKET_NAME. Default is set to "kandidatnr-2038".
-        - Added 
-            Environment:
-              Variables:
-                MyBucketName: !Ref MyBucketName
-          so AWS lambda can access it.
+    Fixed variables, deployed app to aws with sam deploy --guided.
+        * Changed name for hello_world folder to ppe_detection
+        * Updated template.yaml to:
+            - Use value from Parameter "MyBucketName" to BUCKET_NAME. Default is set to "kandidatnr-2038".
+            - Added 
+                Environment:
+                  Variables:
+                    MyBucketName: !Ref MyBucketName
+              so AWS lambda can access it.
         
-
-
+    Create Github Actions workflow for sam.
+        * Added workflows for Github Actions.
+            - Added envs to repo with aws secrets.
+            - Push to main: should build and deploy
+            - Push to other branches: should only build.
+    
 
 
 
