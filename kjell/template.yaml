@@ -15,8 +15,10 @@ Parameters:
   MyBucketName:
     Type: String
     Description: S3 Bucket name
-    #  Commented out this because it messes with github actions. Instead manually enters the sam app name as below.
-    # Default: "kandidatnr-2038"
+    Default: "kandidatnr-2038"
+
+Conditions:
+  CreateBucket: !Equals [!Ref MyBucketName, "kandidantnr-2038"]
 
 Resources:
   Bucket:

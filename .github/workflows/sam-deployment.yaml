@@ -14,9 +14,9 @@ jobs:
   deploy-build-sam:
     runs-on: ubuntu-latest
     env:
-      S3_BUCKET_NAME: pgr301-sam-bucket   # Using this as default bucket for exam
+      S3_ARTIFACT_BUCKET_NAME: pgr301-sam-bucket   # Using this as default bucket for exam
       SAM_APP: sam-app-actions-test       # Change to your unique app name
-      MY_BUCKET_NAME: "kandidatnr-2038"
+      MY_BUCKET_NAME: "kandidatnr-2038"   # Can change bucket to use if one wish.
 
     steps:
       - uses: actions/checkout@v2
@@ -28,16 +28,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}   # These are taken from Github secrets
           aws-region: eu-west-1
 
-      - name: Check if S3 bucket exists
-        run: aws s3api head-bucket --bucket $MY_BUCKET_NAME || true
-        continue-on-error: true
-
       - name: Sam build and deploy on main branch
         if: github.ref == 'refs/heads/main'
         # set variable to get name instead, nicer.
         run: |
           sam build --use-container
-          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name $SAM_APP --s3-bucket $S3_BUCKET_NAME --capabilities CAPABILITY_IAM --region eu-west-1 --parameter-overrides MyBucketName=$MY_BUCKET_NAME
+          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name $SAM_APP --s3-bucket S3_ARTIFACT_BUCKET_NAME --capabilities CAPABILITY_IAM --region eu-west-1 --parameter-overrides MyBucketName=$MY_BUCKET_NAME
 
       - name: Sam build only if not on main branch
         if: github.ref != 'refs/heads/main'
