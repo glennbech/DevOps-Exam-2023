@@ -37,6 +37,10 @@
         * Now github actions should run.
                     
     B.
+    Dockerfile created for app.py.
+    Handles AWS credentials.
+    Runs the sam app accordingly with the script example provided in Oppgave B.
+
     
 
 
@@ -44,21 +48,3 @@
 
 
 
-
-
-
-# Notes
-    * AWS Rekognition for The Personal Protective Equipment (PPE) detection
-        - Bilder
-        - Videor
-        - Text
-
-    * Utstyr att se på
-        - Hjelmer
-        - Vernebriller
-        - Hansker
-        - Verneklär
-
-
-    * Upload images or videos
-    * Get response back on where/if PPE is found.
