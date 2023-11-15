@@ -57,6 +57,13 @@
 
 ## Oppgave 3
     A.
+    Changed some rows in main.tf
+        Added variables for:
+            aws_apprunner_service
+            aws_iam_role
+            aws_iam_policy
+
+        Added instance_configuration for modifying cpu and memory usage
     
 
 
