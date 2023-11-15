@@ -15,7 +15,8 @@ Parameters:
   MyBucketName:
     Type: String
     Description: S3 Bucket name
-    Default: "kandidatnr-2038"
+    #  Commented out this because it messes with github actions. Instead manually enters the sam app name as below.
+    # Default: "kandidatnr-2038"
 
 Resources:
   Bucket:
