@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Test">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/oppgave-2-workflow.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/oppgave-2-workflow.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/oppgave1-sam-deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
