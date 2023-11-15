@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="typo">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Test">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/oppgave-2-workflow.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/oppgave-2-workflow.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/oppgave1-sam-deployment.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,23 +81,7 @@
       <workItem from="1700062142505" duration="1636000" />
       <workItem from="1700063786634" duration="209000" />
       <workItem from="1700064027859" duration="34000" />
-      <workItem from="1700064075937" duration="3936000" />
-    </task>
-    <task id="LOCAL-00009" summary="Wrong name s3 bucket and cloudformation stack">
-      <option name="closed" value="true" />
-      <created>1699979490740</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1699979490740</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Pushing on branch to see if it github actions only builds">
-      <option name="closed" value="true" />
-      <created>1699979850369</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1699979850369</updated>
+      <workItem from="1700064075937" duration="4140000" />
     </task>
     <task id="LOCAL-00011" summary="Did not run github actions if pushed to other than main.">
       <option name="closed" value="true" />
@@ -474,7 +459,23 @@
       <option name="project" value="LOCAL" />
       <updated>1700067669703</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Test">
+      <option name="closed" value="true" />
+      <created>1700068028090</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1700068028090</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Test">
+      <option name="closed" value="true" />
+      <created>1700068056737</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1700068056737</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -505,7 +506,6 @@
     <MESSAGE value="Updated bucket for github actions" />
     <MESSAGE value="Forgot to remove s3 bucket creation" />
     <MESSAGE value="Remove Default value for S3 bucket in template.yaml" />
-    <MESSAGE value="Test" />
     <MESSAGE value="only create s3 bucket if it doesnt exist" />
     <MESSAGE value="type?" />
     <MESSAGE value="test again. deleted all buckets etc" />
@@ -517,7 +517,8 @@
     <MESSAGE value="Error in intellij, works fine in Cloud9 with the Dockerfile..." />
     <MESSAGE value="Added workflows for Oppgave 2 - java app" />
     <MESSAGE value="typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="typo" />
+    <MESSAGE value="Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
