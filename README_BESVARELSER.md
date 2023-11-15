@@ -47,7 +47,16 @@
     Dockerfile for java-app.
     Builds and then runs when running the example script.
 
+    B.
+    Github actions for java app med container image och ecr
+    
+        push till main -> publicera ny container image till ecr repo
 
+            1. skapa docker image
+            2. push till ecr repo
+                skapa ecr repo
+                push till den
+        
 
 
 

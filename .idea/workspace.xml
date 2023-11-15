@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Removed added dependency for now and application.yaml">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Error in intellij, works fine in Cloud9 with the Dockerfile...">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/oppgave-2-workflow.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,15 +81,7 @@
       <workItem from="1700062142505" duration="1636000" />
       <workItem from="1700063786634" duration="209000" />
       <workItem from="1700064027859" duration="34000" />
-      <workItem from="1700064075937" duration="122000" />
-    </task>
-    <task id="LOCAL-00004" summary="Changed name back to HelloWorldFunction to avoid errors for now">
-      <option name="closed" value="true" />
-      <created>1699969451598</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1699969451598</updated>
+      <workItem from="1700064075937" duration="2625000" />
     </task>
     <task id="LOCAL-00005" summary="Changed default s3-bucket name">
       <option name="closed" value="true" />
@@ -473,7 +467,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700063345649</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Error in intellij, works fine in Cloud9 with the Dockerfile...">
+      <option name="closed" value="true" />
+      <created>1700064294221</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1700064294221</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +493,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changed back envs" />
     <MESSAGE value="... had envs in aws configure... moved them outside" />
     <MESSAGE value="region cant use env?" />
     <MESSAGE value="..." />
@@ -516,7 +517,8 @@
     <MESSAGE value="Dockerfile for java app. Builds and then runs when done." />
     <MESSAGE value="." />
     <MESSAGE value="Removed added dependency for now and application.yaml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed added dependency for now and application.yaml" />
+    <MESSAGE value="Error in intellij, works fine in Cloud9 with the Dockerfile..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Error in intellij, works fine in Cloud9 with the Dockerfile..." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
