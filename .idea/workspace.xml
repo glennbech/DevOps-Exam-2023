@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Updated README_BESVARELSER.md">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Removed unnecessary lines in app.py for secrets. handled in Dockerfile already.">
+      <change afterPath="$PROJECT_DIR$/infra/variables.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infra/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kjell/hello_world/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/kjell/hello_world/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kjell/template.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kjell/template.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,22 +83,6 @@
       <workItem from="1700063786634" duration="209000" />
       <workItem from="1700064027859" duration="34000" />
       <workItem from="1700064075937" duration="4140000" />
-    </task>
-    <task id="LOCAL-00012" summary="Trying to set so push to any branches triggers github actions">
-      <option name="closed" value="true" />
-      <created>1699980829646</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1699980829646</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Testing with 2 separate .yaml">
-      <option name="closed" value="true" />
-      <created>1699981052417</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1699981052417</updated>
     </task>
     <task id="LOCAL-00014" summary="Testing with 2 separate .yaml">
       <option name="closed" value="true" />
@@ -476,7 +460,23 @@
       <option name="project" value="LOCAL" />
       <updated>1700071626388</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Testing something with keys in sam again">
+      <option name="closed" value="true" />
+      <created>1700075940356</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1700075940356</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Removed unnecessary lines in app.py for secrets. handled in Dockerfile already.">
+      <option name="closed" value="true" />
+      <created>1700076160589</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1700076160589</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,8 +494,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test push to main" />
-    <MESSAGE value="Test push to main - fix" />
     <MESSAGE value="test" />
     <MESSAGE value="Changed back" />
     <MESSAGE value="Setup structure for Dockerfile with application.yml" />
@@ -519,7 +517,9 @@
     <MESSAGE value="typo" />
     <MESSAGE value="Test" />
     <MESSAGE value="Updated README_BESVARELSER.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated README_BESVARELSER.md" />
+    <MESSAGE value="Testing something with keys in sam again" />
+    <MESSAGE value="Removed unnecessary lines in app.py for secrets. handled in Dockerfile already." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed unnecessary lines in app.py for secrets. handled in Dockerfile already." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
