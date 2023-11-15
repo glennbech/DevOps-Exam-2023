@@ -44,13 +44,18 @@
     
 ## Oppgave 2
     A.
-    Dockerfile for java-app.
+    Created a multi stage Dockerfile for java-app.
     Builds and then runs when running the example script.
 
     B.
     Github actions for java app med container image och ecr
+        ECR created in AWS Interface
         Build image and publish to ECR repo only when pushing to main       - OK
-        Build image only when pushing to other than main                    -
+        Build image only when pushing to other than main                    - OK
+        Uses ref and latest
+
+
+## Oppgave 3
  
 
 
