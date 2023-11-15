@@ -67,7 +67,9 @@
         variables.tf
             Here i set a default value for all of them, but can be overridden.
 
-        Added instance_configuration for modifying cpu and memory usage
+        Added lines in instance_configuration for modifying
+            cpu 
+            memory usage
     
 
 

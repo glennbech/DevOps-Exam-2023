@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Minor changes, updated README_BESVARELSER.md. Fixed port">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="fixed duplicate instance_configuration">
+      <change afterPath="$PROJECT_DIR$/infra/provider.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,14 +82,6 @@
       <workItem from="1700063786634" duration="209000" />
       <workItem from="1700064027859" duration="34000" />
       <workItem from="1700064075937" duration="4140000" />
-    </task>
-    <task id="LOCAL-00017" summary="Updating readme with steps on how to get github actions to work on your own project (names of stuff, secrets etc...)">
-      <option name="closed" value="true" />
-      <created>1699981870237</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1699981870237</updated>
     </task>
     <task id="LOCAL-00018" summary="Added AmazonS3ReadOnlyAccess in template.yaml instead of manually adding in Permissions in AWS.&#10;ADDED description for how to run the workflows yaml with other values.">
       <option name="closed" value="true" />
@@ -474,7 +467,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700079444354</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="fixed duplicate instance_configuration">
+      <option name="closed" value="true" />
+      <created>1700079685036</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1700079685036</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +493,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="create own s3 instead in workflows" />
     <MESSAGE value="create own s3 instead in workflows. mispelling" />
     <MESSAGE value="Changed back to separate S3 bucket again to use for now. Should probably not use it for github actions so sam deploy temp. files appear there." />
     <MESSAGE value="1.b works?" />
@@ -517,7 +517,8 @@
     <MESSAGE value="Modifying main.tf and adding cpu/memory usage" />
     <MESSAGE value="Minor changes, updated README_BESVARELSER.md" />
     <MESSAGE value="Minor changes, updated README_BESVARELSER.md. Fixed port" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor changes, updated README_BESVARELSER.md. Fixed port" />
+    <MESSAGE value="fixed duplicate instance_configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed duplicate instance_configuration" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
