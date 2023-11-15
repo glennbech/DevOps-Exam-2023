@@ -50,7 +50,7 @@
     B.
     Github actions for java app med container image och ecr
         Build image and publish to ECR repo only when pushing to main       - OK
-        Build image only when pushing to other than main                    -
+        Build image only when pushing to other than main                    - test
  
 
 
