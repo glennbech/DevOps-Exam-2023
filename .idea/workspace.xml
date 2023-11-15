@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="typo">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/oppgave-2-workflow.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/oppgave-2-workflow.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,15 +80,7 @@
       <workItem from="1700062142505" duration="1636000" />
       <workItem from="1700063786634" duration="209000" />
       <workItem from="1700064027859" duration="34000" />
-      <workItem from="1700064075937" duration="3581000" />
-    </task>
-    <task id="LOCAL-00008" summary="Added github action workflows file for sam deployment">
-      <option name="closed" value="true" />
-      <created>1699979018854</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1699979018854</updated>
+      <workItem from="1700064075937" duration="3936000" />
     </task>
     <task id="LOCAL-00009" summary="Wrong name s3 bucket and cloudformation stack">
       <option name="closed" value="true" />
@@ -474,7 +466,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700067541500</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="typo">
+      <option name="closed" value="true" />
+      <created>1700067669703</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1700067669703</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

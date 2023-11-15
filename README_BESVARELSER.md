@@ -49,15 +49,9 @@
 
     B.
     Github actions for java app med container image och ecr
-    
-        push till main -> publicera ny container image till ecr repo
-
-            1. skapa docker image
-            2. push till ecr repo
-                skapa ecr repo
-                push till den
-        
-
+        Build image and publish to ECR repo only when pushing to main       - OK
+        Build image only when pushing to other than main                    -
+ 
 
 
 
