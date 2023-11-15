@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       S3_BUCKET_NAME: pgr301-sam-bucket   # Using this as default bucket for exam
-      SAM_APP: sam-app-2038                    # Change to your unique app name
+      SAM_APP: sam-app-actions-test       # Change to your unique app name
 
     steps:
       - uses: actions/checkout@v2

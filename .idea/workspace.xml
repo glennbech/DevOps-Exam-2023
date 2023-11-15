@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Forgot to remove s3 bucket creation">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Remove Default value for S3 bucket in template.yaml">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kjell/template.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kjell/template.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +88,7 @@
       <workItem from="1699962048424" duration="1299000" />
       <workItem from="1699964147919" duration="294000" />
       <workItem from="1699964509675" duration="20903000" />
-      <workItem from="1700051113741" duration="1010000" />
+      <workItem from="1700051113741" duration="1352000" />
     </task>
     <task id="LOCAL-00001" summary="Clone from exam">
       <option name="closed" value="true" />
@@ -402,7 +402,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700051358477</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Remove Default value for S3 bucket in template.yaml">
+      <option name="closed" value="true" />
+      <created>1700052140349</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1700052140349</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -420,7 +428,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Trying to set so push to any branches triggers github actions" />
     <MESSAGE value="Testing with 2 separate .yaml" />
     <MESSAGE value="Seeing if it runs when removing - '!main'" />
     <MESSAGE value="Testing with one .yaml again" />
@@ -445,7 +452,8 @@
     <MESSAGE value="1.b works?" />
     <MESSAGE value="Updated bucket for github actions" />
     <MESSAGE value="Forgot to remove s3 bucket creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Forgot to remove s3 bucket creation" />
+    <MESSAGE value="Remove Default value for S3 bucket in template.yaml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove Default value for S3 bucket in template.yaml" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
