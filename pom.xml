@@ -30,12 +30,13 @@
             <version>1.12.12</version>
         </dependency>
 
-        <!-- AWS Cloud credentials -->
+        <!-- AWS Cloud credentials
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-aws</artifactId>
             <version>2.2.1.RELEASE</version>
         </dependency>
+        -->
 
         <!-- Spring Boot Starter Web -->
         <dependency>
