@@ -37,7 +37,7 @@
                     Check "Command Line Interface (CLI) and continue.
                     Open a new tab and go to your Github repo and go to Settings -> Secret and variables -> Actions
                     Click "New Repository secret"
-                        Name = AWS_ACCESS_KEY_ID
+                        Name = AWS_ACCESS_KEY_I
                         Secret = enter the access key id from AWS IAM
                     Do the same but:
                         Name = AWS_SECRET_ACCESS_KEY

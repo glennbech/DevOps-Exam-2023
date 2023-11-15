@@ -14,9 +14,9 @@ jobs:
   deploy-build-sam:
     runs-on: ubuntu-latest
     env:
-      S3_ARTIFACT_BUCKET_NAME: pgr301-sam-bucket   # Using this as default bucket for exam
-      SAM_APP: sam-app-actions-test       # Change to your unique app name
-      MY_BUCKET_NAME: "kandidatnr-2038-test"   # Can change bucket to use if one wish.
+      S3_ARTIFACT_BUCKET_NAME: pgr301-sam-bucket    # Using this as default bucket for exam
+      SAM_APP: sam-app-ppe-detection                # Name of your sam app
+      MY_BUCKET_NAME: "kandidatnr-2038"             # Bucket used here is the one used for exam with kandidatnr
 
     steps:
       - uses: actions/checkout@v2

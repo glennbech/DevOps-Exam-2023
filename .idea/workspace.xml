@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="only create s3 bucket if it doesnt exist">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="type?">
       <change beforePath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kjell/template.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kjell/template.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +89,7 @@
       <workItem from="1699962048424" duration="1299000" />
       <workItem from="1699964147919" duration="294000" />
       <workItem from="1699964509675" duration="20903000" />
-      <workItem from="1700051113741" duration="4279000" />
+      <workItem from="1700051113741" duration="4800000" />
     </task>
     <task id="LOCAL-00001" summary="Clone from exam">
       <option name="closed" value="true" />
@@ -443,7 +443,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700054679262</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="type?">
+      <option name="closed" value="true" />
+      <created>1700055556099</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1700055556099</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -461,7 +469,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Seeing if it runs when removing - '!main'" />
     <MESSAGE value="Testing with one .yaml again" />
     <MESSAGE value="Updating readme with steps on how to get github actions to work on your own project (names of stuff, secrets etc...)" />
     <MESSAGE value="Added AmazonS3ReadOnlyAccess in template.yaml instead of manually adding in Permissions in AWS.&#10;ADDED description for how to run the workflows yaml with other values." />
@@ -486,7 +493,8 @@
     <MESSAGE value="Remove Default value for S3 bucket in template.yaml" />
     <MESSAGE value="Test" />
     <MESSAGE value="only create s3 bucket if it doesnt exist" />
-    <option name="LAST_COMMIT_MESSAGE" value="only create s3 bucket if it doesnt exist" />
+    <MESSAGE value="type?" />
+    <option name="LAST_COMMIT_MESSAGE" value="type?" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
