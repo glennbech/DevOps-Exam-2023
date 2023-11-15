@@ -12,3 +12,8 @@ variable "aws_iam_policy_name" {
   default = "policy-app-service-2038"
   type = string
 }
+
+variable "port" {
+  default = "8080"
+  type = string
+}

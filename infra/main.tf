@@ -7,7 +7,6 @@ resource "aws_apprunner_service" "service" {
     memory = "1024"
   }
 
-
   instance_configuration {
     instance_role_arn = aws_iam_role.role_for_apprunner_service.arn
   }
@@ -18,8 +17,7 @@ resource "aws_apprunner_service" "service" {
     }
     image_repository {
       image_configuration {
-        port = int
-        default = "8080"
+        port = var.port
       }
       image_identifier      = "244530008913.dkr.ecr.eu-west-1.amazonaws.com/kjell:latest"
       image_repository_type = "ECR"

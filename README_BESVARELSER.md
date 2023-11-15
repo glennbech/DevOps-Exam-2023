@@ -62,6 +62,10 @@
             aws_apprunner_service
             aws_iam_role
             aws_iam_policy
+            port
+
+        variables.tf
+            Here i set a default value for all of them, but can be overridden.
 
         Added instance_configuration for modifying cpu and memory usage
     

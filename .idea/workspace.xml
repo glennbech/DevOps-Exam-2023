@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Modifying main.tf and adding cpu/memory usage">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Minor changes, updated README_BESVARELSER.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infra/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/variables.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,14 +83,6 @@
       <workItem from="1700063786634" duration="209000" />
       <workItem from="1700064027859" duration="34000" />
       <workItem from="1700064075937" duration="4140000" />
-    </task>
-    <task id="LOCAL-00015" summary="Seeing if it runs when removing - '!main'">
-      <option name="closed" value="true" />
-      <created>1699981238047</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1699981238047</updated>
     </task>
     <task id="LOCAL-00016" summary="Testing with one .yaml again">
       <option name="closed" value="true" />
@@ -475,7 +468,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700078042416</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Minor changes, updated README_BESVARELSER.md">
+      <option name="closed" value="true" />
+      <created>1700079090899</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1700079090899</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -493,7 +494,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changed back" />
     <MESSAGE value="Setup structure for Dockerfile with application.yml" />
     <MESSAGE value="create own s3 instead in workflows" />
     <MESSAGE value="create own s3 instead in workflows. mispelling" />
@@ -518,7 +518,8 @@
     <MESSAGE value="Testing something with keys in sam again" />
     <MESSAGE value="Removed unnecessary lines in app.py for secrets. handled in Dockerfile already." />
     <MESSAGE value="Modifying main.tf and adding cpu/memory usage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modifying main.tf and adding cpu/memory usage" />
+    <MESSAGE value="Minor changes, updated README_BESVARELSER.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor changes, updated README_BESVARELSER.md" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
