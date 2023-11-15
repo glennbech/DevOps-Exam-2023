@@ -54,6 +54,9 @@
         Build image only when pushing to other than main                    - OK
         Uses ref and latest
 
+    Running the docker script does not work in intellij (mvn spring-boot:run gives weird errors)
+    But this does not happen in Cloud9, and works fine.
+
 
 ## Oppgave 3
     A.
@@ -64,17 +67,17 @@
             aws_iam_policy
             port
 
+        * Changed ecr from kjell to my ECR.
+
         * variables.tf
             Here i set a default value for all of them, but can be overridden.
 
         * Added lines in instance_configuration for modifying
             cpu 
             memory usage
-
-        * Also had to run:
-            aws configure --profile myprofile-2038
-            to setup a profile called myprofile-2038
     
+    Running terraform init and then terraform apply works fine in intellij.
+    But in Cloud9 i get errors and no not know why...
 
 
 
