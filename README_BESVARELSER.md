@@ -45,7 +45,7 @@
 ## Oppgave 2
     A.
     Dockerfile for java-app.
-    Added maven dependency to handle AWS cloud credentials.
+    Builds and then runs when running the example script.
 
 
 
