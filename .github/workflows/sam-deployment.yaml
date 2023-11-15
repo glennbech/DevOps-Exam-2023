@@ -28,6 +28,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}   # These are taken from Github secrets
           aws-region: eu-west-1
 
+      - name: Check if S3 bucket exists
+        run: aws s3api head-bucket --bucket $MY_BUCKET_NAME || true
+        continue-on-error: true
+
       - name: Sam build and deploy on main branch
         if: github.ref == 'refs/heads/main'
         # set variable to get name instead, nicer.
