@@ -21,9 +21,6 @@ BUCKET_NAME = os.environ.get("MyBucketName")    # When running sam deploy locall
 if BUCKET_NAME is None:
     BUCKET_NAME = os.environ.get('BUCKET_NAME') # For Docker
 
-#AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-#AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-
 
 def lambda_handler(event, context):
 
