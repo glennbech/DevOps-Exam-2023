@@ -27,7 +27,7 @@ jobs:
           AWS-REGION: eu-west-1
 
       - name: Login to AWS ECR
-        run: aws ecr get-loin-password --region eu-west-1 | docker login --username AWS --password-stdin 244530008913.dkr.ecr.eu-west-1.amazonaws.com
+        run: aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 244530008913.dkr.ecr.eu-west-1.amazonaws.com
 
       # Should compile and build for any branch.
       - name: Compile and build docker container image
