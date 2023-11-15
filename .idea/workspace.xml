@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Test using provider">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/provider.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/provider.tf" afterDir="false" />
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="fixed provider">
+      <change beforePath="$PROJECT_DIR$/infra/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/main.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,14 +80,6 @@
       <workItem from="1700063786634" duration="209000" />
       <workItem from="1700064027859" duration="34000" />
       <workItem from="1700064075937" duration="4140000" />
-    </task>
-    <task id="LOCAL-00019" summary="Fixed typo in sam-deployment.yaml">
-      <option name="closed" value="true" />
-      <created>1699984874545</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1699984874545</updated>
     </task>
     <task id="LOCAL-00020" summary="Moved back defined envs to be under with:">
       <option name="closed" value="true" />
@@ -474,7 +465,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700080922099</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="fixed provider">
+      <option name="closed" value="true" />
+      <created>1700081014636</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1700081014636</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +491,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changed back to separate S3 bucket again to use for now. Should probably not use it for github actions so sam deploy temp. files appear there." />
     <MESSAGE value="1.b works?" />
     <MESSAGE value="Updated bucket for github actions" />
     <MESSAGE value="Forgot to remove s3 bucket creation" />
@@ -517,7 +515,8 @@
     <MESSAGE value="Minor changes, updated README_BESVARELSER.md. Fixed port" />
     <MESSAGE value="fixed duplicate instance_configuration" />
     <MESSAGE value="Test using provider" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test using provider" />
+    <MESSAGE value="fixed provider" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed provider" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
