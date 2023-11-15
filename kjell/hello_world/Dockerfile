@@ -8,5 +8,5 @@ ENV AWS_ACCESS_KEY_ID=""
 ENV AWS_SECRET_ACCESS_KEY=""
 ENV BUCKET_NAME=""
 
-CMD ["python", "./app.py"]
+ENTRYPOINT ["python", "./app.py"]
 

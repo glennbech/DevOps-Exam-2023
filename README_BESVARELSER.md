@@ -42,6 +42,24 @@
     Runs the sam app accordingly with the script example provided in Oppgave B.
 
     
+## Oppgave 2
+    A.
+    Dockerfile for java-app.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
