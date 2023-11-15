@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Test">
-      <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/oppgave-2-workflow.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/oppgave-2-workflow.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/oppgave1-sam-deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,15 +81,7 @@
       <workItem from="1700062142505" duration="1636000" />
       <workItem from="1700063786634" duration="209000" />
       <workItem from="1700064027859" duration="34000" />
-      <workItem from="1700064075937" duration="3969000" />
-    </task>
-    <task id="LOCAL-00010" summary="Pushing on branch to see if it github actions only builds">
-      <option name="closed" value="true" />
-      <created>1699979850369</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1699979850369</updated>
+      <workItem from="1700064075937" duration="4140000" />
     </task>
     <task id="LOCAL-00011" summary="Did not run github actions if pushed to other than main.">
       <option name="closed" value="true" />
@@ -473,7 +467,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700068028090</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Test">
+      <option name="closed" value="true" />
+      <created>1700068056737</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1700068056737</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

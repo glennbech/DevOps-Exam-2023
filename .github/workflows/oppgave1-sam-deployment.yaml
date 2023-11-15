@@ -1,3 +1,5 @@
+name: Deploy sam app
+
 on:
   push:
     branches:
