@@ -58,18 +58,22 @@
 ## Oppgave 3
     A.
     Changed some rows in main.tf
-        Added variables for:
+        * Added variables for:
             aws_apprunner_service
             aws_iam_role
             aws_iam_policy
             port
 
-        variables.tf
+        * variables.tf
             Here i set a default value for all of them, but can be overridden.
 
-        Added lines in instance_configuration for modifying
+        * Added lines in instance_configuration for modifying
             cpu 
             memory usage
+
+        * Also had to run:
+            aws configure --profile myprofile-2038
+            to setup a profile called myprofile-2038
     
 
 

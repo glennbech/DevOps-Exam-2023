@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="testing original main.tf">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Test again">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/provider.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/provider.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,14 +82,6 @@
       <workItem from="1700063786634" duration="209000" />
       <workItem from="1700064027859" duration="34000" />
       <workItem from="1700064075937" duration="4140000" />
-    </task>
-    <task id="LOCAL-00022" summary="changed back envs">
-      <option name="closed" value="true" />
-      <created>1699985582113</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1699985582113</updated>
     </task>
     <task id="LOCAL-00023" summary="... had envs in aws configure... moved them outside">
       <option name="closed" value="true" />
@@ -475,7 +467,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700081803945</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Test again">
+      <option name="closed" value="true" />
+      <created>1700082597682</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1700082597682</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -493,7 +493,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Forgot to remove s3 bucket creation" />
     <MESSAGE value="Remove Default value for S3 bucket in template.yaml" />
     <MESSAGE value="only create s3 bucket if it doesnt exist" />
     <MESSAGE value="type?" />
@@ -518,7 +517,8 @@
     <MESSAGE value="fixed provider" />
     <MESSAGE value="Changed ecr from kjell to mine" />
     <MESSAGE value="testing original main.tf" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing original main.tf" />
+    <MESSAGE value="Test again" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test again" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
