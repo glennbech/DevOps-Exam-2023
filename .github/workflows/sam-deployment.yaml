@@ -16,6 +16,7 @@ jobs:
     env:
       S3_BUCKET_NAME: pgr301-sam-bucket   # Using this as default bucket for exam
       SAM_APP: sam-app-actions-test       # Change to your unique app name
+      MY_BUCKET_NAME: "kandidatnr-2038"
 
     steps:
       - uses: actions/checkout@v2
@@ -32,7 +33,7 @@ jobs:
         # set variable to get name instead, nicer.
         run: |
           sam build --use-container
-          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name $SAM_APP --s3-bucket $S3_BUCKET_NAME --capabilities CAPABILITY_IAM --region eu-west-1
+          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name $SAM_APP --s3-bucket $S3_BUCKET_NAME --capabilities CAPABILITY_IAM --region eu-west-1 --parameter-overrides MyBucketName=$MY_BUCKET_NAME
 
       - name: Sam build only if not on main branch
         if: github.ref != 'refs/heads/main'
