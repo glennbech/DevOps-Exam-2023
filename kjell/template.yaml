@@ -17,9 +17,6 @@ Parameters:
     Description: S3 Bucket name
     Default: "kandidatnr-2038"
 
-Conditions:
-  CreateBucket: !Equals [!Ref MyBucketName, "kandidantnr-2038"]
-
 Resources:
   Bucket:
     Type: AWS::S3::Bucket

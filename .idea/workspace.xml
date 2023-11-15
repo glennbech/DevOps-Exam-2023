@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Test">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="only create s3 bucket if it doesnt exist">
       <change beforePath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kjell/template.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kjell/template.yaml" afterDir="false" />
@@ -89,7 +89,7 @@
       <workItem from="1699962048424" duration="1299000" />
       <workItem from="1699964147919" duration="294000" />
       <workItem from="1699964509675" duration="20903000" />
-      <workItem from="1700051113741" duration="3406000" />
+      <workItem from="1700051113741" duration="4279000" />
     </task>
     <task id="LOCAL-00001" summary="Clone from exam">
       <option name="closed" value="true" />
@@ -435,7 +435,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700053649741</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="only create s3 bucket if it doesnt exist">
+      <option name="closed" value="true" />
+      <created>1700054679262</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1700054679262</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,7 +461,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Testing with 2 separate .yaml" />
     <MESSAGE value="Seeing if it runs when removing - '!main'" />
     <MESSAGE value="Testing with one .yaml again" />
     <MESSAGE value="Updating readme with steps on how to get github actions to work on your own project (names of stuff, secrets etc...)" />
@@ -478,7 +485,8 @@
     <MESSAGE value="Forgot to remove s3 bucket creation" />
     <MESSAGE value="Remove Default value for S3 bucket in template.yaml" />
     <MESSAGE value="Test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test" />
+    <MESSAGE value="only create s3 bucket if it doesnt exist" />
+    <option name="LAST_COMMIT_MESSAGE" value="only create s3 bucket if it doesnt exist" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
