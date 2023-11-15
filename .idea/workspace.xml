@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Added workflows for Oppgave 2 - java app">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="typo">
       <change beforePath="$PROJECT_DIR$/.github/workflows/oppgave-2-workflow.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/oppgave-2-workflow.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -80,23 +80,7 @@
       <workItem from="1700062142505" duration="1636000" />
       <workItem from="1700063786634" duration="209000" />
       <workItem from="1700064027859" duration="34000" />
-      <workItem from="1700064075937" duration="3420000" />
-    </task>
-    <task id="LOCAL-00006" summary="Hope env variable for bucket now works in aws lambda">
-      <option name="closed" value="true" />
-      <created>1699975773636</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1699975773636</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Updated readme">
-      <option name="closed" value="true" />
-      <created>1699976483596</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1699976483596</updated>
+      <workItem from="1700064075937" duration="3581000" />
     </task>
     <task id="LOCAL-00008" summary="Added github action workflows file for sam deployment">
       <option name="closed" value="true" />
@@ -474,7 +458,23 @@
       <option name="project" value="LOCAL" />
       <updated>1700066719211</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Added workflows for Oppgave 2 - java app">
+      <option name="closed" value="true" />
+      <created>1700067508372</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1700067508372</updated>
+    </task>
+    <task id="LOCAL-00056" summary="typo">
+      <option name="closed" value="true" />
+      <created>1700067541500</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1700067541500</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +492,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="region cant use env?" />
     <MESSAGE value="..." />
     <MESSAGE value="Test push to main" />
     <MESSAGE value="Test push to main - fix" />
@@ -517,7 +516,8 @@
     <MESSAGE value="Removed added dependency for now and application.yaml" />
     <MESSAGE value="Error in intellij, works fine in Cloud9 with the Dockerfile..." />
     <MESSAGE value="Added workflows for Oppgave 2 - java app" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added workflows for Oppgave 2 - java app" />
+    <MESSAGE value="typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="typo" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
