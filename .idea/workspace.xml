@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment=".">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Removed added dependency for now and application.yaml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,15 +170,7 @@
       <workItem from="1699964509675" duration="20903000" />
       <workItem from="1700051113741" duration="6878000" />
       <workItem from="1700058193145" duration="3857000" />
-      <workItem from="1700062142505" duration="833000" />
-    </task>
-    <task id="LOCAL-00002" summary="Testing if python will use from variables.tf">
-      <option name="closed" value="true" />
-      <created>1699967816232</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1699967816232</updated>
+      <workItem from="1700062142505" duration="1195000" />
     </task>
     <task id="LOCAL-00003" summary="Misread, changed .yaml to get variables from sam...&#10;Changed name on HelloWorldFunction to LambdaPPEDetection.&#10;Set default name on S3 bucket to kandidatnr">
       <option name="closed" value="true" />
@@ -565,7 +556,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700062200280</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Removed added dependency for now and application.yaml">
+      <option name="closed" value="true" />
+      <created>1700062992796</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1700062992796</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,7 +582,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="seems like region variable does not work?" />
     <MESSAGE value="changed back envs" />
     <MESSAGE value="... had envs in aws configure... moved them outside" />
     <MESSAGE value="region cant use env?" />
@@ -608,7 +606,8 @@
     <MESSAGE value="Updated Dockerfile and README_BESVARELSER.md" />
     <MESSAGE value="Dockerfile for java app. Builds and then runs when done." />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="Removed added dependency for now and application.yaml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed added dependency for now and application.yaml" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
