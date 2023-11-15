@@ -27,10 +27,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}   # These are taken from Github secrets
           aws-region: eu-west-1
 
-      - name: Create Deployment S3 Bucket
-        run:
-          aws s3 mb s3://${DEPLOYMENT_S3_BUCKET} -- region eu-west-1
-
       - name: Sam build and deploy on main branch
         if: github.ref == 'refs/heads/main'
         # set variable to get name instead, nicer.
