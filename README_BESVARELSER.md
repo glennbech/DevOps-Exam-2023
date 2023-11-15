@@ -21,29 +21,20 @@
 
 
     How to get Github Actions workflow to run
-        * First you must create a S3 bucket and a CloudFormation stack. This can be done in AWS or by using the code in this project
-          Outside Cloud9 you might need AWS CLI and sam CLI installed.
-          In Cloud9:
-            Navigate to where the template.yaml is for sam.
-            In this case:
-                1. cd DevOps_Exam_2023/kjell
-                2. Run sam deploy --guided
-                3. Enter name of your sam app
-                4. Enter name of your S3 bucket. (Currently this is set to 2038 by default)
-                    These two values are used in .github/workflows/sam-deployment.yaml
-                5. If not using default, change the name of "S3_BUCKET_NAME" and "SAM_APP" in sam-deployment.yaml
-                6. Now you need to create access keys in AWS.
-                    In AWS, search for IAM -> My security credentials -> Create Access key.
-                    Check "Command Line Interface (CLI) and continue.
-                    Open a new tab and go to your Github repo and go to Settings -> Secret and variables -> Actions
+        * Create Secrets in AWS IAM.
+            1. In AWS search for AIM
+            2. Go to My security credentials -> Create Access key.
+            3. Check "Command Line Interface (CLI) and continue
+                Now open new tab and go to your github repo.
+                Go to Settings -> Secrets and variables -> Actions
                     Click "New Repository secret"
                         Name = AWS_ACCESS_KEY_I
                         Secret = enter the access key id from AWS IAM
-                    Do the same but:
+                    Do the same with:
                         Name = AWS_SECRET_ACCESS_KEY
                         Secret = enter the secret access key from AWS IAM
         
-        Now everything should be able to run after the configuation here.
+        * Now github actions should run.
                     
     B.
     
