@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="fixed provider">
-      <change beforePath="$PROJECT_DIR$/infra/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/main.tf" afterDir="false" />
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Changed ecr from kjell to mine">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,14 +80,6 @@
       <workItem from="1700063786634" duration="209000" />
       <workItem from="1700064027859" duration="34000" />
       <workItem from="1700064075937" duration="4140000" />
-    </task>
-    <task id="LOCAL-00020" summary="Moved back defined envs to be under with:">
-      <option name="closed" value="true" />
-      <created>1699985123794</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1699985123794</updated>
     </task>
     <task id="LOCAL-00021" summary="seems like region variable does not work?">
       <option name="closed" value="true" />
@@ -473,7 +465,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700081014636</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Changed ecr from kjell to mine">
+      <option name="closed" value="true" />
+      <created>1700081251278</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1700081251278</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +491,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1.b works?" />
     <MESSAGE value="Updated bucket for github actions" />
     <MESSAGE value="Forgot to remove s3 bucket creation" />
     <MESSAGE value="Remove Default value for S3 bucket in template.yaml" />
@@ -516,7 +515,8 @@
     <MESSAGE value="fixed duplicate instance_configuration" />
     <MESSAGE value="Test using provider" />
     <MESSAGE value="fixed provider" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed provider" />
+    <MESSAGE value="Changed ecr from kjell to mine" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed ecr from kjell to mine" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
