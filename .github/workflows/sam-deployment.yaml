@@ -14,8 +14,8 @@ jobs:
   deploy-build-sam:
     runs-on: ubuntu-latest
     env:
-      S3_BUCKET_NAME: kandidatnr-2038   # Change this to your bucket name
-      SAM_APP: ppe-detection            # Change this to your app name
+      S3_BUCKET_NAME: pgr301-sam-bucket   # Using this as default bucket for exam
+      SAM_APP: sam-app-2038                    # Change to your unique app name
 
     steps:
       - uses: actions/checkout@v2

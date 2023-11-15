@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Changed back to separate S3 bucket again to use for now. Should probably not use it for github actions so sam deploy temp. files appear there.">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="1.b works?">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sam-deployment.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kjell/hello_world/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/kjell/hello_world/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kjell/hello_world/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/kjell/hello_world/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,25 +34,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tobia/Desktop/HK 2021/Semester 5/PGR301-1 23H DevOps i skyen/DevOps-cloudwatch_alarms_terraform&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.29655173&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;aws&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/tobia/Desktop/HK 2021/Semester 5/PGR301-1 23H DevOps i skyen/DevOps_Exam_2023",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.29655173",
+    "settings.editor.selected.configurable": "aws",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="DevOps_Exam_2023" />
@@ -89,6 +88,7 @@
       <workItem from="1699962048424" duration="1299000" />
       <workItem from="1699964147919" duration="294000" />
       <workItem from="1699964509675" duration="20903000" />
+      <workItem from="1700051113741" duration="112000" />
     </task>
     <task id="LOCAL-00001" summary="Clone from exam">
       <option name="closed" value="true" />
@@ -378,7 +378,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699996873890</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="1.b works?">
+      <option name="closed" value="true" />
+      <created>1700000256168</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1700000256168</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,7 +404,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Wrong name s3 bucket and cloudformation stack" />
     <MESSAGE value="Pushing on branch to see if it github actions only builds" />
     <MESSAGE value="Did not run github actions if pushed to other than main." />
     <MESSAGE value="Trying to set so push to any branches triggers github actions" />
@@ -421,7 +428,8 @@
     <MESSAGE value="create own s3 instead in workflows. mispelling" />
     <MESSAGE value="Test" />
     <MESSAGE value="Changed back to separate S3 bucket again to use for now. Should probably not use it for github actions so sam deploy temp. files appear there." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed back to separate S3 bucket again to use for now. Should probably not use it for github actions so sam deploy temp. files appear there." />
+    <MESSAGE value="1.b works?" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.b works?" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
