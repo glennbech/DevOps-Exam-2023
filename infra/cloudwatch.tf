@@ -12,9 +12,9 @@ resource "aws_cloudwatch_dashboard" "main" {
       "properties": {
         "metrics": [
           [ "cloudwatch-2038", "protection-violations.value"],
-          [ "cloudwatch-2038", "protection-violations.value"],
-          [ "cloudwatch-2038", "protection-violations.value"],
-          [ "cloudwatch-2038", "protection-violations.value"],
+          [ "cloudwatch-2038", "valid-protection.value"],
+          [ "cloudwatch-2038", "images-scanned.value"],
+          [ "cloudwatch-2038", "num-people-scanned.value"]
         ],
         "period": 300,
         "stat": "Maximum",

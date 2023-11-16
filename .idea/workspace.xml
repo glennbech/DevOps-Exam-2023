@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="New apprunner, since old one is just rolling back......">
-      <change afterPath="$PROJECT_DIR$/infra/cloudwatch.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/MetricsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/variables.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/PPEResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/PPEResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
-    </list>
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Added hand+head check to PPE. Should show graph in micrometer for violations, valids, images, ppl found" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,15 +85,7 @@
       <workItem from="1700063786634" duration="209000" />
       <workItem from="1700064027859" duration="34000" />
       <workItem from="1700064075937" duration="4140000" />
-      <workItem from="1700132020715" duration="17418000" />
-    </task>
-    <task id="LOCAL-00033" summary="create own s3 instead in workflows. mispelling">
-      <option name="closed" value="true" />
-      <created>1699994093314</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1699994093314</updated>
+      <workItem from="1700132020715" duration="17757000" />
     </task>
     <task id="LOCAL-00034" summary="create own s3 instead in workflows. mispelling">
       <option name="closed" value="true" />
@@ -487,7 +471,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700140307991</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Added hand+head check to PPE. Should show graph in micrometer for violations, valids, images, ppl found">
+      <option name="closed" value="true" />
+      <created>1700149861938</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1700149861938</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -505,7 +497,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed added dependency for now and application.yaml" />
     <MESSAGE value="Error in intellij, works fine in Cloud9 with the Dockerfile..." />
     <MESSAGE value="Added workflows for Oppgave 2 - java app" />
     <MESSAGE value="typo" />
@@ -530,7 +521,8 @@
     <MESSAGE value="Just ideas to add for now..." />
     <MESSAGE value="Misspelling on terraform apply if condition" />
     <MESSAGE value="New apprunner, since old one is just rolling back......" />
-    <option name="LAST_COMMIT_MESSAGE" value="New apprunner, since old one is just rolling back......" />
+    <MESSAGE value="Added hand+head check to PPE. Should show graph in micrometer for violations, valids, images, ppl found" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added hand+head check to PPE. Should show graph in micrometer for violations, valids, images, ppl found" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
