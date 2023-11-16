@@ -131,4 +131,7 @@
 
 
 
+# NOTES:
+Seems like Apprunner does not always update when new push is done: running github action.
+Could be bug with it not always finding :latest from ECR repo?
 

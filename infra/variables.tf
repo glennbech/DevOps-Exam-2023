@@ -27,3 +27,7 @@ variable "cloudwatch-namespace" {
   default = "cloudwatch-2038"
   type = string
 }
+
+variable "image_tag" {
+  type = string
+}
