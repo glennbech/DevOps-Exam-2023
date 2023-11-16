@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Adding necessary dependencies for Micrometer">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Just ideas to add for now...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,15 +80,7 @@
       <workItem from="1700063786634" duration="209000" />
       <workItem from="1700064027859" duration="34000" />
       <workItem from="1700064075937" duration="4140000" />
-      <workItem from="1700132020715" duration="6582000" />
-    </task>
-    <task id="LOCAL-00030" summary="Changed back">
-      <option name="closed" value="true" />
-      <created>1699987510145</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1699987510145</updated>
+      <workItem from="1700132020715" duration="7898000" />
     </task>
     <task id="LOCAL-00031" summary="Setup structure for Dockerfile with application.yml">
       <option name="closed" value="true" />
@@ -475,7 +466,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700137608724</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="Just ideas to add for now...">
+      <option name="closed" value="true" />
+      <created>1700138775287</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1700138775287</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -493,7 +492,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated Dockerfile and README_BESVARELSER.md" />
     <MESSAGE value="Dockerfile for java app. Builds and then runs when done." />
     <MESSAGE value="." />
     <MESSAGE value="Removed added dependency for now and application.yaml" />
@@ -518,7 +516,8 @@
     <MESSAGE value="Test workflows" />
     <MESSAGE value="Updated README_BESVARELSER.md" />
     <MESSAGE value="Adding necessary dependencies for Micrometer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding necessary dependencies for Micrometer" />
+    <MESSAGE value="Just ideas to add for now..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Just ideas to add for now..." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
