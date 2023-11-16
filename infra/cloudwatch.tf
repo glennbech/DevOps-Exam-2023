@@ -11,10 +11,10 @@ resource "aws_cloudwatch_dashboard" "main" {
       "height": 6,
       "properties": {
         "metrics": [
-          [ "var.cloudwatch-namespace", "protection_violations.value"],
-          [ "var.cloudwatch-namespace", "valid_protection.value"],
-          [ "var.cloudwatch-namespace", "images_found.value"],
-          [ "var.cloudwatch-namespace", "people_found.value"]
+          [ "var.cloudwatch-namespace", "total_violations.value"],
+          [ "var.cloudwatch-namespace", "total_valid.value"],
+          [ "var.cloudwatch-namespace", "total_images.value"],
+          [ "var.cloudwatch-namespace", "total_people.value"]
         ],
         "period": 300,
         "stat": "Maximum",

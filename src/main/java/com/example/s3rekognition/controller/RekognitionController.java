@@ -76,7 +76,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
                                     .withName(image.getKey())))
                     .withSummarizationAttributes(new ProtectiveEquipmentSummarizationAttributes()
                             .withMinConfidence(80f)
-                            .withRequiredEquipmentTypes("FACE_COVER", "HAND_COVER", "HEAD_COVER"));
+                            .withRequiredEquipmentTypes("FACE_COVER")); //"HAND_COVER", "HEAD_COVER"
 
             DetectProtectiveEquipmentResult result = rekognitionClient.detectProtectiveEquipment(request);
 
@@ -106,34 +106,14 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         scanResult.put("Violations", ppeResponse.getNumberOfViolations());
         scanResult.put("Valid", ppeResponse.getNumberOfValid());
         scanResult.put("Images", ppeResponse.getNumberOfReadImages());
-        scanResult.put("Persons found", persons);
+        scanResult.put("Person_found", persons);
 
 
         //To Cloudwatch - want to put these 4 in a single graph.
-        meterRegistry.counter("protection_violations").increment(ppeResponse.getNumberOfViolations());
-        meterRegistry.counter("valid_protection").increment(ppeResponse.getNumberOfValid());
-        meterRegistry.counter("images_found").increment(ppeResponse.getNumberOfReadImages());
-        meterRegistry.counter("people_found").increment(persons);
-
-
-        // Show analysis of scanned images
-//        DistributionSummary dsViolation = DistributionSummary.builder("protection_violation").register(meterRegistry);
-//        dsViolation.record(ppeResponse.getNumberOfViolations());
-//
-//        DistributionSummary dsValid = DistributionSummary.builder("valid_protection").register(meterRegistry);
-//        dsValid.record(ppeResponse.getNumberOfValid());
-//
-//        DistributionSummary dsImages = DistributionSummary.builder("images_found").register(meterRegistry);
-//        dsImages.record(images.size());
-//
-//        DistributionSummary dsPeople = DistributionSummary.builder("people_found").register(meterRegistry);
-//        dsPeople.record(persons);
-
-
-        System.out.println("Num violations: " + ppeResponse.getNumberOfViolations());
-        System.out.println("Num valids: " + ppeResponse.getNumberOfValid());
-        System.out.println("Num images: " + images.size());
-        System.out.println("Num persons: " + persons);
+        meterRegistry.counter("violations").increment(ppeResponse.getNumberOfViolations());
+        meterRegistry.counter("valid").increment(ppeResponse.getNumberOfValid());
+        meterRegistry.counter("images").increment(ppeResponse.getNumberOfReadImages());
+        meterRegistry.counter("people").increment(persons);
 
         return ResponseEntity.ok(ppeResponse);
     }
@@ -159,6 +139,21 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
+        Gauge.builder("total_violations", scanResult,
+                violation -> violation.getOrDefault("Violations", 0))
+                .register(meterRegistry);
+
+        Gauge.builder("total_valid", scanResult,
+                        valid -> valid.getOrDefault("Valid", 0))
+                .register(meterRegistry);
+
+        Gauge.builder("total_images", scanResult,
+                        people -> people.getOrDefault("Images", 0))
+                .register(meterRegistry);
+
+        Gauge.builder("total_people", scanResult,
+                        people -> people.getOrDefault("Person_found", 0))
+                .register(meterRegistry);
     }
 
 }
