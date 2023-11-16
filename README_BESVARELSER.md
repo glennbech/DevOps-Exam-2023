@@ -103,8 +103,9 @@
             and use: "run:  terraform apply -var="service_name=$SERVICE_NAME" -var="aws_iam_role_name=$AWS_IAM_ROLE_NAME" -var="aws_iam_policy_name=$AWS_IAM_POLICY_NAME" -var="port=$PORT"  -auto-approve"
 
 
-        
-        
+## Oppgave 4
+    A.
+    
 
 
 
