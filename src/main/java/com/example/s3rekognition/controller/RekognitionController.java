@@ -110,24 +110,24 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
 
 
         //To Cloudwatch - want to put these 4 in a single graph.
-//        meterRegistry.counter("protection_violations").increment(ppeResponse.getNumberOfViolations());
-//        meterRegistry.counter("valid_protection").increment(ppeResponse.getNumberOfValid());
-//        meterRegistry.counter("images_found").increment(ppeResponse.getNumberOfReadImages());
-//        meterRegistry.counter("people_found").increment(persons);
+        meterRegistry.counter("protection_violations").increment(ppeResponse.getNumberOfViolations());
+        meterRegistry.counter("valid_protection").increment(ppeResponse.getNumberOfValid());
+        meterRegistry.counter("images_found").increment(ppeResponse.getNumberOfReadImages());
+        meterRegistry.counter("people_found").increment(persons);
 
 
         // Show analysis of scanned images
-        DistributionSummary dsViolation = DistributionSummary.builder("protection_violation").register(meterRegistry);
-        dsViolation.record(ppeResponse.getNumberOfViolations());
-
-        DistributionSummary dsValid = DistributionSummary.builder("valid_protection").register(meterRegistry);
-        dsValid.record(ppeResponse.getNumberOfValid());
-
-        DistributionSummary dsImages = DistributionSummary.builder("images_found").register(meterRegistry);
-        dsImages.record(images.size());
-
-        DistributionSummary dsPeople = DistributionSummary.builder("people_found").register(meterRegistry);
-        dsPeople.record(persons);
+//        DistributionSummary dsViolation = DistributionSummary.builder("protection_violation").register(meterRegistry);
+//        dsViolation.record(ppeResponse.getNumberOfViolations());
+//
+//        DistributionSummary dsValid = DistributionSummary.builder("valid_protection").register(meterRegistry);
+//        dsValid.record(ppeResponse.getNumberOfValid());
+//
+//        DistributionSummary dsImages = DistributionSummary.builder("images_found").register(meterRegistry);
+//        dsImages.record(images.size());
+//
+//        DistributionSummary dsPeople = DistributionSummary.builder("people_found").register(meterRegistry);
+//        dsPeople.record(persons);
 
 
         System.out.println("Num violations: " + ppeResponse.getNumberOfViolations());
