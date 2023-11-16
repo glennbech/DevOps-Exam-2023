@@ -145,10 +145,10 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
         // Show analysis of scanned images
-        DistributionSummary.builder("protection-violation").register(meterRegistry);
-        DistributionSummary.builder("valid-protection").register(meterRegistry);
-        DistributionSummary.builder("images-scanned").register(meterRegistry);
-        DistributionSummary.builder("num-people-scanned").register(meterRegistry);
+        DistributionSummary.builder("protection_violation").register(meterRegistry);
+        DistributionSummary.builder("valid_protection").register(meterRegistry);
+        DistributionSummary.builder("images_scanned").register(meterRegistry);
+        DistributionSummary.builder("num-people_scanned").register(meterRegistry);
     }
 
 }
