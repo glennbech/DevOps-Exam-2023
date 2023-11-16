@@ -80,16 +80,22 @@
     But in Cloud9 i get errors and no not know why...
 
     B.
-    Pre-requisites:
+    Pre-requisites to run oppgave-2-workflows.yaml for github actions:
         Will need Secrets added into Github secrets from AWS as described in Oppgave 1.
         S3 bucket
         ECR Repository
     
     Changes:
         IAM Role and IAM Policy needs to have a unique name.
-        At terraform apply, change the <name> to be unique
-
-
+        In the oppgave-2-workflows.yaml file, change the values under "env":
+        env:
+          ECR_REPO: 244530008913.dkr.ecr.eu-west-1.amazonaws.com/<your-ecr-repo>
+          SERVICE_NAME: <set-unique-appr-name>
+          AWS_IAM_ROLE_NAME: <set-unique-role-name>
+          AWS_IAM_POLICY_NAME: <set-unique-policy-name>
+          PORT: <set-your-port>
+        
+        Otherwise they will use default values.
 
 
 
