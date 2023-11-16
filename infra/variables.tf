@@ -25,6 +25,6 @@ variable "cloudwatch_namespace" {
   type = string
 }
 
-variable "image_tag" {
-  type = string
-}
+#variable "image_tag" {
+#  type = string
+#}

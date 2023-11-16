@@ -124,9 +124,9 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         return result.getPersons().stream()
                 .flatMap(p -> p.getBodyParts().stream())
                 .anyMatch(bodyPart -> bodyPart.getName().equals("FACE")
-                        || bodyPart.getName().equals("LEFT_HAND")
-                        || bodyPart.getName().equals("RIGHT_HAND")
-                        || bodyPart.getName().equals("HEAD")
+//                        || bodyPart.getName().equals("LEFT_HAND")
+//                        || bodyPart.getName().equals("RIGHT_HAND")
+//                        || bodyPart.getName().equals("HEAD")
                         && bodyPart.getEquipmentDetections().isEmpty());
     }
 

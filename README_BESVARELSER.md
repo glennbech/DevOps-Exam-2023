@@ -134,3 +134,9 @@
 # NOTES:
     Seems to be a known issue that apprunner does not always manage to find the correct ECR image with the :latest tag.
     A solution seems to be to use rev instead since it will always be the latest one pushed.
+
+
+    Error:
+        Github actions fails because it says apprunner is in a state, how to fix this?
+        Seems like it started ot happen after setting apprunner to use :rev instead of :latest
+        BUT APPRUNNER GETS DEPLOYED ANYWAYS. WHY?
