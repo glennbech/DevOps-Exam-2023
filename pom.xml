@@ -20,7 +20,7 @@
 
     <properties>
         <java.version>11</java.version>
-        <aws.sdk.version>2.17.292</aws.sdk.version>
+<!--        <aws.sdk.version>2.17.292</aws.sdk.version>-->
     </properties>
 
     <dependencies>
@@ -49,16 +49,23 @@
         </dependency>
 
         <!-- AWS SDK for java -->
+<!--        <dependency>-->
+<!--            <groupId>software.amazon.awssdk</groupId>-->
+<!--            <artifactId>utils</artifactId>-->
+<!--            <version>${aws.sdk.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>software.amazon.awssdk</groupId>-->
+<!--            <artifactId>aws-sdk-java</artifactId>-->
+<!--            <version></version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+
+        <!-- AWS Java SDK -->
         <dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>utils</artifactId>
-            <version>${aws.sdk.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>aws-sdk-java</artifactId>
-            <version>${aws.sdk.version}</version>
-            <scope>provided</scope>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk</artifactId>
+            <version>1.12.12</version>
         </dependency>
 
         <dependency>
