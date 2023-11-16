@@ -22,3 +22,8 @@ variable "kandidat" {
   default = "dashboard-2038"
   type = string
 }
+
+variable "cloudwatch-namespace" {
+  default = "cloudwatch-2038"
+  type = string
+}

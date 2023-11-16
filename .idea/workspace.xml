@@ -7,7 +7,7 @@
     <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Changed from Gauge to DistributionSummary. Added souts to check value">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infra/cloudwatch.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/cloudwatch.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/variables.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,15 +89,7 @@
       <workItem from="1700063786634" duration="209000" />
       <workItem from="1700064027859" duration="34000" />
       <workItem from="1700064075937" duration="4140000" />
-      <workItem from="1700132020715" duration="21502000" />
-    </task>
-    <task id="LOCAL-00037" summary="1.b works?">
-      <option name="closed" value="true" />
-      <created>1700000256168</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1700000256168</updated>
+      <workItem from="1700132020715" duration="22641000" />
     </task>
     <task id="LOCAL-00038" summary="Updated bucket for github actions">
       <option name="closed" value="true" />
@@ -483,7 +475,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700152837437</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Changed from Gauge to DistributionSummary. Added souts to check value">
+      <option name="closed" value="true" />
+      <created>1700153771317</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1700153771317</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
