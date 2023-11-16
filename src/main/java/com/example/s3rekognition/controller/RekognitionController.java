@@ -27,7 +27,7 @@ import java.util.logging.Logger;
 @RestController
 public class RekognitionController implements ApplicationListener<ApplicationReadyEvent> {
 
-    private Map<String, Integer> scanResult = new HashMap<>();
+    private final Map<String, Integer> scanResult = new HashMap<>();
     private final AmazonS3 s3Client;
     private final AmazonRekognition rekognitionClient;
     private final MeterRegistry meterRegistry;
@@ -53,7 +53,6 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         // Used for metrics
         int violationCounter = 0;
         int validCounter = 0;
-        int persons = 0;
 
         // List all objects in the S3 bucket
         ListObjectsV2Result imageList = s3Client.listObjectsV2(bucketName);
@@ -94,26 +93,19 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
             int personCount = result.getPersons().size();
             PPEClassificationResponse classification = new PPEClassificationResponse(image.getKey(), personCount, violation);
             classificationResponses.add(classification);
-
-            persons += classification.getPersonCount();
         }
 
         PPEResponse ppeResponse = new PPEResponse(bucketName, classificationResponses);
         ppeResponse.setNumberOfViolations(violationCounter);
         ppeResponse.setNumberOfValid(validCounter);
-        ppeResponse.setNumberOfReadImages(images.size());
 
         scanResult.put("Violations", ppeResponse.getNumberOfViolations());
         scanResult.put("Valid", ppeResponse.getNumberOfValid());
-        scanResult.put("Images", ppeResponse.getNumberOfReadImages());
-        scanResult.put("Person_found", persons);
 
 
         //To Cloudwatch - want to put these 4 in a single graph.
-        meterRegistry.counter("violations").increment(ppeResponse.getNumberOfViolations());
-        meterRegistry.counter("valid").increment(ppeResponse.getNumberOfValid());
-        meterRegistry.counter("images").increment(ppeResponse.getNumberOfReadImages());
-        meterRegistry.counter("people").increment(persons);
+        meterRegistry.counter("violations").increment();
+        meterRegistry.counter("valid").increment();
 
         return ResponseEntity.ok(ppeResponse);
     }
@@ -145,14 +137,6 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
 
         Gauge.builder("total_valid", scanResult,
                         valid -> valid.getOrDefault("Valid", 0))
-                .register(meterRegistry);
-
-        Gauge.builder("total_images", scanResult,
-                        people -> people.getOrDefault("Images", 0))
-                .register(meterRegistry);
-
-        Gauge.builder("total_people", scanResult,
-                        people -> people.getOrDefault("Person_found", 0))
                 .register(meterRegistry);
     }
 

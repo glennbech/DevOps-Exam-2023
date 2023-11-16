@@ -11,7 +11,6 @@ public class PPEResponse implements Serializable {
 
     private String bucketName;
     private List<PPEClassificationResponse> results;
-    private int numberOfReadImages;
     private int numberOfViolations;
     private int numberOfValid;
 
@@ -37,14 +36,6 @@ public class PPEResponse implements Serializable {
 
     public void setResults(List<PPEClassificationResponse> results) {
         this.results = results;
-    }
-
-    public int getNumberOfReadImages() {
-        return numberOfReadImages;
-    }
-
-    public void setNumberOfReadImages(int numberOfReadImages) {
-        this.numberOfReadImages = numberOfReadImages;
     }
 
     public int getNumberOfViolations() {
