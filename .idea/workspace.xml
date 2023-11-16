@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Just ideas to add for now...">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Misspelling on terraform apply if condition">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/variables.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,15 +81,7 @@
       <workItem from="1700063786634" duration="209000" />
       <workItem from="1700064027859" duration="34000" />
       <workItem from="1700064075937" duration="4140000" />
-      <workItem from="1700132020715" duration="7898000" />
-    </task>
-    <task id="LOCAL-00031" summary="Setup structure for Dockerfile with application.yml">
-      <option name="closed" value="true" />
-      <created>1699989078996</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1699989078996</updated>
+      <workItem from="1700132020715" duration="8205000" />
     </task>
     <task id="LOCAL-00032" summary="create own s3 instead in workflows">
       <option name="closed" value="true" />
@@ -474,7 +467,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700138775287</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Misspelling on terraform apply if condition">
+      <option name="closed" value="true" />
+      <created>1700139990078</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1700139990078</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +493,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Dockerfile for java app. Builds and then runs when done." />
     <MESSAGE value="." />
     <MESSAGE value="Removed added dependency for now and application.yaml" />
     <MESSAGE value="Error in intellij, works fine in Cloud9 with the Dockerfile..." />
@@ -517,7 +517,8 @@
     <MESSAGE value="Updated README_BESVARELSER.md" />
     <MESSAGE value="Adding necessary dependencies for Micrometer" />
     <MESSAGE value="Just ideas to add for now..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Just ideas to add for now..." />
+    <MESSAGE value="Misspelling on terraform apply if condition" />
+    <option name="LAST_COMMIT_MESSAGE" value="Misspelling on terraform apply if condition" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
