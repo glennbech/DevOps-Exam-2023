@@ -9,6 +9,7 @@ import com.amazonaws.services.s3.model.ListObjectsV2Result;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.example.s3rekognition.PPEClassificationResponse;
 import com.example.s3rekognition.PPEResponse;
+import io.micrometer.core.instrument.DistributionSummary;
 import io.micrometer.core.instrument.Gauge;
 import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -114,6 +115,11 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         meterRegistry.counter("images-scanned").increment(ppeResponse.getNumberOfReadImages());
         meterRegistry.counter("num-people-scanned").increment(persons);
 
+        System.out.println("Num violations: " + ppeResponse.getNumberOfViolations());
+        System.out.println("Num valids: " + ppeResponse.getNumberOfValid());
+        System.out.println("Num images: " + images.size());
+        System.out.println("Num persons: " + persons);
+
         return ResponseEntity.ok(ppeResponse);
     }
 
@@ -130,44 +136,19 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         return result.getPersons().stream()
                 .flatMap(p -> p.getBodyParts().stream())
                 .anyMatch(bodyPart -> bodyPart.getName().equals("FACE")
-                        && bodyPart.getName().equals("LEFT_HAND")
-                        && bodyPart.getName().equals("RIGHT_HAND")
-                        && bodyPart.getName().equals("HEAD")
+                        || bodyPart.getName().equals("LEFT_HAND")
+                        || bodyPart.getName().equals("RIGHT_HAND")
+                        || bodyPart.getName().equals("HEAD")
                         && bodyPart.getEquipmentDetections().isEmpty());
     }
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
-        // Total images scanned to find violations and valid protection gear use.
-        Gauge.builder("protection_gear_analysis", scanResult,
-                s -> s.values().size()).register(meterRegistry);
+        // Show analysis of scanned images
+        DistributionSummary.builder("protection-violation").register(meterRegistry);
+        DistributionSummary.builder("valid-protection").register(meterRegistry);
+        DistributionSummary.builder("images-scanned").register(meterRegistry);
+        DistributionSummary.builder("num-people-scanned").register(meterRegistry);
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
