@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ECR_REPO: 244530008913.dkr.ecr.eu-west-1.amazonaws.com/ecr-kandidatnr-2038
-      SERVICE_NAME: set-your-own-appr-name
-      AWS_IAM_ROLE_NAME: set-your-own-role-name
-      AWS_IAM_POLICY_NAME: set-your-own-policy-name
+      SERVICE_NAME: app-runner-kandidatnr-2038
+      AWS_IAM_ROLE_NAME: iam-role-2038
+      AWS_IAM_POLICY_NAME: policy-app-service-2038
       PORT: 8080
 
     steps:
@@ -58,10 +58,8 @@ jobs:
         run: terraform init
         working-directory: ./infra
 
-
       - name: Terraform apply on push to main
         if: github.ref == 'refs/heads/main'
-        run: terraform apply -var="image_tag=$(git rev-parse --short HEAD)" -auto-approve
-#        run: terraform apply -var="service_name=$SERVICE_NAME" -var="aws_iam_role_name=$AWS_IAM_ROLE_NAME" -var="aws_iam_policy_name=$AWS_IAM_POLICY_NAME" -var="port=$PORT"  -auto-approve
+        run: terraform apply -var="image_tag=$(git rev-parse --short HEAD)" -var="service_name=$SERVICE_NAME" -var="aws_iam_role_name=$AWS_IAM_ROLE_NAME" -var="aws_iam_policy_name=$AWS_IAM_POLICY_NAME" -var="port=$PORT"  -auto-approve
         working-directory: ./infra
 

@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Updated pom.xml. Trying image tag instead of latest for ecr -&gt; app runner">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="So last github actions failed, but app runner did re-deploy and no errors now, wtf?&#10;Updating some stuff in .tf and will try again to re-deploy with ref instead of latest on ecr -&gt; apprunner.">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/oppgave-2-workflow.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/oppgave-2-workflow.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/cloudwatch.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/cloudwatch.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infra/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/variables.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,15 +90,7 @@
       <workItem from="1700063786634" duration="209000" />
       <workItem from="1700064027859" duration="34000" />
       <workItem from="1700064075937" duration="4140000" />
-      <workItem from="1700132020715" duration="41326000" />
-    </task>
-    <task id="LOCAL-00053" summary="Error in intellij, works fine in Cloud9 with the Dockerfile...">
-      <option name="closed" value="true" />
-      <created>1700064294221</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1700064294221</updated>
+      <workItem from="1700132020715" duration="42534000" />
     </task>
     <task id="LOCAL-00054" summary="Added workflows for Oppgave 2 - java app">
       <option name="closed" value="true" />
@@ -483,7 +476,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700174272176</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="So last github actions failed, but app runner did re-deploy and no errors now, wtf?&#10;Updating some stuff in .tf and will try again to re-deploy with ref instead of latest on ecr -&gt; apprunner.">
+      <option name="closed" value="true" />
+      <created>1700175127061</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1700175127061</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +502,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test using provider" />
     <MESSAGE value="fixed provider" />
     <MESSAGE value="Changed ecr from kjell to mine" />
     <MESSAGE value="testing original main.tf" />
@@ -526,7 +526,8 @@
     <MESSAGE value="Try again with dependencies for micrometer and cloudwatch... but no code to send data. see if error occurs now?" />
     <MESSAGE value="Updated pom.xml" />
     <MESSAGE value="Updated pom.xml. Trying image tag instead of latest for ecr -&gt; app runner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated pom.xml. Trying image tag instead of latest for ecr -&gt; app runner" />
+    <MESSAGE value="So last github actions failed, but app runner did re-deploy and no errors now, wtf?&#10;Updating some stuff in .tf and will try again to re-deploy with ref instead of latest on ecr -&gt; apprunner." />
+    <option name="LAST_COMMIT_MESSAGE" value="So last github actions failed, but app runner did re-deploy and no errors now, wtf?&#10;Updating some stuff in .tf and will try again to re-deploy with ref instead of latest on ecr -&gt; apprunner." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
