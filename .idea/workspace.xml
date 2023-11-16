@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="See if cloudwatch works now..">
-      <change beforePath="$PROJECT_DIR$/infra/cloudwatch.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/cloudwatch.tf" afterDir="false" />
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="removing micrometer stuff and see if error still persist in apprunner logs....">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/TimedConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/MetricsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/MetricsConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,15 +90,7 @@
       <workItem from="1700063786634" duration="209000" />
       <workItem from="1700064027859" duration="34000" />
       <workItem from="1700064075937" duration="4140000" />
-      <workItem from="1700132020715" duration="27817000" />
-    </task>
-    <task id="LOCAL-00042" summary="Test">
-      <option name="closed" value="true" />
-      <created>1700052894970</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1700052894970</updated>
+      <workItem from="1700132020715" duration="28720000" />
     </task>
     <task id="LOCAL-00043" summary="Test">
       <option name="closed" value="true" />
@@ -482,7 +476,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700159457211</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="removing micrometer stuff and see if error still persist in apprunner logs....">
+      <option name="closed" value="true" />
+      <created>1700160230820</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1700160230820</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,7 +502,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Testing something with keys in sam again" />
     <MESSAGE value="Removed unnecessary lines in app.py for secrets. handled in Dockerfile already." />
     <MESSAGE value="Modifying main.tf and adding cpu/memory usage" />
     <MESSAGE value="Minor changes, updated README_BESVARELSER.md" />
@@ -525,7 +526,8 @@
     <MESSAGE value="Changed from Gauge to DistributionSummary. Added souts to check value" />
     <MESSAGE value="Testing counter again..." />
     <MESSAGE value="See if cloudwatch works now.." />
-    <option name="LAST_COMMIT_MESSAGE" value="See if cloudwatch works now.." />
+    <MESSAGE value="removing micrometer stuff and see if error still persist in apprunner logs...." />
+    <option name="LAST_COMMIT_MESSAGE" value="removing micrometer stuff and see if error still persist in apprunner logs...." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
