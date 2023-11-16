@@ -23,7 +23,7 @@ variable "kandidat" {
   type = string
 }
 
-variable "cloudwatch-namespace" {
+variable "cloudwatch_namespace" {
   default = "cloudwatch-2038"
   type = string
 }
