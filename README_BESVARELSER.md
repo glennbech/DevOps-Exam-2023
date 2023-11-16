@@ -79,13 +79,15 @@
     Running terraform init and then terraform apply works fine in intellij.
     But in Cloud9 i get errors and no not know why...
 
-
-
-
-
-
-
-
+    B.
+    Pre-requisites:
+        Will need Secrets added into Github secrets from AWS as described in Oppgave 1.
+        S3 bucket
+        ECR Repository
+    
+    Changes:
+        IAM Role and IAM Policy needs to have a unique name.
+        At terraform apply, change the <name> to be unique
 
 
 

@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="test with required_providers">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Updated README_BESVARELSER.md">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/oppgave-2-workflow.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/oppgave-2-workflow.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/main.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infra/provider.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/provider.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/variables.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,25 +38,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/tobia/Desktop/HK 2021/Semester 5/PGR301-1 23H DevOps/DevOps-cloudwatch_alarms_terraform",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.29655173",
-    "settings.editor.selected.configurable": "aws",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tobia/Desktop/HK 2021/Semester 5/PGR301-1 23H DevOps/DevOps-cloudwatch_alarms_terraform&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.29655173&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;aws&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="S3RekognitionApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="s3rekognition" />
@@ -82,14 +85,7 @@
       <workItem from="1700063786634" duration="209000" />
       <workItem from="1700064027859" duration="34000" />
       <workItem from="1700064075937" duration="4140000" />
-    </task>
-    <task id="LOCAL-00025" summary="...">
-      <option name="closed" value="true" />
-      <created>1699986011528</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1699986011528</updated>
+      <workItem from="1700132020715" duration="3019000" />
     </task>
     <task id="LOCAL-00026" summary="Test push to main">
       <option name="closed" value="true" />
@@ -475,7 +471,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700084187286</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Updated README_BESVARELSER.md">
+      <option name="closed" value="true" />
+      <created>1700085476297</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1700085476297</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,7 +508,6 @@
     <MESSAGE value="Added workflows for Oppgave 2 - java app" />
     <MESSAGE value="typo" />
     <MESSAGE value="Test" />
-    <MESSAGE value="Updated README_BESVARELSER.md" />
     <MESSAGE value="Testing something with keys in sam again" />
     <MESSAGE value="Removed unnecessary lines in app.py for secrets. handled in Dockerfile already." />
     <MESSAGE value="Modifying main.tf and adding cpu/memory usage" />
@@ -518,7 +521,8 @@
     <MESSAGE value="Test again" />
     <MESSAGE value="added profile to provider. ran aws configure" />
     <MESSAGE value="test with required_providers" />
-    <option name="LAST_COMMIT_MESSAGE" value="test with required_providers" />
+    <MESSAGE value="Updated README_BESVARELSER.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated README_BESVARELSER.md" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

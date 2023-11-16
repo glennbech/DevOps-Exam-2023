@@ -1,5 +1,5 @@
 variable "service_name" {
-  default = "app-service-2038"
+  default = "app-runner-2038"
   type = string
 }
 
