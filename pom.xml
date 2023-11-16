@@ -84,6 +84,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <mainClass>com.example.s3rekognition.S3RekognitionApplication</mainClass>
+                    <fork>false</fork>
                 </configuration>
             </plugin>
         </plugins>

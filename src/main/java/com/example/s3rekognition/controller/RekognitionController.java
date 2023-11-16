@@ -11,6 +11,7 @@ import com.example.s3rekognition.PPEClassificationResponse;
 import com.example.s3rekognition.PPEResponse;
 import io.micrometer.core.instrument.Gauge;
 import io.micrometer.core.instrument.MeterRegistry;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.http.ResponseEntity;
@@ -32,6 +33,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
     private final MeterRegistry meterRegistry;
     private static final Logger logger = Logger.getLogger(RekognitionController.class.getName());
 
+    @Autowired
     public RekognitionController(MeterRegistry meterRegistry) {
         this.meterRegistry = meterRegistry;
         this.s3Client = AmazonS3ClientBuilder.standard().build();
@@ -102,9 +104,9 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         scanResult.put("Valid", ppeResponse.getNumberOfValid());
 
 
-        //To Cloudwatch - want to put these 4 in a single graph.
-//        meterRegistry.counter("violations").increment();
-//        meterRegistry.counter("valid").increment();
+//        To Cloudwatch - want to put these 4 in a single graph.
+        meterRegistry.counter("violations").increment();
+        meterRegistry.counter("valid").increment();
 
         return ResponseEntity.ok(ppeResponse);
     }
@@ -130,13 +132,13 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
-//        Gauge.builder("total_violations", scanResult,
-//                violation -> violation.getOrDefault("Violations", 0))
-//                .register(meterRegistry);
-//
-//        Gauge.builder("total_valid", scanResult,
-//                        valid -> valid.getOrDefault("Valid", 0))
-//                .register(meterRegistry);
+        Gauge.builder("total_violations", scanResult,
+                violation -> violation.getOrDefault("Violations", 0))
+                .register(meterRegistry);
+
+        Gauge.builder("total_valid", scanResult,
+                        valid -> valid.getOrDefault("Valid", 0))
+                .register(meterRegistry);
     }
 
 }
