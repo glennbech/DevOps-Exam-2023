@@ -80,6 +80,9 @@
     But in Cloud9 i get errors and no not know why...
 
     B.
+    The state will be saved in the S3 bucket after running terraform init and apply locally.
+    If no changes are, it will just pass.
+
     Pre-requisites to run oppgave-2-workflows.yaml for github actions:
         Will need Secrets added into Github secrets from AWS as described in Oppgave 1.
         S3 bucket
@@ -87,15 +90,21 @@
     
     Changes:
         IAM Role and IAM Policy needs to have a unique name.
-        In the oppgave-2-workflows.yaml file, change the values under "env":
-        env:
-          ECR_REPO: 244530008913.dkr.ecr.eu-west-1.amazonaws.com/<your-ecr-repo>
-          SERVICE_NAME: <set-unique-appr-name>
-          AWS_IAM_ROLE_NAME: <set-unique-role-name>
-          AWS_IAM_POLICY_NAME: <set-unique-policy-name>
-          PORT: <set-your-port>
+        In the oppgave-2-workflows.yaml file:
+        Change the values under "env":
+            env:
+              ECR_REPO: 244530008913.dkr.ecr.eu-west-1.amazonaws.com/<your-ecr-repo>
+              SERVICE_NAME: <set-unique-appr-name>
+              AWS_IAM_ROLE_NAME: <set-unique-role-name>
+              AWS_IAM_POLICY_NAME: <set-unique-policy-name>
+              PORT: <set-your-port>, (could most stay as 8080, but added this in case)        
+
+            comment out:    "run: terraform apply -auto-approve"
+            and use: "run:  terraform apply -var="service_name=$SERVICE_NAME" -var="aws_iam_role_name=$AWS_IAM_ROLE_NAME" -var="aws_iam_policy_name=$AWS_IAM_POLICY_NAME" -var="port=$PORT"  -auto-approve"
+
+
         
-        Otherwise they will use default values.
+        
 
 
 

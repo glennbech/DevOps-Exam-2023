@@ -53,15 +53,15 @@ jobs:
       # Push to ECR, run terraform init and apply should all be done when pushing to main. They could be in the same run: | script
       # But to make it a bit easier for the eyes, i divided them into separate ones. Some duplicate code but easier to read and see which part is running.
 
-      - name: Terraform init and apply on push to main
+      - name: Terraform init on push to main
         if: github.ref == 'refs/heads/main'
         run: terraform init
         working-directory: ./infra
 
-        # run: terraform apply -var="service_name=$SERVICE_NAME" -var="aws_iam_role_name=$AWS_IAM_ROLE_NAME" -var="aws_iam_policy_name=$AWS_IAM_POLICY_NAME" -var="port=$PORT"  -auto-approve
+
       - name: Terraform apply on push to main
         if: github.ref == 'ref/heads/main'
-#        run: terraform apply -auto-approve
-        run: terraform apply -var="service_name=$SERVICE_NAME" -var="aws_iam_role_name=$AWS_IAM_ROLE_NAME" -var="aws_iam_policy_name=$AWS_IAM_POLICY_NAME" -var="port=$PORT"  -auto-approve
+        run: terraform apply -auto-approve
+#        run: terraform apply -var="service_name=$SERVICE_NAME" -var="aws_iam_role_name=$AWS_IAM_ROLE_NAME" -var="aws_iam_policy_name=$AWS_IAM_POLICY_NAME" -var="port=$PORT"  -auto-approve
         working-directory: ./infra
 
