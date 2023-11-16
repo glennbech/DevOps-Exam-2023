@@ -17,3 +17,8 @@ variable "port" {
   default = "8080"
   type = string
 }
+
+variable "kandidat" {
+  default = "dashboard-2038"
+  type = string
+}

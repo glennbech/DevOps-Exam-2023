@@ -89,7 +89,12 @@
         ECR Repository
     
     Changes:
-        IAM Role and IAM Policy needs to have a unique name.
+        provider.tf contains information about the s3 bucket.
+            Change:
+                bucket - to your s3 bucket
+                key - (if you want your own name to where state is saved)
+        
+        Apprunner, IAM Role and IAM Policy needs to have a unique name.
         In the oppgave-2-workflows.yaml file:
         Change the values under "env":
             env:
@@ -105,10 +110,23 @@
 
 ## Oppgave 4
     A.
+        * Minst en ny endpoint - text detection?
+
+        * Utvid koden evt. med mer funktionalitet
+            - face, hand, head cover
+            - räkna antal violations och valids, antal bilder
+                ge till micrometer som målinstrument
+            
+            - minst 3 måleinstrumenter
+            - förklara alla val.
+
+    B.
+    Cloudwatch alarm som skickar varsel till epost.
+        - Vid invalid
+    Lages via terraform kod som separat modul.
+        
+
     
-
-
-
 
 
 

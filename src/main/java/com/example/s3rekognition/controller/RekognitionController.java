@@ -9,6 +9,7 @@ import com.amazonaws.services.s3.model.ListObjectsV2Result;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.example.s3rekognition.PPEClassificationResponse;
 import com.example.s3rekognition.PPEResponse;
+import io.micrometer.core.instrument.Gauge;
 import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
@@ -16,13 +17,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Logger;
 
 
 @RestController
 public class RekognitionController implements ApplicationListener<ApplicationReadyEvent> {
 
+    private Map<String, Integer> scanResult = new HashMap<>();
     private final AmazonS3 s3Client;
     private final AmazonRekognition rekognitionClient;
     private final MeterRegistry meterRegistry;
@@ -45,6 +49,11 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
     @GetMapping(value = "/scan-ppe", consumes = "*/*", produces = "application/json")
     @ResponseBody
     public ResponseEntity<PPEResponse> scanForPPE(@RequestParam String bucketName) {
+        // Used for metrics
+        int violationCounter = 0;
+        int validCounter = 0;
+        int persons = 0;
+
         // List all objects in the S3 bucket
         ListObjectsV2Result imageList = s3Client.listObjectsV2(bucketName);
 
@@ -66,31 +75,47 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
                                     .withName(image.getKey())))
                     .withSummarizationAttributes(new ProtectiveEquipmentSummarizationAttributes()
                             .withMinConfidence(80f)
-                            .withRequiredEquipmentTypes("FACE_COVER"));
+                            .withRequiredEquipmentTypes("FACE_COVER", "HAND_COVER", "HEAD_COVER"));
 
             DetectProtectiveEquipmentResult result = rekognitionClient.detectProtectiveEquipment(request);
 
             // If any person on an image lacks PPE on the face, it's a violation of regulations
             boolean violation = isViolation(result);
 
+            if (violation) {
+                violationCounter++;
+            } else {
+                validCounter++;
+            }
+
             logger.info("scanning " + image.getKey() + ", violation result " + violation);
             // Categorize the current image as a violation or not.
             int personCount = result.getPersons().size();
             PPEClassificationResponse classification = new PPEClassificationResponse(image.getKey(), personCount, violation);
             classificationResponses.add(classification);
+
+            persons += classification.getPersonCount();
         }
+
         PPEResponse ppeResponse = new PPEResponse(bucketName, classificationResponses);
+        ppeResponse.setNumberOfViolations(violationCounter);
+        ppeResponse.setNumberOfValid(validCounter);
+        ppeResponse.setNumberOfReadImages(images.size());
+
+        scanResult.put("Violations", ppeResponse.getNumberOfViolations());
+        scanResult.put("Valid", ppeResponse.getNumberOfValid());
+        scanResult.put("Images", ppeResponse.getNumberOfReadImages());
+        scanResult.put("Persons found", persons);
+
+
+        //To Cloudwatch - want to put these 4 in a single graph.
+        meterRegistry.counter("protection-violations").increment(ppeResponse.getNumberOfViolations());
+        meterRegistry.counter("valid-protection").increment(ppeResponse.getNumberOfValid());
+        meterRegistry.counter("images-scanned").increment(ppeResponse.getNumberOfReadImages());
+        meterRegistry.counter("num-people-scanned").increment(persons);
+
         return ResponseEntity.ok(ppeResponse);
     }
-
-    /*
-        IDEAS:
-            Counter for num of images read from bucket
-            Counter for valids
-            Counter for violations
-     */
-
-
 
     /**
      * Detects if the image has a protective gear violation for the FACE bodypart-
@@ -105,11 +130,44 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         return result.getPersons().stream()
                 .flatMap(p -> p.getBodyParts().stream())
                 .anyMatch(bodyPart -> bodyPart.getName().equals("FACE")
+                        && bodyPart.getName().equals("LEFT_HAND")
+                        && bodyPart.getName().equals("RIGHT_HAND")
+                        && bodyPart.getName().equals("HEAD")
                         && bodyPart.getEquipmentDetections().isEmpty());
     }
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
-
+        // Total images scanned to find violations and valid protection gear use.
+        Gauge.builder("protection_gear_analysis", scanResult,
+                s -> s.values().size()).register(meterRegistry);
     }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
