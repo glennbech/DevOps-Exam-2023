@@ -20,7 +20,7 @@
 
     <properties>
         <java.version>11</java.version>
-        <!-- <aws.sdk.version>2.17.292</aws.sdk.version> -->
+        <aws.sdk.version>2.17.292</aws.sdk.version>
     </properties>
 
     <dependencies>
@@ -37,37 +37,36 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-<!--        -->
-<!--        &lt;!&ndash; Micrometer &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>io.micrometer</groupId>-->
-<!--            <artifactId>micrometer-core</artifactId>-->
-<!--        </dependency>-->
+        <!-- Micrometer -->
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-core</artifactId>
+        </dependency>
 
-<!--        &lt;!&ndash; To Cloudwatch &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>io.micrometer</groupId>-->
-<!--            <artifactId>micrometer-registry-cloudwatch2</artifactId>-->
-<!--        </dependency>-->
+        <!-- To Cloudwatch -->
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-cloudwatch2</artifactId>
+        </dependency>
 
-<!--        &lt;!&ndash; Data &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-actuator</artifactId>-->
-<!--        </dependency>-->
+        <!-- Data -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 
-<!--        &lt;!&ndash; AWS SDK for java &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>software.amazon.awssdk</groupId>-->
-<!--            <artifactId>utils</artifactId>-->
-<!--            <version>${aws.sdk.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>software.amazon.awssdk</groupId>-->
-<!--            <artifactId>aws-sdk-java</artifactId>-->
-<!--            <version>${aws.sdk.version}</version>-->
-<!--            <scope>provided</scope>-->
-<!--        </dependency>-->
+        <!-- AWS SDK for java -->
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>utils</artifactId>
+            <version>${aws.sdk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>aws-sdk-java</artifactId>
+            <version>${aws.sdk.version}</version>
+            <scope>provided</scope>
+        </dependency>
 
 
         <!-- Spring Boot Starter Test -->
