@@ -13,6 +13,7 @@ public class PPEResponse implements Serializable {
     private List<PPEClassificationResponse> results;
     private int numberOfViolations;
     private int numberOfValid;
+    private int alarmTriggered;
 
     public PPEResponse() {
     }
@@ -52,6 +53,14 @@ public class PPEResponse implements Serializable {
 
     public void setNumberOfValid(int numberOfValid) {
         this.numberOfValid = numberOfValid;
+    }
+
+    public int getAlarmTriggered() {
+        return alarmTriggered;
+    }
+
+    public void setAlarmTriggered(int alarmTriggered) {
+        this.alarmTriggered = alarmTriggered;
     }
 }
 

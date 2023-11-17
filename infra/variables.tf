@@ -1,15 +1,15 @@
 variable "service_name" {
-#  default = "app-runner-kandidatnr-2038"
+  default = "app-runner-kandidatnr-2038"
   type = string
 }
 
 variable "aws_iam_role_name" {
-#  default = "policy-app-service-2038"
+  default = "policy-app-service-2038"
   type = string
 }
 
 variable "aws_iam_policy_name" {
-#  default = "iam-role-2038"
+  default = "iam-role-2038"
   type = string
 }
 
@@ -30,5 +30,6 @@ variable "cloudwatch_namespace" {
 
 # default is set from github actions during docker push to ecr.
 variable "image_tag" {
+  default = "blabla"
   type = string
 }

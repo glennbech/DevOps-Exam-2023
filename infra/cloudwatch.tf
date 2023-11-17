@@ -19,7 +19,29 @@ resource "aws_cloudwatch_dashboard" "main" {
         "region": "eu-west-1",
         "title": "PPE Detection analysis"
       }
-    }
+    },
+    {
+     "type": "metric",
+     "x": 18,
+     "y": 60,
+     "width": 6,
+     "height": 6,
+     "properties": {
+        "metrics": [
+          ["${var.cloudwatch_namespace}", "exceeded_violation_alarm.value"]
+        ],
+        "view": "gauge",
+        "stat": "maximum",
+        "region": "eu-west-1",
+        "title": "Violation alarm counter",
+        "yAxis": {
+           "left": {
+              "min": 0,
+              "max": 10
+           }
+         }
+       }
+     }
   ]
 }
 DASHBOARD
