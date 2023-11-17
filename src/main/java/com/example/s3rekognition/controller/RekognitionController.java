@@ -28,7 +28,6 @@ import java.util.logging.Logger;
 public class RekognitionController implements ApplicationListener<ApplicationReadyEvent> {
 
     private final Map<String, Integer> scanResult = new HashMap<>();
-    private int exceedViolationCount = 0;
     private final AmazonS3 s3Client;
     private final AmazonRekognition rekognitionClient;
     private final MeterRegistry meterRegistry;
@@ -159,7 +158,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         // use alarm when violation >= valids
         // count how many times alarm been triggered
         if (ppeResponse.getNumberOfViolations() >= ppeResponse.getNumberOfValid()) {
-            meterRegistry.counter("Exceeded_violation_alarm").increment();
+            meterRegistry.counter("violation_alarm").increment();
         }
 
         return ResponseEntity.ok(ppeResponse);
@@ -202,6 +201,10 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         Gauge.builder("total_valid", scanResult,
                         valid -> valid.getOrDefault("Valid", 0))
                 .register(meterRegistry);
+
+        Gauge.builder("exceeded_violation_alarm", meterRegistry.get("violation_alarm").counter()::count)
+                .register(meterRegistry);
+
     }
 
 }
