@@ -111,6 +111,13 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         return ResponseEntity.ok(ppeResponse);
     }
 
+    /*
+        Create more endpoints:
+            * one for hands
+            * one for head
+            * one with all
+     */
+
     /**
      * Detects if the image has a protective gear violation for the FACE bodypart-
      * It does so by iterating over all persons in a picture, and then again over

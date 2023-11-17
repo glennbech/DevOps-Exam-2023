@@ -140,3 +140,9 @@
         Github actions fails because it says apprunner is in a state, how to fix this?
         Seems like it started ot happen after setting apprunner to use :rev instead of :latest
         BUT APPRUNNER GETS DEPLOYED ANYWAYS. WHY?
+
+    Now:
+        This commit succeeded, no errors in apprunner regarding cloudwatch: 
+            https://github.com/TobiasLiu1990/DevOps-Exam-2023/commit/bce3ee363a3a4ded72574d2a58791a325069aff3
+
+        Last test: re-deploy: 

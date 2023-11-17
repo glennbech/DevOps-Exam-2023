@@ -10,8 +10,8 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "kandidatnr-2038"
+    bucket = "pgr301-2021-terraform-state"
     key = "2038-apprunner-new-state.state"
-    region = "eu-west-1"
+    region = "eu-north-1"
   }
 }
