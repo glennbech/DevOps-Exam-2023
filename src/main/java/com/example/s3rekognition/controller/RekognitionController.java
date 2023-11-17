@@ -28,6 +28,7 @@ import java.util.logging.Logger;
 public class RekognitionController implements ApplicationListener<ApplicationReadyEvent> {
 
     private final Map<String, Integer> scanResult = new HashMap<>();
+    private int exceedViolationCount = 0;
     private final AmazonS3 s3Client;
     private final AmazonRekognition rekognitionClient;
     private final MeterRegistry meterRegistry;
@@ -82,7 +83,6 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
 
             // If any person on an image lacks PPE on the face, it's a violation of regulations
             boolean violation = isViolation(result);
-
             if (violation) {
                 violationCounter++;
             } else {
@@ -114,14 +114,15 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
     @GetMapping(value = "/scan-ppe", consumes = "*/*", produces = "application/json")
     @ResponseBody
     public ResponseEntity<PPEResponse> scanFullPPE(@RequestParam String bucketName) {
-        // Metrics for full protection?
+        int violationCounter = 0;
+        int validCounter = 0;
 
         ListObjectsV2Result imageList = s3Client.listObjectsV2(bucketName);             // Get content from bucket
         List<PPEClassificationResponse> classificationResponses = new ArrayList<>();
         List<S3ObjectSummary> images = imageList.getObjectSummaries();                  // Get information about each file in bucket.
 
         for (S3ObjectSummary image : images) {
-            logger.info("Scanning " + image.getKey());      // Key here = file name.
+            logger.info("Scanning " + image.getKey());          // Key here = file name.
 
             // AWS Rekognition
             DetectProtectiveEquipmentRequest request = new DetectProtectiveEquipmentRequest()
@@ -138,18 +139,32 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
 
 
             boolean violation = isStrictViolation(result);
+            if (violation) {
+                violationCounter++;
+            } else {
+                validCounter++;
+            }
+
+            logger.info("Scanning " + image.getKey() + ", Protection analysis: " + violation);
+
+            int personCount = result.getPersons().size();
+            PPEClassificationResponse classification = new PPEClassificationResponse(image.getKey(), personCount, violation);
+            classificationResponses.add(classification);
         }
 
+        PPEResponse ppeResponse = new PPEResponse(bucketName, classificationResponses);
+        ppeResponse.setNumberOfViolations(violationCounter);
+        ppeResponse.setNumberOfValid(validCounter);
+
+        // use alarm when violation >= valids
+        // count how many times alarm been triggered
+        if (ppeResponse.getNumberOfViolations() >= ppeResponse.getNumberOfValid()) {
+            meterRegistry.counter("Exceeded_violation_alarm").increment();
+        }
+
+        return ResponseEntity.ok(ppeResponse);
     }
 
-
-
-    /*
-        Create more endpoints:
-            * one for hands
-            * one for head
-            * one with all
-     */
 
     /**
      * Detects if the image has a protective gear violation for the FACE bodypart-
@@ -177,7 +192,6 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
                                 || bodyPart.getName().equals("HEAD"))
                                 && bodyPart.getEquipmentDetections().isEmpty());
     }
-
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
