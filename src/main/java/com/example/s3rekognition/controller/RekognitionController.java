@@ -76,7 +76,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
                                     .withName(image.getKey())))
                     .withSummarizationAttributes(new ProtectiveEquipmentSummarizationAttributes()
                             .withMinConfidence(80f)
-                            .withRequiredEquipmentTypes("FACE_COVER")); //"HAND_COVER", "HEAD_COVER"
+                            .withRequiredEquipmentTypes("FACE_COVER"));
 
             DetectProtectiveEquipmentResult result = rekognitionClient.detectProtectiveEquipment(request);
 
@@ -111,6 +111,39 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         return ResponseEntity.ok(ppeResponse);
     }
 
+    @GetMapping(value = "/scan-ppe", consumes = "*/*", produces = "application/json")
+    @ResponseBody
+    public ResponseEntity<PPEResponse> scanFullPPE(@RequestParam String bucketName) {
+        // Metrics for full protection?
+
+        ListObjectsV2Result imageList = s3Client.listObjectsV2(bucketName);             // Get content from bucket
+        List<PPEClassificationResponse> classificationResponses = new ArrayList<>();
+        List<S3ObjectSummary> images = imageList.getObjectSummaries();                  // Get information about each file in bucket.
+
+        for (S3ObjectSummary image : images) {
+            logger.info("Scanning " + image.getKey());      // Key here = file name.
+
+            // AWS Rekognition
+            DetectProtectiveEquipmentRequest request = new DetectProtectiveEquipmentRequest()
+                    .withImage(new Image()                          // Set image to be scanned with Rekognition
+                            .withS3Object(new S3Object()            // From S3 bucket
+                                    .withBucket(bucketName)         // Named bucketName
+                                    .withName(image.getKey())))     // Set specific image to be scanned (key = filename)
+
+                    .withSummarizationAttributes(new ProtectiveEquipmentSummarizationAttributes()
+                            .withMinConfidence(80f)
+                            .withRequiredEquipmentTypes("FACE_COVER", "HAND_COVER", "HEAD_COVER"));
+
+            DetectProtectiveEquipmentResult result = rekognitionClient.detectProtectiveEquipment(request);
+
+
+            boolean violation = isStrictViolation(result);
+        }
+
+    }
+
+
+
     /*
         Create more endpoints:
             * one for hands
@@ -131,16 +164,25 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         return result.getPersons().stream()
                 .flatMap(p -> p.getBodyParts().stream())
                 .anyMatch(bodyPart -> bodyPart.getName().equals("FACE")
-//                        || bodyPart.getName().equals("LEFT_HAND")
-//                        || bodyPart.getName().equals("RIGHT_HAND")
-//                        || bodyPart.getName().equals("HEAD")
                         && bodyPart.getEquipmentDetections().isEmpty());
     }
+
+    private static boolean isStrictViolation(DetectProtectiveEquipmentResult result) {
+        return result.getPersons().stream()
+                .flatMap(p -> p.getBodyParts().stream())
+                .anyMatch(bodyPart ->
+                        (bodyPart.getName().equals("FACE")
+                                || bodyPart.getName().equals("LEFT_HAND")
+                                || bodyPart.getName().equals("RIGHT_HAND")
+                                || bodyPart.getName().equals("HEAD"))
+                                && bodyPart.getEquipmentDetections().isEmpty());
+    }
+
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
         Gauge.builder("total_violations", scanResult,
-                violation -> violation.getOrDefault("Violations", 0))
+                        violation -> violation.getOrDefault("Violations", 0))
                 .register(meterRegistry);
 
         Gauge.builder("total_valid", scanResult,

@@ -110,15 +110,23 @@
 
 ## Oppgave 4
     A.
-        * Minst en ny endpoint - text detection?
+    * KRAV: Minst en till endpoint
+            Minst 3 måleinstrumenter
+            FÖRKLARA BRA VALEN
+    * Frivilligt: Förbättre koden osv.
 
-        * Utvid koden evt. med mer funktionalitet
-            - face, hand, head cover
-            - räkna antal violations och valids, antal bilder
-                ge till micrometer som målinstrument
+        * Extra endpoints - Hands, Head. Kanske en med allt också?
+            Räkna antal violations och valid från bilder
+
+
+    * Modifications
+        Added metrics for number of violations and valid scans of PPE protection in scanForPPE endpoint
+        These two metrics shows in one widget on Cloudwatch.
+    
+    
+
             
-            - minst 3 måleinstrumenter
-            - förklara alla val.
+        
 
     B.
     Cloudwatch alarm som skickar varsel till epost.
