@@ -19,6 +19,21 @@ resource "aws_cloudwatch_dashboard" "main" {
         "region": "eu-west-1",
         "title": "PPE Detection analysis"
       }
+    },
+    {
+      "type": "bar",
+      "x": 0,
+      "y": 6,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [ "${var.cloudwatch_namespace}", "total_violations.value"],
+          [ "${var.cloudwatch_namespace}", "total_valid.value"]
+        ],
+        "region": "eu-west-1",
+        "title": "PPE Detection analysis - Bar"
+      }
     }
   ]
 }

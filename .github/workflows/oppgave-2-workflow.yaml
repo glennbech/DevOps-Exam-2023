@@ -46,8 +46,8 @@ jobs:
         run: |
           rev=$(git rev-parse --short HEAD)
           docker tag ppe-detection-test $ECR_REPO:$rev
-          docker push $ECR_REPO:$rev
           docker tag ppe-detection-test $ECR_REPO:latest
+          docker push $ECR_REPO:$rev
           docker push $ECR_REPO:latest
 
       # Push to ECR, run terraform init and apply should all be done when pushing to main. They could be in the same run: | script
@@ -60,6 +60,6 @@ jobs:
 
       - name: Terraform apply on push to main
         if: github.ref == 'refs/heads/main'
-#        run: terraform apply -var="image_tag=$(git rev-parse --short HEAD)" -var="service_name=$SERVICE_NAME" -var="aws_iam_role_name=$AWS_IAM_ROLE_NAME" -var="aws_iam_policy_name=$AWS_IAM_POLICY_NAME" -var="port=$PORT"  -auto-approve
-        run: terraform apply -var="service_name=$SERVICE_NAME" -var="aws_iam_role_name=$AWS_IAM_ROLE_NAME" -var="aws_iam_policy_name=$AWS_IAM_POLICY_NAME" -var="port=$PORT"  -auto-approve
+        run: terraform apply -var="image_tag=$(git rev-parse --short HEAD)" -var="service_name=$SERVICE_NAME" -var="aws_iam_role_name=$AWS_IAM_ROLE_NAME" -var="aws_iam_policy_name=$AWS_IAM_POLICY_NAME" -var="port=$PORT"  -auto-approve
+#        run: terraform apply -var="service_name=$SERVICE_NAME" -var="aws_iam_role_name=$AWS_IAM_ROLE_NAME" -var="aws_iam_policy_name=$AWS_IAM_POLICY_NAME" -var="port=$PORT"  -auto-approve
         working-directory: ./infra
