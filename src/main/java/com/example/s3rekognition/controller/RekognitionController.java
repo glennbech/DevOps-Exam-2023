@@ -110,7 +110,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         return ResponseEntity.ok(ppeResponse);
     }
 
-    @GetMapping(value = "/scan-ppe", consumes = "*/*", produces = "application/json")
+    @GetMapping(value = "/scan-full-ppe", consumes = "*/*", produces = "application/json")
     @ResponseBody
     public ResponseEntity<PPEResponse> scanFullPPE(@RequestParam String bucketName) {
         int violationCounter = 0;
