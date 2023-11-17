@@ -160,7 +160,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         // count how many times alarm been triggered
         if (ppeResponse.getNumberOfViolations() >= ppeResponse.getNumberOfValid()) {
             exceededViolationCounter++;
-            meterRegistry.counter("violation_alarm").increment();
+//            meterRegistry.counter("violation_alarm").increment();
         }
 
         return ResponseEntity.ok(ppeResponse);
@@ -204,10 +204,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
                         valid -> valid.getOrDefault("Valid", 0))
                 .register(meterRegistry);
 
-        Gauge.builder("exceeded_violation_alarm", this, obj -> obj.exceededViolationCounter).register(meterRegistry);
-
-//        Gauge.builder("exceeded_violation_alarm", meterRegistry.get("violation_alarm").counter()::count)
-//                .register(meterRegistry);
+//        Gauge.builder("exceeded_violation_alarm", this, obj -> obj.exceededViolationCounter).register(meterRegistry);
 
     }
 
