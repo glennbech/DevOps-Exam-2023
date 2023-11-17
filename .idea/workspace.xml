@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="fix on metric for violation limit">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="dont know why apprunner fails now... comment out changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
     </list>
@@ -89,15 +89,7 @@
       <workItem from="1700064027859" duration="34000" />
       <workItem from="1700064075937" duration="4140000" />
       <workItem from="1700132020715" duration="46995000" />
-      <workItem from="1700237991102" duration="13126000" />
-    </task>
-    <task id="LOCAL-00067" summary="Test using provider">
-      <option name="closed" value="true" />
-      <created>1700080922099</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1700080922099</updated>
+      <workItem from="1700237991102" duration="13997000" />
     </task>
     <task id="LOCAL-00068" summary="fixed provider">
       <option name="closed" value="true" />
@@ -483,7 +475,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700253230217</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="dont know why apprunner fails now... comment out changes">
+      <option name="closed" value="true" />
+      <created>1700254201849</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1700254201849</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +501,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Misspelling on terraform apply if condition" />
     <MESSAGE value="New apprunner, since old one is just rolling back......" />
     <MESSAGE value="Added hand+head check to PPE. Should show graph in micrometer for violations, valids, images, ppl found" />
     <MESSAGE value="forgot to change name after copying 1st metric. removed , at the last one" />
@@ -526,7 +525,8 @@
     <MESSAGE value="Updated cloudwatch.tf to show violation alarms as gauge" />
     <MESSAGE value="forgot to update endpoint" />
     <MESSAGE value="fix on metric for violation limit" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix on metric for violation limit" />
+    <MESSAGE value="dont know why apprunner fails now... comment out changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="dont know why apprunner fails now... comment out changes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
