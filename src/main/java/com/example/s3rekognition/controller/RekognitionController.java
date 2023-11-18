@@ -168,14 +168,16 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
             meterRegistry.counter("violation_alarm").increment();
         }
 
-        // If it reaches 5, it should reset the counter and gauge widget.
+        // If it reaches 5, alarm should be triggered.
+        // When it reaches over 5, another violation occurs - "reset" counter to 1
         // The alarm set for this widget has evaluation_period = 1.
-        if (exceededViolationCounter >= 5) {
-            exceededViolationCounter = 0;
+        if (exceededViolationCounter > 5) {
+            exceededViolationCounter = 1;
             meterRegistry.gauge("exceeded_violation_alarm", exceededViolationCounter);
         }
 
         logger.info("Number of people scanned: " + totalPersonCount + ". Number of violations: " + ppeResponse.getNumberOfViolations());
+        logger.info("Current violation counter: " + exceededViolationCounter);
         return ResponseEntity.ok(ppeResponse);
     }
 
