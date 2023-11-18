@@ -51,12 +51,15 @@
         
       * Now github actions should run.
 
+
 ### B. Docker container
 - [x] Lag en Dockerfile som bygger et container image som kör python koden.
 
 
 
+
 ---
+
 
 
 
@@ -65,6 +68,7 @@
 ### A. Dockerfile
 - [x] Lag en Dockerfile for Java-applikasjonen.
   - [x] Multi stage Dockerfile som kompilerer og kjörer applikationen.
+
 
 ### B. GitHub Actions workflow for container image og ECR
 - [x] Lag ny GitHub Actions workflow fil.
@@ -80,7 +84,9 @@
 
 
 
+
 ---
+
 
 
 
@@ -106,6 +112,7 @@
     Port might usually not be changed. But if it is used already, it can be practical to be able to change here.
 
     Changed ecr from kjell to my ECR.
+
 
 ### B. Terraform i GitHub Actions
 - [x] Utvid din GitHub Actions workflow som lager et Docker image, til også å kjøre terraformkoden.
@@ -142,7 +149,9 @@
 
 
 
+
 ---
+
 
 
 
@@ -220,7 +229,8 @@
     The alarm is created in Terraform as a module. It uses the same "prefix" variable from the "main" Terraform code.
     This makes it easier to maintain the requirement that Cloudwatch and the alarm uses the same name for the namespace.
     The only variable that needs input is the email for the alarm.
-    
+![Oppgave 4 - Alarm.png](images%2FOppgave%204%20-%20Alarm.png)
+
     When running terraform apply with the new alarm module, you will get an email asking you to subscribe to it.
     You must accept if you want email notifications from the alarm. See image below.
 ![Oppgave 4 - Email notification for Alarm - 1.png](images%2FOppgave%204%20-%20Email%20notification%20for%20Alarm%20-%201.png)
@@ -244,4 +254,44 @@
         Change violationLimit accordingly. Default is set to 5.
         Change violationPercentage. Default is set to 0.3 (30%).
 
+
+
+
 ---
+
+
+
+
+# Oppgave 5 - Drøfteoppgaver
+
+### A. Kontinuerlig Integrering
+Forklar hva kontinuerlig integrasjon (CI) er og diskuter dens betydning i utviklingsprosessen. I ditt svar,
+vennligst inkluder:
+- [ ] En definisjon av kontinuerlig integrasjon.
+- [ ] Fordelene med å bruke CI i et utviklingsprosjekt - hvordan CI kan forbedre kodekvaliteten og effektivisere utviklingsprosessen.
+- [ ] Hvordan jobber vi med CI i GitHub rent praktisk? For eskempel i et utviklingsteam på fire/fem utivklere?
+
+
+
+
+
+### B. Sammenligning av Scrum/Smidig og DevOps fra et Utviklers Perspektiv
+
+
+
+
+
+
+
+
+### C. Det Andre Prinsippet - Feedback
+
+
+
+
+
+
+
+
+
+    f

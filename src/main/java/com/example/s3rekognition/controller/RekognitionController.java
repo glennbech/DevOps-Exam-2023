@@ -54,7 +54,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
      */
     @GetMapping(value = "/scan-ppe", consumes = "*/*", produces = "application/json")
     @ResponseBody
-    @Timed(value = "scanforPPE-latency", description = "single piece scan latency")
+//    @Timed(value = "scanforPPE-latency", description = "single piece scan latency")
     public ResponseEntity<PPEResponse> scanForPPE(@RequestParam String bucketName) {
         // Used for metrics
         int violationCounter = 0;
@@ -116,7 +116,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
     }
 
     @GetMapping(value = "/scan-full-ppe", consumes = "*/*", produces = "application/json")
-    @Timed(value = "scanFullPPE-latency", description = "full ppe scan latency")
+//    @Timed(value = "scanFullPPE-latency", description = "full ppe scan latency")
     @ResponseBody
     public ResponseEntity<PPEResponse> scanFullPPE(@RequestParam String bucketName) {
         int violationCounter = 0;
