@@ -1,7 +1,5 @@
 # Oppgave 1 - Kjells Pythoncode
 
----
-
 ### A. SAM & GitHub actions workflow
 - [x] Lage S3-bucket med kandidat-nummer.
 - [x] Fjern hardkoding av S3 bucket navnet og leser verdien "BUCKET_NAME" fra en miljövariabel.
@@ -60,8 +58,6 @@
 
 # Oppgave 2 - Overgang til Java og Spring boot
 
----
-
 ### A. Dockerfile
 - [x] Lag en Dockerfile for Java-applikasjonen.
   - [x] Multi stage Dockerfile som kompilerer og kjörer applikationen.
@@ -82,12 +78,10 @@
 
 # Oppgave 3 - Terraform, AWS Apprunner og Infrastruktur som kode
 
----
-
 ### A. Kodeendringer og forbedringer
 - [x] Fjern hardkodingen av service_name, slik at du kan bruke ditt kandidatnummer eller noe annet som service navn.
 - [x] Se etter andre hard-kodede verdier og se om du kan forbedre kodekvaliteten.
-- [x] Reduser CPU til 256, og Memory til 1024 (defaultverdiene er høyere)
+- [x] Reduser CPU til 256, og Memory til 1024 (defaultverdiene er høyere).
 
 
     Added some variables that uses variables.tf
@@ -106,92 +100,103 @@
     Changed ecr from kjell to my ECR.
 
 ### B. Terraform i GitHub Actions
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
+- [x] Utvid din GitHub Actions workflow som lager et Docker image, til også å kjøre terraformkoden.
+- [x] På hver push til main, skal Terraformkoden kjøres etter jobber som bygger Docker container image.
+  - [x] Du kan bruke samme S3 bucket som vi har brukt til det formålet i øvingene.
+- [x] Du må lege til Terraform provider og backend-konfigurasjon. Dette har Kjell glemt. 
+- [x] Beskriv også hvilke endringer, om noen, sensor må gjøre i sin fork, GitHub Actions workflow eller kode for å få denne til å kjøre i sin fork.
 
 
-
-
-
-
-    The state will be saved in the S3 bucket after running terraform init and apply locally.
-    If no changes are, it will just pass.
-
-    Pre-requisites to run oppgave-2-workflows.yaml for github actions:
-        Will need Secrets added into Github secrets from AWS as described in Oppgave 1.
-        S3 bucket
-        ECR Repository
+    Using the S3 bucket from class: pgr301-2021-terraform-state
+    State file: 2038-apprunner-new-state.state
     
-    Changes:
-        provider.tf contains information about the s3 bucket.
-            Change:
-                bucket - to your s3 bucket
-                key - (if you want your own name to where state is saved)
-        
-        Apprunner, IAM Role and IAM Policy needs to have a unique name.
-        In the oppgave-2-workflows.yaml file:
-        Change the values under "env":
-            env:
-              ECR_REPO: 244530008913.dkr.ecr.eu-west-1.amazonaws.com/<your-ecr-repo>
-              SERVICE_NAME: <set-unique-appr-name>
-              AWS_IAM_ROLE_NAME: <set-unique-role-name>
-              AWS_IAM_POLICY_NAME: <set-unique-policy-name>
-              PORT: <set-your-port>, (could most stay as 8080, but added this in case)        
+    Assuming that you have AWS Secrets correctly setup in GitHub, if you are running your own you should have:
+      Your own ECR repository
+      Change ECR repository in main.tf to your under "image_identifier"
+      Change S3 Bucket in provider.tf (if not using the provided one)
 
-            comment out:    "run: terraform apply -auto-approve"
-            and use: "run:  terraform apply -var="service_name=$SERVICE_NAME" -var="aws_iam_role_name=$AWS_IAM_ROLE_NAME" -var="aws_iam_policy_name=$AWS_IAM_POLICY_NAME" -var="port=$PORT"  -auto-approve"
+      Apprunner, IAM Role and IAM Policy needs to have a unique name.
+        Change the following env. in the workflow file:
+          env:
+            ECR_REPO: <your-ecr-repo>
+            SERVICE_NAME: <you-appr-name>
+            AWS_IAM_ROLE_NAME: <you-role-name>
+            AWS_IAM_POLICY_NAME: <you-policy-name>
+            PORT: <port>, (could most stay as 8080, but added this in case)
+      
+      Also check so the ECR is correct under the step: "Login to AWS ECR"
 
-
-## Oppgave 4
-    A.
-    * Additions
-        scanForPPE:
-            Added metrics for number of violations and valid scans of PPE protection in scanForPPE endpoint
-            These two metrics shows in one widget on Cloudwatch.
-            It could be interesting to see how many that actually correctly wear PPE. This way each scanned image
-            can show the number of people violating it and number of people who passes.
-        
-        scanFullPPE:
-            New endpoint to scan all three parts: head, face and hands for PPE.
-            New Gauge widget added here which reports number of violations.
-            If the violation reaches 10, alarm should trigger and send an email notifiation.
-                The idea is that this could be used for very strict environments where PPE is very important and
-                compliance must be good. So for example if it happens 10 times a day, thats very bad.
-                Now this value can easily be changed in cloudwatch.tf under min/max,
-                it wouldnt make sense to have 10 times a day for a place with 5 employees.
-            
-        Latency:
-            Two new metrics for both endpoints above to measure the time it takes for each to complete.
-                With @Timed, we can measure the time it takes for the endpoint to complete.
-                If it takes too long, there could be an error. But this also depends on the amount of images scanned.
-
-            
-
-## Oppgave 4 - Feedback
-
+      Then it should work fine.
 ---
-### A.
+
+# Oppgave 4 - Feedback
+
+### A. Utvid applikasjonen og legg inn "Måleinstrumenter"
+- [x] Lag minst et nytt endepunkt.
+- [x] Utvid gjerne også den eksisterende koden med mer funksjonalitet.
+- [x] Gjør nødvendige endringer i Java-applikasjonen til å bruke Micrometer rammeverket for Metrics.
+  - [x] Konfigurer for leveranse av Metrics til CloudWatch.
+- [x] Dere skal skrive en kort begrunnelse for hvorfor dere har valgt måleinstrumentene dere har gjort, og valgene må være relevante.
+- [x] Minst tre ulike måleinstrumenter.
+  - [x] Widget 1 - 
+  - [x] Widget 2 - .
+  - [x] Widget 3 - Average latency for Single PPE-piece scan.
+  - [x] Widget 4 - Average latency for Full PPE scan.
 
 
+    New endpoint: scanFullPPE:
+      Scans head, face and both hands for PPE.
+
+
+    Widget choice:
+      Widget 1 - Face PPE Detection analysis:
+        This widget uses the scanForPPE endpoint.
+        The graph shows the number of violations and number of valid PPE-detections in one graph.
+        It could be relevant for statistics to measure how many that fails, which would probably need some changes in a system to improve this.
+        Having both in one graph makes it easier to see this.
+
+
+      Widget 2 - Full PPE Violation counter:
+        This widget is only for the scanFullPPE endpoint, which considers face, head and both hands.
+        The condition for this gauge to update is:
+          After finding the total numbers of people in all images in a bucket, if 30% of them violates the PPE detection,
+          the gauge will increment by 1.
+          When the gauge reaches 5, it will trigger an alarm.
+          After reaching 6, it will reset to 1.
+            I chose to not reset when reaching 5 because then the gauge would never show 5. It would go to 4 and then to 0.
+        
+
+        The idea is that this could be used for very strict environments where PPE is very important, which means 
+        compliance must be good. So for example if violations happen x times a day, thats very bad.
+        Limit is set to 5 in this exam, but this is a very small number, which likely spams the email inbox.
+        This is easily changed, more in B. about alarms.
+
+
+      Widget 3 - Average latency for Single PPE-piece scan
+        Shows the latency for calling the scanForPPE endpoint.
+        It can be important to know the latency because of performance-checking and debugging.
+        For example stress test to see how well it handles multiple calls. If it runs too slow, it might need improvement.
+        If it takes very very long, it might point to some error.
+
+
+      Widget 4 - Average latency for Full PPE scan
+        Same as described in Widget 3.
+        Additionally, it also shows that a full PPE scan does take longer than just checking face.
 
 ### B. Cloudwatch Alarm og Terraform moduler
-- [x] Lag en CloudWatch-alarm.
-- [x] Senda varsel till Epost dersom den utlöses.
-- [x] Skriv redgjörelse for valget.
-- [x] Lages ved hjelp av Terraformkode.
-- [x] Skal lages som separat Terraform modul
-- [x] Undvik hardkoding.
-- [x] Pass på at brukere av modulen ikke må sette mange variabler vid bruk.
+- [x] Lag en CloudWatch-alarm som sender et varsel på Epost dersom den utløses.
+- [x] Dere velger selv kriteriet for kriterier til at alarmen skal løses ut, men dere må skrive en kort redgjørelse for valget.
+- [x] Alarmen skal lages ved hjelp av Terraformkode.
+- [x] Koden skal lages som en separat Terraform modul.
+- [x] Legg vekt på å unngå hardkoding av verdier i modulen for maksimal gjenbrukbarhet.
+- [x] Pass samtidig på at brukere av modulen ikke må sette mange variabler når de inkluderer den i koden sin
 
----
-### Explanation
-        The module for the alarm is created as a module in Terraform.
-        It uses the same "prefix" variable from the main Terraform code to make it easier to set the correct namings,
-        especially the namespace, so the CloudWatch namespace and alarm namespace are the asme one.
+  
+    The alarm is created in Terraform as a module. It uses the same "prefix" variable from the "main" Terraform code.
+    This makes it easier to maintain the requirement that Cloudwatch and the alarm uses the same name for the namespace.
+    The only variable that needs input is the email for the alarm.
+
+        
         The only variable that needs to be set is the email.
         The prefix has a default value, but can be overridden easily when doing terraform apply.
 
