@@ -29,6 +29,8 @@ import java.util.logging.Logger;
 public class RekognitionController implements ApplicationListener<ApplicationReadyEvent> {
     private final Map<String, Integer> scanResult = new HashMap<>();
     private int exceededViolationCounter = 0;
+    private final int violationLimit = 5;
+    private final double violationPercentage = 0.3;
     private final AmazonS3 s3Client;
     private final AmazonRekognition rekognitionClient;
     private final MeterRegistry meterRegistry;
@@ -163,7 +165,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
 
         // This should check if 30% of the scanned people are violations, it should increment by 1 to the widget.
         // If it reaches 5 times, it should send off an alarm.
-        if (ppeResponse.getNumberOfViolations() >= totalPersonCount * 0.3) {
+        if (ppeResponse.getNumberOfViolations() >= totalPersonCount * violationPercentage) {
             exceededViolationCounter++;
             meterRegistry.counter("violation_alarm").increment();
         }
@@ -171,7 +173,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         // If it reaches 5, alarm should be triggered.
         // When it reaches over 5, another violation occurs - "reset" counter to 1
         // The alarm set for this widget has evaluation_period = 1.
-        if (exceededViolationCounter > 5) {
+        if (exceededViolationCounter > violationLimit) {
             exceededViolationCounter = 1;
             meterRegistry.gauge("exceeded_violation_alarm", exceededViolationCounter);
         }

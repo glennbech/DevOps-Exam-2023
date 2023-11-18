@@ -141,17 +141,42 @@
 
 
 ### B. Cloudwatch Alarm og Terraform moduler
-- [ ] Lag en CloudWatch-alarm.
-- [ ] Senda varsel till Epost dersom den utlöses.
-- [ ] Skriv redgjörelse for valget.
-- [ ] Lages ved hjelp av Terraformkode.
-- [ ] Skal lages som separat Terraform modul
-- [ ] Undvik hardkoding.
-- [ ] Pass på at brukere av modulen ikke må sette mange variabler vid bruk.
+- [x] Lag en CloudWatch-alarm.
+- [x] Senda varsel till Epost dersom den utlöses.
+- [x] Skriv redgjörelse for valget.
+- [x] Lages ved hjelp av Terraformkode.
+- [x] Skal lages som separat Terraform modul
+- [x] Undvik hardkoding.
+- [x] Pass på at brukere av modulen ikke må sette mange variabler vid bruk.
 
+---
+### Explanation
+        The module for the alarm is created as a module in Terraform.
+        It uses the same "prefix" variable from the main Terraform code to make it easier to set the correct namings,
+        especially the namespace, so the CloudWatch namespace and alarm namespace are the asme one.
+        The only variable that needs to be set is the email.
+        The prefix has a default value, but can be overridden easily when doing terraform apply.
 
+        The alarm chosen here triggers when the gauge widget reaches 5. It is only set for the scanFullPPE endpoint.
+        The logic behind this alarm/gauge is that when a bucket is scanned and the total number of people is found, 
+        if 30% of them violates the PPE requirement, the gauge increments by 1.
+        If this happens 5 times, the alarm will be triggered.
+        This is set to be quite strict, so a lot of email could possibly be sent in a short period of time.
+        This is just an example. If there are a lot of people, limit can easily be changed to a higher number before sending an alarm.
+        Two places needs to be changed in that case:
+            infra/alarm_module/variables.tf:
+                Change the default value = 5 under "threshold" to change at what value the alarm should trigger at.
 
+            infra/alarm_module/main.tf:
+                evaluation_periods and period, can be modified so it wont be as sensitive.
 
+            infra/cloudwatch.tf:
+                Change the "max" value here to modify the maximum value of the gauge widget.
+
+            RekognitionController.java: 
+                Change violationLimit. Default is set to 5.
+                Change violationPercentage. Default is set to 0.3 (30%).
+---
 
 
 
@@ -159,15 +184,3 @@
 # NOTES:
     Seems to be a known issue that apprunner does not always manage to find the correct ECR image with the :latest tag.
     A solution seems to be to use rev instead since it will always be the latest one pushed.
-
-
-    Error:
-        Github actions fails because it says apprunner is in a state, how to fix this?
-        Seems like it started ot happen after setting apprunner to use :rev instead of :latest
-        BUT APPRUNNER GETS DEPLOYED ANYWAYS. WHY?
-
-    Now:
-        This commit succeeded, no errors in apprunner regarding cloudwatch: 
-            https://github.com/TobiasLiu1990/DevOps-Exam-2023/commit/bce3ee363a3a4ded72574d2a58791a325069aff3
-
-        Last test: re-deploy: 
