@@ -23,13 +23,19 @@ variable "kandidat" {
   type = string
 }
 
-variable "cloudwatch_namespace" {
+# default is set from github actions during docker push to ecr.
+variable "image_tag" {
+  default = "blabla"
+  type = string
+}
+
+# Used for both namespace for CloudWatch dashboard and alarm.
+variable "prefix" {
   default = "cloudwatch-2038"
   type = string
 }
 
-# default is set from github actions during docker push to ecr.
-variable "image_tag" {
-  default = "blabla"
+# Alarm module
+variable "alarm_email" {
   type = string
 }

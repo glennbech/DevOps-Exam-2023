@@ -11,8 +11,8 @@ resource "aws_cloudwatch_dashboard" "main" {
       "height": 6,
       "properties": {
         "metrics": [
-          ["${var.cloudwatch_namespace}", "total_violations.value"],
-          ["${var.cloudwatch_namespace}", "total_valid.value"]
+          ["${var.prefix}", "total_violations.value"],
+          ["${var.prefix}", "total_valid.value"]
         ],
         "period": 300,
         "stat": "Maximum",
@@ -28,7 +28,7 @@ resource "aws_cloudwatch_dashboard" "main" {
      "height": 6,
      "properties": {
         "metrics": [
-          ["${var.cloudwatch_namespace}", "exceeded_violation_alarm.value"]
+          ["${var.prefix}", "exceeded_violation_alarm.value"]
         ],
         "view": "gauge",
         "stat": "Maximum",
@@ -51,7 +51,7 @@ resource "aws_cloudwatch_dashboard" "main" {
       "properties": {
         "metrics": [
           [
-            "${var.cloudwatch_namespace}", "scanforPPE-latency.avg",
+            "${var.prefix}", "scanforPPE-latency.avg",
             "exception", "none",
             "method", "scanForPPE",
             "class", "com.example.s3rekognition.controller.RekognitionController"]
@@ -71,7 +71,7 @@ resource "aws_cloudwatch_dashboard" "main" {
       "properties": {
         "metrics": [
           [
-            "${var.cloudwatch_namespace}", "scanFullPPE-latency.avg",
+            "${var.prefix}", "scanFullPPE-latency.avg",
             "exception", "none",
             "method", "scanFullPPE",
             "class", "com.example.s3rekognition.controller.RekognitionController"]
