@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Added latency metric for scanForPPE">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Added latency metric for scanFullPPE as well">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/cloudwatch.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/cloudwatch.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,15 +91,7 @@
       <workItem from="1700064075937" duration="4140000" />
       <workItem from="1700132020715" duration="46995000" />
       <workItem from="1700237991102" duration="19879000" />
-      <workItem from="1700302034498" duration="7631000" />
-    </task>
-    <task id="LOCAL-00074" summary="Updated README_BESVARELSER.md">
-      <option name="closed" value="true" />
-      <created>1700085476297</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1700085476297</updated>
+      <workItem from="1700302034498" duration="8215000" />
     </task>
     <task id="LOCAL-00075" summary="Added terraform provider and configurations. Updated README_BESVARELSER.md">
       <option name="closed" value="true" />
@@ -486,7 +477,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700309951041</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="Added latency metric for scanFullPPE as well">
+      <option name="closed" value="true" />
+      <created>1700310106451</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1700310106451</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,7 +503,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="See if cloudwatch works now.." />
     <MESSAGE value="removing micrometer stuff and see if error still persist in apprunner logs...." />
     <MESSAGE value="added timeconfig @Time on endpoint" />
     <MESSAGE value="removed all micrometer, cloudwatch stuff for now" />
@@ -529,7 +527,8 @@
     <MESSAGE value="Shit. forgot to add .value on &quot;exceeded_violation_alarm&quot; ......" />
     <MESSAGE value="Metrics now sending/showing correctly on cloudwatch" />
     <MESSAGE value="Added latency metric for scanForPPE" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added latency metric for scanForPPE" />
+    <MESSAGE value="Added latency metric for scanFullPPE as well" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added latency metric for scanFullPPE as well" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

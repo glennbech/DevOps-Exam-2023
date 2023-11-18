@@ -110,15 +110,6 @@
 
 ## Oppgave 4
     A.
-    * KRAV: Minst en till endpoint
-            Minst 3 måleinstrumenter
-            FÖRKLARA BRA VALEN
-    * Frivilligt: Förbättre koden osv.
-
-        * Extra endpoints - Hands, Head. Kanske en med allt också?
-            Räkna antal violations och valid från bilder
-
-
     * Additions
         scanForPPE:
             Added metrics for number of violations and valid scans of PPE protection in scanForPPE endpoint
@@ -141,15 +132,26 @@
                 If it takes too long, there could be an error. But this also depends on the amount of images scanned.
 
             
-        
 
-    B.
-    Cloudwatch alarm som skickar varsel till epost.
-        - Vid invalid
-    Lages via terraform kod som separat modul.
-        
+## Oppgave 4 - Feedback
 
-    
+---
+### A.
+
+
+
+### B. Cloudwatch Alarm og Terraform moduler
+- [ ] Lag en CloudWatch-alarm.
+- [ ] Senda varsel till Epost dersom den utlöses.
+- [ ] Skriv redgjörelse for valget.
+- [ ] Lages ved hjelp av Terraformkode.
+- [ ] Skal lages som separat Terraform modul
+- [ ] Undvik hardkoding.
+- [ ] Pass på at brukere av modulen ikke må sette mange variabler vid bruk.
+
+
+
+
 
 
 
