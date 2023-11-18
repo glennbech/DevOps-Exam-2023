@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Fixed error in cloudwatch for scanFullPPE widget">
-      <change afterPath="$PROJECT_DIR$/infra/alarm_module/main.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/alarm_module/outputs.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/alarm_module/variables.tf" afterDir="false" />
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Adding alarm module in terraform">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/cloudwatch.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/cloudwatch.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/alarm_module/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/alarm_module/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,15 +92,7 @@
       <workItem from="1700064075937" duration="4140000" />
       <workItem from="1700132020715" duration="46995000" />
       <workItem from="1700237991102" duration="19879000" />
-      <workItem from="1700302034498" duration="10129000" />
-    </task>
-    <task id="LOCAL-00077" summary="Updated README_BESVARELSER.md">
-      <option name="closed" value="true" />
-      <created>1700136557994</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1700136557994</updated>
+      <workItem from="1700302034498" duration="10902000" />
     </task>
     <task id="LOCAL-00078" summary="Adding necessary dependencies for Micrometer">
       <option name="closed" value="true" />
@@ -489,7 +478,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700312763463</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="Adding alarm module in terraform">
+      <option name="closed" value="true" />
+      <created>1700314090211</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1700314090211</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -507,7 +504,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed all micrometer, cloudwatch stuff for now" />
     <MESSAGE value="Try again with dependencies for micrometer and cloudwatch... but no code to send data. see if error occurs now?" />
     <MESSAGE value="Updated pom.xml" />
     <MESSAGE value="Updated pom.xml. Trying image tag instead of latest for ecr -&gt; app runner" />
@@ -532,7 +528,8 @@
     <MESSAGE value="Added latency metric for scanFullPPE as well" />
     <MESSAGE value="Updating README_BESVARELSER.md a little" />
     <MESSAGE value="Fixed error in cloudwatch for scanFullPPE widget" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed error in cloudwatch for scanFullPPE widget" />
+    <MESSAGE value="Adding alarm module in terraform" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding alarm module in terraform" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

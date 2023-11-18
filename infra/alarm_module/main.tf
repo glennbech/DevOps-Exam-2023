@@ -5,7 +5,7 @@ resource "aws_cloudwatch_metric_alarm" "threshold" {
 
   comparison_operator = "GreaterThanOrEqualToThreshold"
   threshold           = var.threshold
-  evaluation_periods  = "2"
+  evaluation_periods  = "1"
   period              = "60"
   statistic           = "Maximum"
 
