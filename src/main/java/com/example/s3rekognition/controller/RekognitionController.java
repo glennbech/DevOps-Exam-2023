@@ -188,7 +188,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
      * It does so by iterating over all persons in a picture, and then again over
      * each body part of the person. If the body part is a FACE and there is no
      * protective gear on it, a violation is recorded for the picture.
-     *
+
      * @param result
      * @return
      */

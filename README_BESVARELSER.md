@@ -142,6 +142,7 @@
   - [x] Widget 2 - .
   - [x] Widget 3 - Average latency for Single PPE-piece scan.
   - [x] Widget 4 - Average latency for Full PPE scan.
+![Oppgave 3 - CloudWatch Dashboard - Widgets.png](images%2FOppgave%203%20-%20CloudWatch%20Dashboard%20-%20Widgets.png)
 
 
     New endpoint: scanFullPPE:
@@ -164,7 +165,7 @@
           When the gauge reaches 5, it will trigger an alarm.
           After reaching 6, it will reset to 1.
             I chose to not reset when reaching 5 because then the gauge would never show 5. It would go to 4 and then to 0.
-        
+![Oppgave 3-4 - Max value 5.png](images%2FOppgave%203-4%20-%20Max%20value%205.png)
 
         The idea is that this could be used for very strict environments where PPE is very important, which means 
         compliance must be good. So for example if violations happen x times a day, thats very bad.
@@ -195,30 +196,30 @@
     The alarm is created in Terraform as a module. It uses the same "prefix" variable from the "main" Terraform code.
     This makes it easier to maintain the requirement that Cloudwatch and the alarm uses the same name for the namespace.
     The only variable that needs input is the email for the alarm.
+    
+    When running terraform apply with the new alarm module, you will get an email asking you to subscribe to it.
+    You must accept if you want email notifications from the alarm. See image below.
+![Oppgave 4 - Email notification for Alarm - 1.png](images%2FOppgave%204%20-%20Email%20notification%20for%20Alarm%20-%201.png)
+![Oppgave 4 - Accepted Alarm subscription - 2.png](images%2FOppgave%204%20-%20Accepted%20Alarm%20subscription%20-%202.png)
 
-        
-        The only variable that needs to be set is the email.
-        The prefix has a default value, but can be overridden easily when doing terraform apply.
+    The alarm uses the gauge widget and triggers when it reaches 5. An email will then be sent.
+![Oppgave 4 - Alarm triggered - 3.png](images%2FOppgave%204%20-%20Alarm%20triggered%20-%203.png)
 
-        The alarm chosen here triggers when the gauge widget reaches 5. It is only set for the scanFullPPE endpoint.
-        The logic behind this alarm/gauge is that when a bucket is scanned and the total number of people is found, 
-        if 30% of them violates the PPE requirement, the gauge increments by 1.
-        If this happens 5 times, the alarm will be triggered.
-        This is set to be quite strict, so a lot of email could possibly be sent in a short period of time.
-        This is just an example. If there are a lot of people, limit can easily be changed to a higher number before sending an alarm.
-        Two places needs to be changed in that case:
-            infra/alarm_module/variables.tf:
-                Change the default value = 5 under "threshold" to change at what value the alarm should trigger at.
+    The condition for it to trigger is described in Part A. under Widget 2.
+    If you want to change the condition for the trigger:
+      infra/alarm_module/variables.tf:
+        Change the default value = 5 under "threshold" to change at what value the alarm should trigger at.
 
-            infra/alarm_module/main.tf:
-                evaluation_periods and period, can be modified so it wont be as sensitive.
+      infra/alarm_module/main.tf:
+        evaluation_periods and period, can be modified so it wont be as sensitive.
 
-            infra/cloudwatch.tf:
-                Change the "max" value here to modify the maximum value of the gauge widget.
+      infra/cloudwatch.tf:
+        Change the "max" value here to modify the maximum value of the gauge widget.
 
-            RekognitionController.java: 
-                Change violationLimit. Default is set to 5.
-                Change violationPercentage. Default is set to 0.3 (30%).
+      RekognitionController.java: 
+        Change violationLimit. Default is set to 5.
+        Change violationPercentage. Default is set to 0.3 (30%).
+
 ---
 
 
