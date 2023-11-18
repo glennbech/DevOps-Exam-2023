@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Updated README_BESVARELSER.md">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/oppgave-2-workflow.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/oppgave-2-3-workflow.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/variables.tf" afterDir="false" />
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Updating workflows">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/main.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,15 +91,7 @@
       <workItem from="1700064075937" duration="4140000" />
       <workItem from="1700132020715" duration="46995000" />
       <workItem from="1700237991102" duration="19879000" />
-      <workItem from="1700302034498" duration="19308000" />
-    </task>
-    <task id="LOCAL-00086" summary="Changed from Gauge to DistributionSummary. Added souts to check value">
-      <option name="closed" value="true" />
-      <created>1700153771317</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1700153771317</updated>
+      <workItem from="1700302034498" duration="19542000" />
     </task>
     <task id="LOCAL-00087" summary="Changed from Gauge to DistributionSummary. Added souts to check value">
       <option name="closed" value="true" />
@@ -486,7 +477,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700323060088</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="Updating workflows">
+      <option name="closed" value="true" />
+      <created>1700323393907</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1700323393907</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,7 +503,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="I dont get it. apprunner shows errors on cloudwatch sometimes and sometimes not with SAAAMMEEEEEE re-deployment. trying again try with ref again" />
     <MESSAGE value="SEEMS TO WORK NOW, OMG. changed to correct bucket for storing state, so i can run ppe on my own s3 bucket with images." />
     <MESSAGE value="Adding new endpoint to check face, hand, head for equipment" />
     <MESSAGE value="Create condition to count number of times violations &gt;= valids and send to widget. Should later send alarm too" />
@@ -529,7 +527,8 @@
     <MESSAGE value="Added logging for people scanned and violations" />
     <MESSAGE value="Now seems to work as it should!" />
     <MESSAGE value="Updated README_BESVARELSER.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated README_BESVARELSER.md" />
+    <MESSAGE value="Updating workflows" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating workflows" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
