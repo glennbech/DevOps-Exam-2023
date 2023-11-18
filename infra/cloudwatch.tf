@@ -37,7 +37,7 @@ resource "aws_cloudwatch_dashboard" "main" {
         "yAxis": {
            "left": {
               "min": 0,
-              "max": 10
+              "max": 5
            }
          }
        }

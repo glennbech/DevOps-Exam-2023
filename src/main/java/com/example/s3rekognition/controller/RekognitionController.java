@@ -119,6 +119,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
     public ResponseEntity<PPEResponse> scanFullPPE(@RequestParam String bucketName) {
         int violationCounter = 0;
         int validCounter = 0;
+        int totalPersonCount = 0;
 
         ListObjectsV2Result imageList = s3Client.listObjectsV2(bucketName);             // Get content from bucket
         List<PPEClassificationResponse> classificationResponses = new ArrayList<>();
@@ -147,10 +148,11 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
             } else {
                 validCounter++;
             }
-
             logger.info("Scanning " + image.getKey() + ", Protection analysis: " + violation);
 
             int personCount = result.getPersons().size();
+            totalPersonCount += personCount;
+
             PPEClassificationResponse classification = new PPEClassificationResponse(image.getKey(), personCount, violation);
             classificationResponses.add(classification);
         }
@@ -159,21 +161,19 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         ppeResponse.setNumberOfViolations(violationCounter);
         ppeResponse.setNumberOfValid(validCounter);
 
-        // use alarm when violation >= valids
-        // count how many times alarm been triggered
-        if (ppeResponse.getNumberOfViolations() >= ppeResponse.getNumberOfValid()) {
+        // This should check if 30% of the scanned people are violations, it should increment by 1 to the widget.
+        // If it reaches 5 times, it should send off an alarm.
+        if (ppeResponse.getNumberOfViolations() >= totalPersonCount * 0.3) {
             exceededViolationCounter++;
             meterRegistry.counter("violation_alarm").increment();
         }
 
-        // Check so that when gauge reaches 10, it should reset to 0.
-        // Also update the gauge value to 0. The resets should not bypass the alarm.
+        // If it reaches 5, it should reset the counter and gauge widget.
         // The alarm set for this widget has evaluation_period = 1.
-        if (exceededViolationCounter >= 10) {
+        if (exceededViolationCounter >= 5) {
             exceededViolationCounter = 0;
             meterRegistry.gauge("exceeded_violation_alarm", exceededViolationCounter);
         }
-
         return ResponseEntity.ok(ppeResponse);
     }
 

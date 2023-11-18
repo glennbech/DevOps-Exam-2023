@@ -39,6 +39,7 @@ public class MetricsConfig {
     }
 
     // Gets the name for the cloudwatch namespace from application.properties.
+    // The name of cloudwatch.namespace must be the same as in Terraform.
     private CloudWatchConfig setupCloudWatchConfig() {
         return new CloudWatchConfig() {
             private Map<String, String> configuration = Map.of(
