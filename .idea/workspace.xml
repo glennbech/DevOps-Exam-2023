@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Updating README_BESVARELSER.md">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Try again with :latest">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/oppgave-2-3-workflow.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/oppgave-2-3-workflow.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/variables.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,15 +98,7 @@
       <workItem from="1700064075937" duration="4140000" />
       <workItem from="1700132020715" duration="46995000" />
       <workItem from="1700237991102" duration="19879000" />
-      <workItem from="1700302034498" duration="31788000" />
-    </task>
-    <task id="LOCAL-00091" summary="removing micrometer stuff and see if error still persist in apprunner logs....">
-      <option name="closed" value="true" />
-      <created>1700160230820</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1700160230820</updated>
+      <workItem from="1700302034498" duration="33058000" />
     </task>
     <task id="LOCAL-00092" summary="added timeconfig @Time on endpoint">
       <option name="closed" value="true" />
@@ -490,7 +484,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700336800171</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="Try again with :latest">
+      <option name="closed" value="true" />
+      <created>1700337186386</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1700337186386</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,7 +510,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create condition to count number of times violations &gt;= valids and send to widget. Should later send alarm too" />
     <MESSAGE value="Updated cloudwatch.tf to show violation alarms as gauge" />
     <MESSAGE value="forgot to update endpoint" />
     <MESSAGE value="fix on metric for violation limit" />
@@ -533,7 +534,8 @@
     <MESSAGE value="Updating workflows" />
     <MESSAGE value="Forgot to uncomment main.tf. Also pushing a application.properties file this time, but it does not contain sensitive data" />
     <MESSAGE value="Updating README_BESVARELSER.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating README_BESVARELSER.md" />
+    <MESSAGE value="Try again with :latest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Try again with :latest" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

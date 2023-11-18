@@ -54,7 +54,11 @@
 ### B. Docker container
 - [x] Lag en Dockerfile som bygger et container image som kör python koden.
 
+
+
 ---
+
+
 
 # Oppgave 2 - Overgang til Java og Spring boot
 
@@ -74,7 +78,11 @@
 
     I created a new ECR repository in AWS named: ecr-kandidatnr-2038
 
+
+
 ---
+
+
 
 # Oppgave 3 - Terraform, AWS Apprunner og Infrastruktur som kode
 
@@ -133,7 +141,10 @@
     A solution seems to be to use rev instead since it will always be the latest one pushed.
 
 
+
 ---
+
+
 
 # Oppgave 4 - Feedback
 
@@ -153,7 +164,6 @@
 
     New endpoint: scanFullPPE:
       Scans head, face and both hands for PPE.
-
 
     Widget choice:
       Widget 1 - Face PPE Detection analysis:
@@ -189,6 +199,14 @@
       Widget 4 - Average latency for Full PPE scan
         Same as described in Widget 3.
         Additionally, it also shows that a full PPE scan does take longer than just checking face.
+
+
+    I used applicaton.properties for an envionment variable to set the cloudwatch.namespace in MetricsConfig.java.
+    Since it didnt otherwise contain secret/sensitive data, its pushed to GitHub.
+    ***
+    IMPORTANT! The cloudwatch namespace must be same here and in the Terraform code to be able to connect and send data correctly.
+    ***
+
 
 ### B. Cloudwatch Alarm og Terraform moduler
 - [x] Lag en CloudWatch-alarm som sender et varsel på Epost dersom den utløses.
