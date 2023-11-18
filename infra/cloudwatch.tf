@@ -59,7 +59,27 @@ resource "aws_cloudwatch_dashboard" "main" {
         "period": 300,
         "stat": "Average",
         "region": "eu-west-1",
-        "title": "Average latency for single PPE piece scan"
+        "title": "Average latency for Single PPE-piece scan"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 6,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [
+            "${var.cloudwatch_namespace}", "scanFullPPE-latency.avg",
+            "exception", "none",
+            "method", "scanForPPE",
+            "class", "com.example.s3rekognition.controller.RekognitionController"]
+        ],
+        "period": 300,
+        "stat": "Average",
+        "region": "eu-west-1",
+        "title": "Average latency for Full PPE scan"
       }
     }
   ]

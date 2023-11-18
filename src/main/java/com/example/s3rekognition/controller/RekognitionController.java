@@ -114,6 +114,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
     }
 
     @GetMapping(value = "/scan-full-ppe", consumes = "*/*", produces = "application/json")
+    @Timed(value = "scanFullPPE-latency", description = "full ppe scan latency")
     @ResponseBody
     public ResponseEntity<PPEResponse> scanFullPPE(@RequestParam String bucketName) {
         int violationCounter = 0;
