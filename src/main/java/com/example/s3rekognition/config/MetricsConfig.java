@@ -4,6 +4,8 @@ import io.micrometer.cloudwatch2.CloudWatchConfig;
 import io.micrometer.cloudwatch2.CloudWatchMeterRegistry;
 import io.micrometer.core.instrument.Clock;
 import io.micrometer.core.instrument.MeterRegistry;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import software.amazon.awssdk.regions.Region;
@@ -14,6 +16,9 @@ import java.util.Map;
 
 @Configuration
 public class MetricsConfig {
+
+    @Value("${cloudwatch.namespace}")
+    private String cloudwatchNamespace;
 
     @Bean
     public CloudWatchAsyncClient cloudWatchAsyncClient() {
@@ -33,10 +38,11 @@ public class MetricsConfig {
                 cloudWatchAsyncClient());
     }
 
+    // Gets the name for the cloudwatch namespace from application.properties.
     private CloudWatchConfig setupCloudWatchConfig() {
         return new CloudWatchConfig() {
             private Map<String, String> configuration = Map.of(
-                    "cloudwatch.namespace", "cloudwatch-2038",
+                    "cloudwatch.namespace", "cloudwatchNamespace",
                     "cloudwatch.step", Duration.ofSeconds(5).toString());
             @Override
             public String get(String key) {

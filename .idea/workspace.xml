@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Add reset condition for exceededViolationCounter for the gauge widget">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Fixed email">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/cloudwatch.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/cloudwatch.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/config/MetricsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/config/MetricsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,15 +92,7 @@
       <workItem from="1700064075937" duration="4140000" />
       <workItem from="1700132020715" duration="46995000" />
       <workItem from="1700237991102" duration="19879000" />
-      <workItem from="1700302034498" duration="11419000" />
-    </task>
-    <task id="LOCAL-00079" summary="Just ideas to add for now...">
-      <option name="closed" value="true" />
-      <created>1700138775287</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1700138775287</updated>
+      <workItem from="1700302034498" duration="12708000" />
     </task>
     <task id="LOCAL-00080" summary="Misspelling on terraform apply if condition">
       <option name="closed" value="true" />
@@ -486,7 +478,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700314696488</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="Fixed email">
+      <option name="closed" value="true" />
+      <created>1700315353950</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1700315353950</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,7 +504,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated pom.xml" />
     <MESSAGE value="Updated pom.xml. Trying image tag instead of latest for ecr -&gt; app runner" />
     <MESSAGE value="So last github actions failed, but app runner did re-deploy and no errors now, wtf?&#10;Updating some stuff in .tf and will try again to re-deploy with ref instead of latest on ecr -&gt; apprunner." />
     <MESSAGE value="Changing order in workflows" />
@@ -529,7 +528,8 @@
     <MESSAGE value="Fixed error in cloudwatch for scanFullPPE widget" />
     <MESSAGE value="Adding alarm module in terraform" />
     <MESSAGE value="Add reset condition for exceededViolationCounter for the gauge widget" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add reset condition for exceededViolationCounter for the gauge widget" />
+    <MESSAGE value="Fixed email" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed email" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
