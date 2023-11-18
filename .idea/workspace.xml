@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Updating workflows">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/main.tf" afterDir="false" />
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Forgot to uncomment main.tf. Also pushing a application.properties file this time, but it does not contain sensitive data">
+      <change afterPath="$PROJECT_DIR$/images/Oppgave 1 - Create Access keys 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Oppgave 1 - Create Access keys 2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Oppgave 1 - Create Access keys 3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Oppgave 1 - Create Access keys 4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +65,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tobia\Desktop\HK 2021\Semester 5\PGR301-1 23H DevOps\DevOps_Exam_2023\images" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="S3RekognitionApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="s3rekognition" />
@@ -91,15 +100,7 @@
       <workItem from="1700064075937" duration="4140000" />
       <workItem from="1700132020715" duration="46995000" />
       <workItem from="1700237991102" duration="19879000" />
-      <workItem from="1700302034498" duration="19542000" />
-    </task>
-    <task id="LOCAL-00087" summary="Changed from Gauge to DistributionSummary. Added souts to check value">
-      <option name="closed" value="true" />
-      <created>1700155043837</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1700155043837</updated>
+      <workItem from="1700302034498" duration="26206000" />
     </task>
     <task id="LOCAL-00088" summary="Testing counter again...">
       <option name="closed" value="true" />
@@ -485,7 +486,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700323393907</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="Forgot to uncomment main.tf. Also pushing a application.properties file this time, but it does not contain sensitive data">
+      <option name="closed" value="true" />
+      <created>1700323645865</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1700323645865</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,7 +512,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="SEEMS TO WORK NOW, OMG. changed to correct bucket for storing state, so i can run ppe on my own s3 bucket with images." />
     <MESSAGE value="Adding new endpoint to check face, hand, head for equipment" />
     <MESSAGE value="Create condition to count number of times violations &gt;= valids and send to widget. Should later send alarm too" />
     <MESSAGE value="Updated cloudwatch.tf to show violation alarms as gauge" />
@@ -528,7 +536,8 @@
     <MESSAGE value="Now seems to work as it should!" />
     <MESSAGE value="Updated README_BESVARELSER.md" />
     <MESSAGE value="Updating workflows" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating workflows" />
+    <MESSAGE value="Forgot to uncomment main.tf. Also pushing a application.properties file this time, but it does not contain sensitive data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Forgot to uncomment main.tf. Also pushing a application.properties file this time, but it does not contain sensitive data" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

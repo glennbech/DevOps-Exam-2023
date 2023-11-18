@@ -1,85 +1,123 @@
-## Oppgave 1
-    A.
-    Fixed variables, deployed app to aws with sam deploy --guided.
-        * Updated template.yaml to:
-            - Use value from Parameter "MyBucketName" to BUCKET_NAME. Default is set to "kandidatnr-2038".
-            - Added 
-                Environment:
-                  Variables:
-                    MyBucketName: !Ref MyBucketName
-              so AWS lambda can access it.
+# Oppgave 1 - Kjells Pythoncode
 
-        The Lambda app could not access the S3 bucket because of permissions. Had to add the following:
+---
+
+### A. SAM & GitHub actions workflow
+- [x] Lage S3-bucket med kandidat-nummer.
+- [x] Fjern hardkoding av S3 bucket navnet og leser verdien "BUCKET_NAME" fra en miljövariabel.
+- [x] Testa API:et
+- [x] Opprette en GitHub Actions-workflow for SAM applikationen.
+  - [x] Push till main branch: bygge og deploye Lambda-funksjonen.
+  - [x] Push till andra branches: kun bygges.
+- [x] Forklaring hva sensor må gjöre för att GitHub Actions workflow ska köra.
+
+
+    BUCKET_NAME now uses envionment variable. This is set to "kandidatnr-2038" as default in template.yaml
+    GitHub Actions workflow file builds and/or deploys the sam app depending on push to main or other branches.
+    Updated template.yaml to:
+      - Use value from Parameter "MyBucketName" to BUCKET_NAME. Default is set to "kandidatnr-2038".
+      - Added
+          Parameters - To be able to set the BucketName.
+          Environment:
+            Variables:
+              MyBucketName: !Ref MyBucketName
+                so AWS lambda can access it.
+
+          The Lambda app could not access the S3 bucket because of permissions. Had to add the following under Policies:
             - AmazonS3ReadOnlyAccess
 
+    How to get GitHub Actions workflow to run
+      * Create Access keys in AWS:
+        1. Search for IAM.
+        2. Go to "My security credentials" on the right panel.
+![Oppgave 1 - Create Access keys 1.png](images%2FOppgave%201%20-%20Create%20Access%20keys%201.png)
+
+        3. Click "Create access key".
+![Oppgave 1 - Create Access keys 2.png](images%2FOppgave%201%20-%20Create%20Access%20keys%202.png)
+
+        4. Check "Command Line Interface (CLI) and continue.
+           Now you have created AWS access keys. It should then look like the image below:
+![Oppgave 1 - Create Access keys 3.jpg](images%2FOppgave%201%20-%20Create%20Access%20keys%203.jpg)
+
+        5. Now open a new tab and go to your GitHub repo.
+        6. Go to "Settings -> Secrets and variables -> Actions, like the image below:
+![Oppgave 1 - Create Access keys 4.png](images%2FOppgave%201%20-%20Create%20Access%20keys%204.png)
+
+        7. Click New repository secret
+          Name should be as in the image. Copy the respective keys from AWS that you created and add them here.
+            Name = AWS_ACCESS_KEY_ID
+            Secret = enter the access key id from AWS IAM
+          Do the same with:
+            Name = AWS_SECRET_ACCESS_KEY
+            Secret = enter the secret access key from AWS IAM
         
-    Create Github Actions workflow for sam.
-        * Added workflows for Github Actions.
-            - Added envs to repo with aws secrets.
-            - Push to main: should build and deploy             - OK
-            - Push to other branches: should only build         - OK
+      * Now github actions should run.
+
+### B. Docker container
+- [x] Lag en Dockerfile som bygger et container image som kör python koden.
+
+---
+
+# Oppgave 2 - Overgang til Java og Spring boot
+
+---
+
+### A. Dockerfile
+- [x] Lag en Dockerfile for Java-applikasjonen.
+  - [x] Multi stage Dockerfile som kompilerer og kjörer applikationen.
+
+### B. GitHub Actions workflow for container image og ECR
+- [x] Lag ny GitHub Actions workflow fil.
+  - [x] Lager og publiserer er nytt Container image till et ECR repository vid push till main branch.
+  - [x] Kompilere og bygge et nytt container image, men ikke publisere till ECR dersom ikke main branch.
+- [x] Selv lage et ECR repository i AWS miljöet.
+- [x] Container image skal ha en tag som er.
+  - [x] Lik commit-hash som i Git.
+  - [x] Sista versjon skal i tillegg ha taggen "latest".
+  
+
+    I created a new ECR repository in AWS named: ecr-kandidatnr-2038
+
+---
+
+# Oppgave 3 - Terraform, AWS Apprunner og Infrastruktur som kode
+
+---
+
+### A. Kodeendringer og forbedringer
+- [x] Fjern hardkodingen av service_name, slik at du kan bruke ditt kandidatnummer eller noe annet som service navn.
+- [x] Se etter andre hard-kodede verdier og se om du kan forbedre kodekvaliteten.
+- [x] Reduser CPU til 256, og Memory til 1024 (defaultverdiene er høyere)
 
 
-    How to get Github Actions workflow to run
-        * Create Secrets in AWS IAM.
-            1. In AWS search for AIM
-            2. Go to My security credentials -> Create Access key.
-            3. Check "Command Line Interface (CLI) and continue
-                Now open new tab and go to your github repo.
-                Go to Settings -> Secrets and variables -> Actions
-                    Click "New Repository secret"
-                        Name = AWS_ACCESS_KEY_I
-                        Secret = enter the access key id from AWS IAM
-                    Do the same with:
-                        Name = AWS_SECRET_ACCESS_KEY
-                        Secret = enter the secret access key from AWS IAM
-        
-        * Now github actions should run.
-                    
-    B.
-    Dockerfile created for app.py.
-    Handles AWS credentials.
-    Runs the sam app accordingly with the script example provided in Oppgave B.
+    Added some variables that uses variables.tf
+      - service_name
+      - aws_iam_role_name
+      - aws_iam_policy_name
+      - port
+      - image_tag
 
-    
-## Oppgave 2
-    A.
-    Created a multi stage Dockerfile for java-app.
-    Builds and then runs when running the example script.
+    Many of the values here uses a default value, to make it more practical for this exam.
+    Otherwise, it would most likely be more practical without them if someone else used it.
+    But it can be overridden with -var="<the_variable>=<your_name>"
+    These variables are overridden in the GitHub Actions workflow file.
+    Port might usually not be changed. But if it is used already, it can be practical to be able to change here.
 
-    B.
-    Github actions for java app med container image och ecr
-        ECR created in AWS Interface
-        Build image and publish to ECR repo only when pushing to main       - OK
-        Build image only when pushing to other than main                    - OK
-        Uses ref and latest
+    Changed ecr from kjell to my ECR.
 
-    Running the docker script does not work in intellij (mvn spring-boot:run gives weird errors)
-    But this does not happen in Cloud9, and works fine.
+### B. Terraform i GitHub Actions
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
 
 
-## Oppgave 3
-    A.
-    Changed some rows in main.tf
-        * Added variables for:
-            aws_apprunner_service
-            aws_iam_role
-            aws_iam_policy
-            port
 
-        * Changed ecr from kjell to my ECR.
 
-        * variables.tf
-            Here i set a default value for all of them, but can be overridden.
 
-        * Added lines in instance_configuration for modifying
-            cpu 
-            memory usage
-    
-    Running terraform init and then terraform apply works fine in intellij.
-    But in Cloud9 i get errors and no not know why...
 
-    B.
     The state will be saved in the S3 bucket after running terraform init and apply locally.
     If no changes are, it will just pass.
 
