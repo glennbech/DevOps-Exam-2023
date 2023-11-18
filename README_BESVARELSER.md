@@ -127,6 +127,12 @@
       Also check so the ECR is correct under the step: "Login to AWS ECR"
 
       Then it should work fine.
+
+### NOTES:
+    Seems to be a known issue that apprunner does not always manage to find the correct ECR image with the :latest tag.
+    A solution seems to be to use rev instead since it will always be the latest one pushed.
+
+
 ---
 
 # Oppgave 4 - Feedback
@@ -208,23 +214,16 @@
     The condition for it to trigger is described in Part A. under Widget 2.
     If you want to change the condition for the trigger:
       infra/alarm_module/variables.tf:
-        Change the default value = 5 under "threshold" to change at what value the alarm should trigger at.
+        Change the default value under "threshold". Default is 5.
 
       infra/alarm_module/main.tf:
-        evaluation_periods and period, can be modified so it wont be as sensitive.
+        evaluation_periods and period, can be modified so it wont be as sensitive as the default values currently.
 
       infra/cloudwatch.tf:
-        Change the "max" value here to modify the maximum value of the gauge widget.
+        For the gauge: Change the "max" value here accordingly. Default is 5.
 
-      RekognitionController.java: 
-        Change violationLimit. Default is set to 5.
+      src/main/java/com.example.s3rekognition/controller/RekognitionController.java:
+        Change violationLimit accordingly. Default is set to 5.
         Change violationPercentage. Default is set to 0.3 (30%).
 
 ---
-
-
-
-
-# NOTES:
-    Seems to be a known issue that apprunner does not always manage to find the correct ECR image with the :latest tag.
-    A solution seems to be to use rev instead since it will always be the latest one pushed.
