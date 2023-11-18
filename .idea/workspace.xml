@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Now seems to work as it should!">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Updated README_BESVARELSER.md">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/oppgave-2-workflow.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/oppgave-2-3-workflow.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/variables.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,15 +92,7 @@
       <workItem from="1700064075937" duration="4140000" />
       <workItem from="1700132020715" duration="46995000" />
       <workItem from="1700237991102" duration="19879000" />
-      <workItem from="1700302034498" duration="18974000" />
-    </task>
-    <task id="LOCAL-00085" summary="Changed from Gauge to DistributionSummary. Added souts to check value">
-      <option name="closed" value="true" />
-      <created>1700152837437</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1700152837437</updated>
+      <workItem from="1700302034498" duration="19308000" />
     </task>
     <task id="LOCAL-00086" summary="Changed from Gauge to DistributionSummary. Added souts to check value">
       <option name="closed" value="true" />
@@ -486,7 +478,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700321800555</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="Updated README_BESVARELSER.md">
+      <option name="closed" value="true" />
+      <created>1700323060088</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1700323060088</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,7 +504,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="I dont get it. apprunner shows errors on cloudwatch sometimes and sometimes not with SAAAMMEEEEEE re-deployment. trying again without ref and use latest again" />
     <MESSAGE value="I dont get it. apprunner shows errors on cloudwatch sometimes and sometimes not with SAAAMMEEEEEE re-deployment. trying again try with ref again" />
     <MESSAGE value="SEEMS TO WORK NOW, OMG. changed to correct bucket for storing state, so i can run ppe on my own s3 bucket with images." />
     <MESSAGE value="Adding new endpoint to check face, hand, head for equipment" />
@@ -529,7 +528,8 @@
     <MESSAGE value="Fixed/changed logic on gauge widget.&#10;If violations &gt; 30% of people scanned, add to gauge. if gauge &gt;= 5 trigger alarm" />
     <MESSAGE value="Added logging for people scanned and violations" />
     <MESSAGE value="Now seems to work as it should!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Now seems to work as it should!" />
+    <MESSAGE value="Updated README_BESVARELSER.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated README_BESVARELSER.md" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
