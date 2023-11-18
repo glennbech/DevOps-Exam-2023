@@ -65,7 +65,7 @@ resource "aws_cloudwatch_dashboard" "main" {
     {
       "type": "metric",
       "x": 0,
-      "y": 6,
+      "y": 12,
       "width": 12,
       "height": 6,
       "properties": {
@@ -73,7 +73,7 @@ resource "aws_cloudwatch_dashboard" "main" {
           [
             "${var.cloudwatch_namespace}", "scanFullPPE-latency.avg",
             "exception", "none",
-            "method", "scanForPPE",
+            "method", "scanFullPPE",
             "class", "com.example.s3rekognition.controller.RekognitionController"]
         ],
         "period": 300,
