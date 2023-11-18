@@ -174,6 +174,8 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
             exceededViolationCounter = 0;
             meterRegistry.gauge("exceeded_violation_alarm", exceededViolationCounter);
         }
+
+        logger.info("Number of people scanned: " + totalPersonCount + ". Number of violations: " + ppeResponse.getNumberOfViolations());
         return ResponseEntity.ok(ppeResponse);
     }
 
