@@ -28,7 +28,6 @@ resource "aws_iam_role" "role_for_apprunner_service" {
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 
-
 data "aws_iam_policy_document" "assume_role" {
   statement {
     effect = "Allow"
@@ -67,7 +66,6 @@ resource "aws_iam_policy" "policy" {
   description = "Policy for App Runner"
   policy      = data.aws_iam_policy_document.policy.json
 }
-
 
 resource "aws_iam_role_policy_attachment" "attachment" {
   role       = aws_iam_role.role_for_apprunner_service.name

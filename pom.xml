@@ -20,7 +20,6 @@
 
     <properties>
         <java.version>11</java.version>
-<!--        <aws.sdk.version>2.17.292</aws.sdk.version>-->
     </properties>
 
     <dependencies>
@@ -67,6 +66,8 @@
             <optional>true</optional>
             <version>1.18.20</version>
         </dependency>
+
+        <!-- Maybe try this? -->
 
 
         <!-- Spring Boot Starter Test -->
