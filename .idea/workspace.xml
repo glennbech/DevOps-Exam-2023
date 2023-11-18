@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Test without latency">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Test without latency. typo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/cloudwatch.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/cloudwatch.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/config/MetricsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/config/MetricsConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,15 +97,7 @@
       <workItem from="1700132020715" duration="46995000" />
       <workItem from="1700237991102" duration="19879000" />
       <workItem from="1700302034498" duration="34403000" />
-      <workItem from="1700340226731" duration="1597000" />
-    </task>
-    <task id="LOCAL-00094" summary="removed all micrometer, cloudwatch stuff for now">
-      <option name="closed" value="true" />
-      <created>1700162963156</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1700162963156</updated>
+      <workItem from="1700340226731" duration="2310000" />
     </task>
     <task id="LOCAL-00095" summary="removed all micrometer, cloudwatch stuff for now">
       <option name="closed" value="true" />
@@ -491,7 +483,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700341423593</updated>
     </task>
-    <option name="localTasksCounter" value="143" />
+    <task id="LOCAL-00143" summary="Test without latency. typo">
+      <option name="closed" value="true" />
+      <created>1700341851551</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1700341851551</updated>
+    </task>
+    <option name="localTasksCounter" value="144" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,7 +509,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="forgot to update endpoint" />
     <MESSAGE value="fix on metric for violation limit" />
     <MESSAGE value="dont know why apprunner fails now... comment out changes" />
     <MESSAGE value="forgot to remove the gauge that wasnt working" />
@@ -534,7 +533,8 @@
     <MESSAGE value="Updating README_BESVARELSER.md" />
     <MESSAGE value="Try again with :latest" />
     <MESSAGE value="Test without latency" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test without latency" />
+    <MESSAGE value="Test without latency. typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test without latency. typo" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
