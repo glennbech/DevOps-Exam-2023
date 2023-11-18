@@ -7,7 +7,7 @@ resource "aws_cloudwatch_dashboard" "main" {
       "type": "metric",
       "x": 0,
       "y": 0,
-      "width": 12,
+      "width": 16,
       "height": 6,
       "properties": {
         "metrics": [
@@ -17,7 +17,7 @@ resource "aws_cloudwatch_dashboard" "main" {
         "period": 300,
         "stat": "Maximum",
         "region": "eu-west-1",
-        "title": "PPE Detection analysis"
+        "title": "Face PPE Detection analysis"
       }
     },
     {
@@ -33,7 +33,7 @@ resource "aws_cloudwatch_dashboard" "main" {
         "view": "gauge",
         "stat": "Maximum",
         "region": "eu-west-1",
-        "title": "Violation alarm counter",
+        "title": "Full PPE Violation counter",
         "yAxis": {
            "left": {
               "min": 0,
@@ -41,7 +41,27 @@ resource "aws_cloudwatch_dashboard" "main" {
            }
          }
        }
-     }
+    },
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 6,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [
+            "${var.cloudwatch_namespace}", "scanforPPE-latency.avg",
+            "exception", "none",
+            "method", "scanForPPE",
+            "class", "com.example.s3rekognition.controller.RekognitionController"]
+        ],
+        "period": 300,
+        "stat": "Average",
+        "region": "eu-west-1",
+        "title": "Average latency for single PPE piece scan"
+      }
+    }
   ]
 }
 DASHBOARD

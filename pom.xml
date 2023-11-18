@@ -30,6 +30,19 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!-- AspectJ TimedAspect -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <!-- AWS Java SDK -->
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk</artifactId>
+            <version>1.12.12</version>
+        </dependency>
+
         <!-- Micrometer -->
         <dependency>
             <groupId>io.micrometer</groupId>
@@ -46,26 +59,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-
-        <!-- AWS SDK for java -->
-<!--        <dependency>-->
-<!--            <groupId>software.amazon.awssdk</groupId>-->
-<!--            <artifactId>utils</artifactId>-->
-<!--            <version>${aws.sdk.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>software.amazon.awssdk</groupId>-->
-<!--            <artifactId>aws-sdk-java</artifactId>-->
-<!--            <version></version>-->
-<!--            <scope>provided</scope>-->
-<!--        </dependency>-->
-
-        <!-- AWS Java SDK -->
-        <dependency>
-            <groupId>com.amazonaws</groupId>
-            <artifactId>aws-java-sdk</artifactId>
-            <version>1.12.12</version>
         </dependency>
 
         <dependency>

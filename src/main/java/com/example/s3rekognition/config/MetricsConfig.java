@@ -1,4 +1,4 @@
-package com.example.s3rekognition;
+package com.example.s3rekognition.config;
 
 import io.micrometer.cloudwatch2.CloudWatchConfig;
 import io.micrometer.cloudwatch2.CloudWatchMeterRegistry;

@@ -119,11 +119,26 @@
             Räkna antal violations och valid från bilder
 
 
-    * Modifications
-        Added metrics for number of violations and valid scans of PPE protection in scanForPPE endpoint
-        These two metrics shows in one widget on Cloudwatch.
-    
-    
+    * Additions
+        scanForPPE:
+            Added metrics for number of violations and valid scans of PPE protection in scanForPPE endpoint
+            These two metrics shows in one widget on Cloudwatch.
+            It could be interesting to see how many that actually correctly wear PPE. This way each scanned image
+            can show the number of people violating it and number of people who passes.
+        
+        scanFullPPE:
+            New endpoint to scan all three parts: head, face and hands for PPE.
+            New Gauge widget added here which reports number of violations.
+            If the violation reaches 10, alarm should trigger and send an email notifiation.
+                The idea is that this could be used for very strict environments where PPE is very important and
+                compliance must be good. So for example if it happens 10 times a day, thats very bad.
+                Now this value can easily be changed in cloudwatch.tf under min/max,
+                it wouldnt make sense to have 10 times a day for a place with 5 employees.
+            
+        Latency:
+            Two new metrics for both endpoints above to measure the time it takes for each to complete.
+                With @Timed, we can measure the time it takes for the endpoint to complete.
+                If it takes too long, there could be an error. But this also depends on the amount of images scanned.
 
             
         

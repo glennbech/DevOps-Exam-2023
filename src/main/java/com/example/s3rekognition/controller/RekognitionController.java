@@ -9,6 +9,7 @@ import com.amazonaws.services.s3.model.ListObjectsV2Result;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.example.s3rekognition.PPEClassificationResponse;
 import com.example.s3rekognition.PPEResponse;
+import io.micrometer.core.annotation.Timed;
 import io.micrometer.core.instrument.Gauge;
 import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +27,12 @@ import java.util.logging.Logger;
 
 @RestController
 public class RekognitionController implements ApplicationListener<ApplicationReadyEvent> {
-
     private final Map<String, Integer> scanResult = new HashMap<>();
     private int exceededViolationCounter = 0;
     private final AmazonS3 s3Client;
     private final AmazonRekognition rekognitionClient;
     private final MeterRegistry meterRegistry;
+
     private static final Logger logger = Logger.getLogger(RekognitionController.class.getName());
 
     @Autowired
@@ -51,6 +52,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
      */
     @GetMapping(value = "/scan-ppe", consumes = "*/*", produces = "application/json")
     @ResponseBody
+    @Timed(value = "scanforPPE-latency", description = "single piece scan latency")
     public ResponseEntity<PPEResponse> scanForPPE(@RequestParam String bucketName) {
         // Used for metrics
         int violationCounter = 0;
@@ -162,10 +164,8 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
             exceededViolationCounter++;
             meterRegistry.counter("violation_alarm").increment();
         }
-
         return ResponseEntity.ok(ppeResponse);
     }
-
 
     /**
      * Detects if the image has a protective gear violation for the FACE bodypart-
@@ -205,10 +205,6 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
                 .register(meterRegistry);
 
         Gauge.builder("exceeded_violation_alarm", this, obj -> obj.exceededViolationCounter).register(meterRegistry);
-
-//        Gauge.builder("exceeded_violation_alarm", meterRegistry.get("violation_alarm").counter()::count)
-//                .register(meterRegistry);
-
     }
 
 }
