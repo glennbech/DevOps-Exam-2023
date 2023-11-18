@@ -21,7 +21,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
 
 
@@ -29,7 +28,7 @@ import java.util.logging.Logger;
 public class RekognitionController implements ApplicationListener<ApplicationReadyEvent> {
 
     private final Map<String, Integer> scanResult = new HashMap<>();
-    private final AtomicInteger exceededViolationCounter = new AtomicInteger(0);
+    private int exceededViolationCounter = 0;
     private final AmazonS3 s3Client;
     private final AmazonRekognition rekognitionClient;
     private final MeterRegistry meterRegistry;
@@ -105,13 +104,12 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         scanResult.put("Valid", ppeResponse.getNumberOfValid());
 
 
-        // To Cloudwatch - These two should be in 1 widget.
+//        To Cloudwatch - want to put these 4 in a single graph.
         meterRegistry.counter("violations").increment();
         meterRegistry.counter("valid").increment();
 
         return ResponseEntity.ok(ppeResponse);
     }
-
 
     @GetMapping(value = "/scan-full-ppe", consumes = "*/*", produces = "application/json")
     @ResponseBody
@@ -161,10 +159,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         // use alarm when violation >= valids
         // count how many times alarm been triggered
         if (ppeResponse.getNumberOfViolations() >= ppeResponse.getNumberOfValid()) {
-            logger.info("Before: " + exceededViolationCounter);
-            exceededViolationCounter.incrementAndGet();
-            logger.info("After: " + exceededViolationCounter);
-
+            exceededViolationCounter++;
             meterRegistry.counter("violation_alarm").increment();
         }
 
@@ -209,8 +204,10 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
                         valid -> valid.getOrDefault("Valid", 0))
                 .register(meterRegistry);
 
-        Gauge.builder("exceeded_violation_alarm", exceededViolationCounter, AtomicInteger::get)
-                .register(meterRegistry);
+        Gauge.builder("exceeded_violation_alarm", this, obj -> obj.exceededViolationCounter).register(meterRegistry);
+
+//        Gauge.builder("exceeded_violation_alarm", meterRegistry.get("violation_alarm").counter()::count)
+//                .register(meterRegistry);
 
     }
 

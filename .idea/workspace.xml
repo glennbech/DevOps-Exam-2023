@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="try again without  changes">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Shit. forgot to add .value on &quot;exceeded_violation_alarm&quot; ......">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infra/cloudwatch.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/cloudwatch.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/variables.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/PPEResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/PPEResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,15 +90,8 @@
       <workItem from="1700064027859" duration="34000" />
       <workItem from="1700064075937" duration="4140000" />
       <workItem from="1700132020715" duration="46995000" />
-      <workItem from="1700237991102" duration="19046000" />
-    </task>
-    <task id="LOCAL-00071" summary="Test again">
-      <option name="closed" value="true" />
-      <created>1700082597682</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1700082597682</updated>
+      <workItem from="1700237991102" duration="19879000" />
+      <workItem from="1700302034498" duration="295000" />
     </task>
     <task id="LOCAL-00072" summary="added profile to provider. ran aws configure">
       <option name="closed" value="true" />
@@ -487,7 +477,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700256596657</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="Shit. forgot to add .value on &quot;exceeded_violation_alarm&quot; ......">
+      <option name="closed" value="true" />
+      <created>1700260546256</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1700260546256</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -505,7 +503,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="forgot to change name after copying 1st metric. removed , at the last one" />
     <MESSAGE value="Changed from Gauge to DistributionSummary. Added souts to check value" />
     <MESSAGE value="Testing counter again..." />
     <MESSAGE value="See if cloudwatch works now.." />
@@ -530,7 +527,8 @@
     <MESSAGE value="dont know why apprunner fails now... comment out changes" />
     <MESSAGE value="forgot to remove the gauge that wasnt working" />
     <MESSAGE value="try again without  changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="try again without  changes" />
+    <MESSAGE value="Shit. forgot to add .value on &quot;exceeded_violation_alarm&quot; ......" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shit. forgot to add .value on &quot;exceeded_violation_alarm&quot; ......" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -31,7 +31,7 @@ resource "aws_cloudwatch_dashboard" "main" {
           ["${var.cloudwatch_namespace}", "exceeded_violation_alarm.value"]
         ],
         "view": "gauge",
-        "stat": "maximum",
+        "stat": "Maximum",
         "region": "eu-west-1",
         "title": "Violation alarm counter",
         "yAxis": {
