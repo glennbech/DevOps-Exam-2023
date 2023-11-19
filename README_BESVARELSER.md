@@ -292,9 +292,110 @@ vennligst inkluder:
 
 
 ### B. Sammenligning av Scrum/Smidig og DevOps fra et Utviklers Perspektiv
+1. Scrum/Smidig Metodikk:
+- [x] Beskriv kort, hovedtrekkene i Scrum metodikk og dens tilnærming til programvareutvikling.
+- [x] Diskuter eventuelle utfordringer og styrker ved å bruke Scrum/Smidig i programvareutviklingsprosjekter.
 
+
+    Scrum is used for agile methodology which have been shown to work well for software develpoment.
+    It is an iterative process to progressively work towards the projects goal.
+    A product backlog which contain a list of tasks to be done. This can change from sprint to sprint by adding/removing
+    tasks.
+
+    In a scrum there are different roles:
+      - Product owner.
+      - Scrum master.
+      - Development team.
+
+    Scrum/Agile is a very efficient way of working.
+    Strengths:
+      - Time-efficient:
+          Tasks are divided into smaller tasks, which makes it easier to work with.
+          Identifying if things wont work out will save you time.
+      - Flexibility:
+          Allows of changes if a plan does not work. If a planned sprint does not work out as planned, 
+          adjustments can be made for the next sprint and so on.
+      - Communication:
+          It is normal to have a longer stand-up at the beginning of the sprint to discuss the plan for the sprint.
+          Then normal to have a shorter daily sprint to catch up on what the team has done.
+          A retrospective is held at the end of the sprint to discuss how things have gone, if it worked out, future improvements etc.
+          This leads to transparency. And it usually promotes everyone on the team have a say and contribute.
+
+    Challenges:
+      - Communcation:
+          Using Scrum/Agile reguires a good communcation between the team members. Scrum/Agile usually promotes input from
+          everyone on the team. But some might be more quiet than others which might have more to say but does not "find" the oppotunity.
+          Important to have everyone have their say.
+          Having a good team leader/scrum master would help with this.
+      - Commitment:
+          The team members are dependant on each other for it to work, which requires responsibility from everyone.
+
+
+2. DevOps Metodikk:
+- [x] Forklar grunnleggende prinsipper og praksiser i DevOps, spesielt med tanke på integrasjonen av utvikling og drift.
+- [x] Analyser hvordan DevOps kan påvirke kvaliteten og leveransetempoet i programvareutvikling.
+- [x] Reflekter over styrker og utfordringer knyttet til bruk av DevOps i utviklingsprosjekter.
+
+
+    DevOps encourages close working culture between developers and operations to make the development process as efficient as possible.
+    This means that both shares the responsiblity for everything.
+    By having this, it ensures a smoother and more efficient development process and supports continuous delivery of software.
+
+    The three main princples are:
+      Flow: 
+        CI as explained above is a big part of this.
+        Pipelining and automation is important to identify errors fast to keep improving the software.
+        Continuous delivery is another aspect that ensures that the software is always ready for deployment and release.
+
+      Feedback:
+        This principle puts emphasis on information from and to developers and operations.
+        Having a feedback loop allows for fast identification of issues which allows for fast debugging and fixes.
+        By using for example telemetry and surveillance, logging, metrics helps with this.
+        A/B-testing is also used for feedback, for example testing a new desgin on a webpage. It allows us to see whichever is better when tested on
+        public opinion.
+
+      Continuous improvement:
+        Encourages a culture to learn and improve.
+        Learning from mistakes for example or trying new things to solve a problem more efficient will all lead to a 
+        better software development process.
+
+    By utilizing the DevOps principles, it helps ensuring software with good quality and quick releases.
+    Flow helps with quick and small improvements for releases and Feedback helps with identifying errors fast.
+
+    Strengths:
+      - Efficiency:
+          CI/CD ensures a fast and efficient software delivery.
+          Automations such as tests ensures a good quality of the software.
+          Feedback provides fast responsitivity for errors.
+          
+    Challenges:
+      - Communcation:
+          Can be a big cultural change of working environment. Requires good teamwork and understanding of DevOps principles to work.
+          This can be quite complex to get a hold on at first.
+
+
+3. Sammenligning og Kontrast:
+- [x] Sammenlign Scrum/Smidig og DevOps i forhold til deres påvirkning på programvarekvalitet og leveransetempo.
+- [ ] Diskuter hvilke aspekter ved hver metodikk som kan være mer fordelaktige i bestemte utviklingssituasjoner.
+
+
+    Many parts of Scrum/Agile and DevOps are similar.
+    Both put emphasis on software quality by for example incorporating testing. Feedback is also used to identify errors or improvements.
+    Both also encourages small commits and merges to avoid issues. Both has transparnecy so everyone in the team can see
+    what is being worked on.
+    Changes and adjustments can be done throughout the process to deliver the best product possible.
+
+    Scrum/Agile emphasises more on the iterative process of product development.
+    Delivery time is considered differently since sprints are done in periods (ex. 3 weeks). After that, the product can be shown if ready.
+    Feedback here is usually through people like PO, user testing and from team members. In DevOps it is usually automated
+    to identify issues fast by using for example telemetry.
+    DevOps puts more emphasis on the automating part of development process of software delivery. 
+    Both methodologies aim to improve software quality and delivery time but covers this from different angles.
 
     
+
+
+
 
 
 
@@ -311,3 +412,34 @@ vennligst inkluder:
 
 
     f
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
