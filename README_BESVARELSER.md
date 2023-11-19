@@ -411,47 +411,21 @@ vennligst inkluder:
 
 ### C. Det Andre Prinsippet - Feedback
 
-    For the new functionality i would use telemetry and monitoring for collecting data on user interaction such as:
+    For a new functionality i would like to perform A/B testing to see how well users perceive it.
+    It would be interesting to use telemetry and monitoring for collecting data on user interaction such as:
       - Interaction frequency.
       - Time spent using it.
-      - If the user experiences any issues.
-        
-    Then more specific metrics could be used for performance such as latency, response time or up-time.
-    Alarms can be applied for these metrics to send a notification at certain thresholds to identify errors quickly.
-    A/B testing is also an alternative to try out for a new funtionality.
-    It could be interesting to see how attractive the new functinlity is compared to not having it.
-    Logging will be used as well for troubleshooting.
+      - User experience.
+      - User issues.
 
-    By collecting data from these methods it would collectively help finding areas of improvement.
-    
+    Then also use specific metrics for performance measuring such as response time, up-time and number of times users
+    found/clicked on the new functionality. I would also use alarms for metrics for safety purposes.
+    For example if response time is high and goes over a threshold, it could mean that there is an issue.
 
+    With the measurements it would be possible to find bugs, issues and areas that needs improvements.
+    Logging could then be used for troubleshooting.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    In the later stages after A/B testing, when functionality seems satisfactory, i would consider rolling it out for everyone to try out.
+    Telemetry and monitoring, metrics and logging would all still be relevant to track long-term use of the functionality.
+    When fully incorporated and working well, specific feedback might not be needed anymore, but shifts back to the
+    application as a whole (assuming the application has a sufficient and effective feedback system).
