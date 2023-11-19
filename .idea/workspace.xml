@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Revert. Testing newer 1.x version of aws java sdk">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Back to original version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,15 +98,7 @@
       <workItem from="1700237991102" duration="19879000" />
       <workItem from="1700302034498" duration="34403000" />
       <workItem from="1700340226731" duration="4342000" />
-      <workItem from="1700396261914" duration="5670000" />
-    </task>
-    <task id="LOCAL-00099" summary="Updated pom.xml">
-      <option name="closed" value="true" />
-      <created>1700171904645</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1700171904645</updated>
+      <workItem from="1700396261914" duration="7363000" />
     </task>
     <task id="LOCAL-00100" summary="Updated pom.xml">
       <option name="closed" value="true" />
@@ -492,7 +484,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700402265145</updated>
     </task>
-    <option name="localTasksCounter" value="148" />
+    <task id="LOCAL-00148" summary="Back to original version">
+      <option name="closed" value="true" />
+      <created>1700403065951</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1700403065951</updated>
+    </task>
+    <option name="localTasksCounter" value="149" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -510,7 +510,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Metrics now sending/showing correctly on cloudwatch" />
     <MESSAGE value="Added latency metric for scanForPPE" />
     <MESSAGE value="Added latency metric for scanFullPPE as well" />
     <MESSAGE value="Updating README_BESVARELSER.md a little" />
@@ -535,7 +534,8 @@
     <MESSAGE value="Trying to set max connections to see if it fixes apprunner error" />
     <MESSAGE value="See if retry works" />
     <MESSAGE value="Revert. Testing newer 1.x version of aws java sdk" />
-    <option name="LAST_COMMIT_MESSAGE" value="Revert. Testing newer 1.x version of aws java sdk" />
+    <MESSAGE value="Back to original version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Back to original version" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

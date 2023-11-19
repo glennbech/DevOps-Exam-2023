@@ -267,18 +267,34 @@
 ### A. Kontinuerlig Integrering
 Forklar hva kontinuerlig integrasjon (CI) er og diskuter dens betydning i utviklingsprosessen. I ditt svar,
 vennligst inkluder:
-- [ ] En definisjon av kontinuerlig integrasjon.
-- [ ] Fordelene med å bruke CI i et utviklingsprosjekt - hvordan CI kan forbedre kodekvaliteten og effektivisere utviklingsprosessen.
-- [ ] Hvordan jobber vi med CI i GitHub rent praktisk? For eskempel i et utviklingsteam på fire/fem utivklere?
+- [x] En definisjon av kontinuerlig integrasjon.
+- [x] Fordelene med å bruke CI i et utviklingsprosjekt - hvordan CI kan forbedre kodekvaliteten og effektivisere utviklingsprosessen.
+- [x] Hvordan jobber vi med CI i GitHub rent praktisk? For eskempel i et utviklingsteam på fire/fem utivklere?
 
 
+    Continuous integration, as the name suggests, is the practice of frequent integrations of new code (updates for example)
+    to the main branch.
+    This helps avoiding big changes which can cause harder times to debug eventual errors.
+    Many and smaller commits and merges of updates to the main branch introduces small changes at a time, which will be much easier to debug if error happens.
+    It is also easier to do changes upon.
+    For example if many developers work on the same project, if huge code changes are commited each time, it will most likely lead to conflicts.
+    Code might not work with each other, people have spent a lot of time on their code which in the end might need to be fully changed.
+    If each of them commits and merge small changes each time, less time will be spent on checking if it works.
+    This also makes it easier for the team to see who works with what.
 
+    Having that said, CI should be automated to have checks.
+    For example:
+      - that nobody can directly commit to main but only to branches.
+      - Should contain tests.
+      - Merges should be reviewed by others on the team.
+
+    By having these steps, it is fast and easy to get feedback on the code that you want to merge. For example if tests fail.
 
 
 ### B. Sammenligning av Scrum/Smidig og DevOps fra et Utviklers Perspektiv
 
 
-
+    
 
 
 
