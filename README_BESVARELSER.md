@@ -392,11 +392,19 @@ vennligst inkluder:
     DevOps puts more emphasis on the automating part of development process of software delivery. 
     Both methodologies aim to improve software quality and delivery time but covers this from different angles.
 
-    
-
-
-
-
+    In the beginning of a project, during the development process it would make more sense to do Scrum/Agile.
+    Especially if the end goal isnt very clearly defined yet or if frequent changes are expected.
+    In a more certain project that needs to be reliable and available like a bank application, DevOps would be preferred.
+  
+    For example if a project is about developing a creative suggestion AI for furnitures, in the start and early stages,
+    using Scrum/Agile would fit better because it allows for changes and flexibility.
+    The start phase would include a lot of testing different technologies and reseach. Planning would most likely change a lot.
+    Then it would require feedback in the form of user testing to see what people think of it, how easy it is to use etc.
+    Rinse and repeat till the product seems more satisfactory.
+    Then further down when the product gets more defined and is ready for deployment it would be a good idea to switch to DevOps.
+    CI/CD helps with efficient improvements and deployments.
+    Feedback provides objective data in the form of numbers. Automated feedback such as telemetry and monitoring can identify
+    areas to improve or identify issues.
 
 
 
