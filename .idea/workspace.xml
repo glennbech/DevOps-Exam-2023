@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Test without latency. Test to change 5 to 10s on how often app sends data to cloudwatch">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Trying to set max connections to see if it fixes apprunner error">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/cloudwatch.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/cloudwatch.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/S3RekognitionApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/S3RekognitionApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/config/MetricsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/config/MetricsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/config/TimedConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/config/TimedConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,15 +97,8 @@
       <workItem from="1700132020715" duration="46995000" />
       <workItem from="1700237991102" duration="19879000" />
       <workItem from="1700302034498" duration="34403000" />
-      <workItem from="1700340226731" duration="4039000" />
-    </task>
-    <task id="LOCAL-00096" summary="Try again with dependencies for micrometer and cloudwatch... but no code to send data. see if error occurs now?">
-      <option name="closed" value="true" />
-      <created>1700164817381</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1700164817381</updated>
+      <workItem from="1700340226731" duration="4342000" />
+      <workItem from="1700396261914" duration="3998000" />
     </task>
     <task id="LOCAL-00097" summary="Try again with dependencies for micrometer and cloudwatch... but no code to send data. see if error occurs now?">
       <option name="closed" value="true" />
@@ -497,7 +484,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700342712427</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="Changing back values to before">
+      <option name="closed" value="true" />
+      <created>1700344541734</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1700344541734</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -515,8 +510,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dont know why apprunner fails now... comment out changes" />
-    <MESSAGE value="forgot to remove the gauge that wasnt working" />
     <MESSAGE value="try again without  changes" />
     <MESSAGE value="Shit. forgot to add .value on &quot;exceeded_violation_alarm&quot; ......" />
     <MESSAGE value="Metrics now sending/showing correctly on cloudwatch" />
@@ -540,7 +533,9 @@
     <MESSAGE value="Test without latency" />
     <MESSAGE value="Test without latency. typo" />
     <MESSAGE value="Test without latency. Test to change 5 to 10s on how often app sends data to cloudwatch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test without latency. Test to change 5 to 10s on how often app sends data to cloudwatch" />
+    <MESSAGE value="Changing back values to before" />
+    <MESSAGE value="Trying to set max connections to see if it fixes apprunner error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Trying to set max connections to see if it fixes apprunner error" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

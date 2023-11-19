@@ -1,5 +1,8 @@
 package com.example.s3rekognition.config;
 
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
+import com.amazonaws.services.s3.AmazonS3Client;
 import io.micrometer.cloudwatch2.CloudWatchConfig;
 import io.micrometer.cloudwatch2.CloudWatchMeterRegistry;
 import io.micrometer.core.instrument.Clock;
@@ -19,6 +22,7 @@ public class MetricsConfig {
 
     @Value("${cloudwatch.namespace}")
     private String cloudwatchNamespace;
+
 
     @Bean
     public CloudWatchAsyncClient cloudWatchAsyncClient() {
@@ -51,4 +55,14 @@ public class MetricsConfig {
             }
         };
     }
+
+    // New Bean to set up S3 Client with timeout/retry check
+    @Bean
+    public AmazonS3Client amazonS3Client() {
+        ClientConfiguration clientConfig = new ClientConfiguration();
+        clientConfig.setMaxErrorRetry(5); // Adjust the value based on your specific requirements
+
+        return new AmazonS3Client(new DefaultAWSCredentialsProviderChain(), clientConfig);
+    }
+
 }
