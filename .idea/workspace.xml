@@ -7,6 +7,8 @@
     <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Oppgave 5. updating README_BESVARELSER.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/cloudwatch.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/cloudwatch.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,15 +100,7 @@
       <workItem from="1700237991102" duration="19879000" />
       <workItem from="1700302034498" duration="34403000" />
       <workItem from="1700340226731" duration="4342000" />
-      <workItem from="1700396261914" duration="18141000" />
-    </task>
-    <task id="LOCAL-00102" summary="So last github actions failed, but app runner did re-deploy and no errors now, wtf?&#10;Updating some stuff in .tf and will try again to re-deploy with ref instead of latest on ecr -&gt; apprunner.">
-      <option name="closed" value="true" />
-      <created>1700175127061</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1700175127061</updated>
+      <workItem from="1700396261914" duration="19616000" />
     </task>
     <task id="LOCAL-00103" summary="So last github actions failed, but app runner did re-deploy and no errors now, wtf?&#10;Updating some stuff in .tf and will try again to re-deploy with ref instead of latest on ecr -&gt; apprunner.">
       <option name="closed" value="true" />
@@ -492,7 +486,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700413272733</updated>
     </task>
-    <option name="localTasksCounter" value="151" />
+    <task id="LOCAL-00151" summary="Oppgave 5. updating README_BESVARELSER.md">
+      <option name="closed" value="true" />
+      <created>1700416200103</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1700416200103</updated>
+    </task>
+    <option name="localTasksCounter" value="152" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

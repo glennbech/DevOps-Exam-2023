@@ -51,7 +51,7 @@ resource "aws_cloudwatch_dashboard" "main" {
       "properties": {
         "metrics": [
           [
-            "${var.prefix}", "scanforPPE-latency.avg",
+            "${var.prefix}", "scanforPPE-response-time.avg",
             "exception", "none",
             "method", "scanForPPE",
             "class", "com.example.s3rekognition.controller.RekognitionController"]
@@ -59,7 +59,7 @@ resource "aws_cloudwatch_dashboard" "main" {
         "period": 300,
         "stat": "Average",
         "region": "eu-west-1",
-        "title": "Average latency for Single PPE-piece scan"
+        "title": "Average Response Time for Single PPE-piece scan"
       }
     },
     {
@@ -71,7 +71,7 @@ resource "aws_cloudwatch_dashboard" "main" {
       "properties": {
         "metrics": [
           [
-            "${var.prefix}", "scanFullPPE-latency.avg",
+            "${var.prefix}", "scanFullPPE-response-time.avg",
             "exception", "none",
             "method", "scanFullPPE",
             "class", "com.example.s3rekognition.controller.RekognitionController"]
@@ -79,7 +79,7 @@ resource "aws_cloudwatch_dashboard" "main" {
         "period": 300,
         "stat": "Average",
         "region": "eu-west-1",
-        "title": "Average latency for Full PPE scan"
+        "title": "Average Response Time for Full PPE scan"
       }
     }
   ]

@@ -166,8 +166,8 @@
 - [x] Minst tre ulike måleinstrumenter.
   - [x] Widget 1 - 
   - [x] Widget 2 - .
-  - [x] Widget 3 - Average latency for Single PPE-piece scan.
-  - [x] Widget 4 - Average latency for Full PPE scan.
+  - [x] Widget 3 - Average response time for Single PPE-piece scan.
+  - [x] Widget 4 - Average response time for Full PPE scan.
 ![Oppgave 3 - CloudWatch Dashboard - Widgets.png](images%2FOppgave%203%20-%20CloudWatch%20Dashboard%20-%20Widgets.png)
 
 
@@ -198,14 +198,14 @@
         This is easily changed, more in B. about alarms.
 
 
-      Widget 3 - Average latency for Single PPE-piece scan
-        Shows the latency for calling the scanForPPE endpoint.
-        It can be important to know the latency because of performance-checking and debugging.
+      Widget 3 - Average response time for Single PPE-piece scan
+        Shows the response time for calling the scanForPPE endpoint.
+        It can be important to know the response time because of performance-checking and debugging.
         For example stress test to see how well it handles multiple calls. If it runs too slow, it might need improvement.
         If it takes very very long, it might point to some error.
 
 
-      Widget 4 - Average latency for Full PPE scan
+      Widget 4 - Average response time for Full PPE scan
         Same as described in Widget 3.
         Additionally, it also shows that a full PPE scan does take longer than just checking face.
 
@@ -376,7 +376,7 @@ vennligst inkluder:
 
 3. Sammenligning og Kontrast:
 - [x] Sammenlign Scrum/Smidig og DevOps i forhold til deres påvirkning på programvarekvalitet og leveransetempo.
-- [ ] Diskuter hvilke aspekter ved hver metodikk som kan være mer fordelaktige i bestemte utviklingssituasjoner.
+- [x] Diskuter hvilke aspekter ved hver metodikk som kan være mer fordelaktige i bestemte utviklingssituasjoner.
 
 
     Many parts of Scrum/Agile and DevOps are similar.
@@ -403,7 +403,7 @@ vennligst inkluder:
     Rinse and repeat till the product seems more satisfactory.
     Then further down when the product gets more defined and is ready for deployment it would be a good idea to switch to DevOps.
     CI/CD helps with efficient improvements and deployments.
-    Feedback provides objective data in the form of numbers. Automated feedback such as telemetry and monitoring can identify
+    Feedback provides objective data in the form of numbers. Automated feedback such as telemetry, monitoring and metrics can identify
     areas to improve or identify issues.
 
 
@@ -411,15 +411,19 @@ vennligst inkluder:
 
 ### C. Det Andre Prinsippet - Feedback
 
+    For the new functionality i would use telemetry and monitoring for collecting data on user interaction such as:
+      - Interaction frequency.
+      - Time spent using it.
+      - If the user experiences any issues.
+        
+    Then more specific metrics could be used for performance such as latency, response time or up-time.
+    Alarms can be applied for these metrics to send a notification at certain thresholds to identify errors quickly.
+    A/B testing is also an alternative to try out for a new funtionality.
+    It could be interesting to see how attractive the new functinlity is compared to not having it.
+    Logging will be used as well for troubleshooting.
 
-
-
-
-
-
-
-
-    f
+    By collecting data from these methods it would collectively help finding areas of improvement.
+    
 
 
 
