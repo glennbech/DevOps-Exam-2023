@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Trying to set max connections to see if it fixes apprunner error">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="See if retry works">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/config/MetricsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/config/MetricsConfig.java" afterDir="false" />
     </list>
@@ -98,15 +98,7 @@
       <workItem from="1700237991102" duration="19879000" />
       <workItem from="1700302034498" duration="34403000" />
       <workItem from="1700340226731" duration="4342000" />
-      <workItem from="1700396261914" duration="3998000" />
-    </task>
-    <task id="LOCAL-00097" summary="Try again with dependencies for micrometer and cloudwatch... but no code to send data. see if error occurs now?">
-      <option name="closed" value="true" />
-      <created>1700168181290</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1700168181290</updated>
+      <workItem from="1700396261914" duration="4607000" />
     </task>
     <task id="LOCAL-00098" summary="Try again with dependencies for micrometer and cloudwatch... but no code to send data. see if error occurs now?">
       <option name="closed" value="true" />
@@ -492,7 +484,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700344541734</updated>
     </task>
-    <option name="localTasksCounter" value="146" />
+    <task id="LOCAL-00146" summary="See if retry works">
+      <option name="closed" value="true" />
+      <created>1700401353368</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1700401353368</updated>
+    </task>
+    <option name="localTasksCounter" value="147" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -510,7 +510,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="try again without  changes" />
     <MESSAGE value="Shit. forgot to add .value on &quot;exceeded_violation_alarm&quot; ......" />
     <MESSAGE value="Metrics now sending/showing correctly on cloudwatch" />
     <MESSAGE value="Added latency metric for scanForPPE" />
@@ -535,7 +534,8 @@
     <MESSAGE value="Test without latency. Test to change 5 to 10s on how often app sends data to cloudwatch" />
     <MESSAGE value="Changing back values to before" />
     <MESSAGE value="Trying to set max connections to see if it fixes apprunner error" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying to set max connections to see if it fixes apprunner error" />
+    <MESSAGE value="See if retry works" />
+    <option name="LAST_COMMIT_MESSAGE" value="See if retry works" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
