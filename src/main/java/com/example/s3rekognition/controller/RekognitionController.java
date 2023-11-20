@@ -30,13 +30,12 @@ import java.util.logging.Logger;
 @RestController
 public class RekognitionController implements ApplicationListener<ApplicationReadyEvent> {
     private int exceededViolationCounter = 0;
-    AtomicInteger exceededViolationGauge;
+    private AtomicInteger exceededViolationGauge;
     private final int violationLimit = 5;               // Change this value for when to reset Gauge
     private final double violationPercentage = 0.3;     // Change this value for sensitivity to increment to Gauge
     private final AmazonS3 s3Client;
     private final AmazonRekognition rekognitionClient;
     private final MeterRegistry meterRegistry;
-
     private static final Logger logger = Logger.getLogger(RekognitionController.class.getName());
 
     @Autowired
