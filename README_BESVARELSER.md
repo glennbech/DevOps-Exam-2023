@@ -144,6 +144,8 @@
       Then it should work fine.
 
 ### NOTES:
+    * Sometimes i get a deploymeny error regarding port used. But i cant find the reason why as it should be free. When re-running it, everything works.
+
     Seems to be a known issue that apprunner does not always manage to find the correct ECR image with the :latest tag.
     A solution seems to be to use rev instead since it will always be the latest one pushed.
 

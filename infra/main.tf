@@ -16,7 +16,6 @@ resource "aws_apprunner_service" "service" {
         port = var.port
       }
       image_identifier      = "244530008913.dkr.ecr.eu-west-1.amazonaws.com/ecr-kandidatnr-2038:latest"
-#      image_identifier      = "244530008913.dkr.ecr.eu-west-1.amazonaws.com/ecr-kandidatnr-2038:${var.image_tag}"
       image_repository_type = "ECR"
     }
     auto_deployments_enabled = true

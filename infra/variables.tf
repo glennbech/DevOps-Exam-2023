@@ -18,11 +18,6 @@ variable "port" {
   type = string
 }
 
-# default is set from github actions during docker push to ecr.
-#variable "image_tag" {
-#  type = string
-#}
-
 # Used for both namespace for CloudWatch dashboard and alarm.
 variable "prefix" {
 #  default = "cloudwatch-kandidatnr-2038"
