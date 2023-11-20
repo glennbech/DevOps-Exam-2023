@@ -30,7 +30,7 @@ import java.util.logging.Logger;
 @RestController
 public class RekognitionController implements ApplicationListener<ApplicationReadyEvent> {
     private int exceededViolationCounter = 0;
-//    private AtomicInteger exceededViolationGauge;
+    private AtomicInteger exceededViolationGauge;
     private final int violationLimit = 5;               // Change this value for when to reset Gauge
     private final double violationPercentage = 0.3;     // Change this value for sensitivity to increment to Gauge
     private final AmazonS3 s3Client;
@@ -43,7 +43,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         this.meterRegistry = meterRegistry;
         this.s3Client = AmazonS3ClientBuilder.standard().build();
         this.rekognitionClient = AmazonRekognitionClientBuilder.standard().build();
-//        this.exceededViolationGauge = meterRegistry.gauge("exceeded_violation_alarm", new AtomicInteger(0));
+        this.exceededViolationGauge = meterRegistry.gauge("exceeded_violation_alarm", new AtomicInteger(0));
     }
 
     /**
@@ -56,7 +56,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
      */
     @GetMapping(value = "/scan-ppe", consumes = "*/*", produces = "application/json")
     @ResponseBody
-//    @Timed(value = "scanforPPE-response-time", description = "single piece scan response time")
+    @Timed(value = "scanforPPE-response-time", description = "single piece scan response time")
     public ResponseEntity<PPEResponse> scanForPPE(@RequestParam String bucketName) {
         // Used for metrics
         int violationCounter = 0;
@@ -114,7 +114,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
     }
 
     @GetMapping(value = "/scan-full-ppe", consumes = "*/*", produces = "application/json")
-//    @Timed(value = "scanFullPPE-response-time", description = "full ppe scan response time")
+    @Timed(value = "scanFullPPE-response-time", description = "full ppe scan response time")
     @ResponseBody
     public ResponseEntity<PPEResponse> scanFullPPE(@RequestParam String bucketName) {
         int violationCounter = 0;
@@ -141,7 +141,6 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
 
             DetectProtectiveEquipmentResult result = rekognitionClient.detectProtectiveEquipment(request);
 
-
             boolean violation = isStrictViolation(result);
             if (violation) {
                 violationCounter++;
@@ -161,26 +160,29 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         ppeResponse.setNumberOfViolations(violationCounter);
         ppeResponse.setNumberOfValid(validCounter);
 
+        // Update Gauge metrics if condition are met.
+        updateGaugeMetric(ppeResponse, totalPersonCount);
 
-//        // This should check if 30% of the scanned people are violations, it should increment by 1 to the widget.
-//        // If it reaches 5 times, it should send off an alarm.
-//        if (ppeResponse.getNumberOfViolations() >= totalPersonCount * violationPercentage) {
-//            exceededViolationCounter++;
-//            exceededViolationGauge.getAndIncrement();
-//        }
-//
-//        // If it reaches 5, alarm should be triggered.
-//        // When it reaches over 5, another violation occurs - "reset" counter to 1
-//        // The alarm set for this widget has evaluation_period = 1.
-//        if (exceededViolationCounter > violationLimit) {
-//            exceededViolationCounter = 1;
-//            exceededViolationGauge.set(1);
-//        }
-//
-//
-//        logger.info("Number of people scanned: " + totalPersonCount + ". Number of violations: " + ppeResponse.getNumberOfViolations());
-//        logger.info("Current violation counter: " + exceededViolationCounter);
+        logger.info("Number of people scanned: " + totalPersonCount + ". Number of violations: " + ppeResponse.getNumberOfViolations());
+        logger.info("Current violation counter: " + exceededViolationCounter);
         return ResponseEntity.ok(ppeResponse);
+    }
+
+    private void updateGaugeMetric(PPEResponse ppeResponse, int totalPersonCount) {
+        // This should check if 30% of the scanned people are violations, it should increment by 1 to the widget.
+        // If it reaches 5 times, it should send off an alarm.
+        if (ppeResponse.getNumberOfViolations() >= totalPersonCount * violationPercentage) {
+            exceededViolationCounter++;
+            exceededViolationGauge.getAndIncrement();
+        }
+
+        // If it reaches 5, alarm should be triggered.
+        // When it reaches over 5 that means another violation has occured -> reset counter to 1
+        // The alarm set for this widget has evaluation_period = 1 (very strict).
+        if (exceededViolationCounter > violationLimit) {
+            exceededViolationCounter = 1;
+            exceededViolationGauge.set(1);
+        }
     }
 
     /**

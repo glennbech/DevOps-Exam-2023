@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="README_BESVARELSER.md update">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Testing if error happens with just 2 metrics to 1 widget">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/cloudwatch.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/cloudwatch.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,15 +116,7 @@
       <workItem from="1700396261914" duration="24511000" />
       <workItem from="1700440623939" duration="19000" />
       <workItem from="1700483273270" duration="8726000" />
-      <workItem from="1700502036915" duration="707000" />
-    </task>
-    <task id="LOCAL-00113" summary="Updated cloudwatch.tf to show violation alarms as gauge">
-      <option name="closed" value="true" />
-      <created>1700250895744</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1700250895744</updated>
+      <workItem from="1700502036915" duration="1902000" />
     </task>
     <task id="LOCAL-00114" summary="forgot to update endpoint">
       <option name="closed" value="true" />
@@ -509,7 +502,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700501975201</updated>
     </task>
-    <option name="localTasksCounter" value="162" />
+    <task id="LOCAL-00162" summary="Testing if error happens with just 2 metrics to 1 widget">
+      <option name="closed" value="true" />
+      <created>1700502849999</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1700502849999</updated>
+    </task>
+    <option name="localTasksCounter" value="163" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,7 +528,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed namespace, forgot to remove &quot;&quot; around variable name.." />
     <MESSAGE value="Fixed/changed logic on gauge widget.&#10;If violations &gt; 30% of people scanned, add to gauge. if gauge &gt;= 5 trigger alarm" />
     <MESSAGE value="Added logging for people scanned and violations" />
     <MESSAGE value="Now seems to work as it should!" />
@@ -552,7 +552,8 @@
     <MESSAGE value="Removing unncessary code, fixing comments. Removed code for using latest rev instead of latest for ECR -&gt; apprunner. Seems to work now fine." />
     <MESSAGE value="pom.xml update" />
     <MESSAGE value="README_BESVARELSER.md update" />
-    <option name="LAST_COMMIT_MESSAGE" value="README_BESVARELSER.md update" />
+    <MESSAGE value="Testing if error happens with just 2 metrics to 1 widget" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing if error happens with just 2 metrics to 1 widget" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
