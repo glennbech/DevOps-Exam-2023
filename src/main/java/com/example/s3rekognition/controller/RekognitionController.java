@@ -167,7 +167,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         // If it reaches 5 times, it should send off an alarm.
         if (ppeResponse.getNumberOfViolations() >= totalPersonCount * violationPercentage) {
             exceededViolationCounter++;
-            meterRegistry.counter("violation_alarm").increment();
+            meterRegistry.counter("exceeded_violation_alarm").increment();
         }
 
         // If it reaches 5, alarm should be triggered.
