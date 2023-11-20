@@ -19,68 +19,6 @@ resource "aws_cloudwatch_dashboard" "main" {
         "region": "eu-west-1",
         "title": "Face PPE Detection analysis"
       }
-    },
-    {
-     "type": "metric",
-     "x": 18,
-     "y": 60,
-     "width": 6,
-     "height": 6,
-     "properties": {
-        "metrics": [
-          ["${var.prefix}", "exceeded_violation_alarm.value"]
-        ],
-        "view": "gauge",
-        "stat": "Maximum",
-        "region": "eu-west-1",
-        "title": "Full PPE Violation counter",
-        "yAxis": {
-           "left": {
-              "min": 0,
-              "max": 5
-           }
-         }
-       }
-    },
-    {
-      "type": "metric",
-      "x": 0,
-      "y": 6,
-      "width": 12,
-      "height": 6,
-      "properties": {
-        "metrics": [
-          [
-            "${var.prefix}", "scanforPPE-response-time.avg",
-            "exception", "none",
-            "method", "scanForPPE",
-            "class", "com.example.s3rekognition.controller.RekognitionController"]
-        ],
-        "period": 300,
-        "stat": "Average",
-        "region": "eu-west-1",
-        "title": "Average Response Time for Single PPE-piece scan"
-      }
-    },
-    {
-      "type": "metric",
-      "x": 0,
-      "y": 12,
-      "width": 12,
-      "height": 6,
-      "properties": {
-        "metrics": [
-          [
-            "${var.prefix}", "scanFullPPE-response-time.avg",
-            "exception", "none",
-            "method", "scanFullPPE",
-            "class", "com.example.s3rekognition.controller.RekognitionController"]
-        ],
-        "period": 300,
-        "stat": "Average",
-        "region": "eu-west-1",
-        "title": "Average Response Time for Full PPE scan"
-      }
     }
   ]
 }

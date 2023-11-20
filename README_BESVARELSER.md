@@ -145,11 +145,11 @@
 
 ### NOTES:
     * Sometimes i get a deploymeny error regarding port used. But i cant find the reason why as it should be free. When re-running it, everything works.
-
-    Seems to be a known issue that apprunner does not always manage to find the correct ECR image with the :latest tag.
-    A solution seems to be to use rev instead since it will always be the latest one pushed.
-
-
+    * In Apprunner, i get some errors i am not able to fix:
+      - i.m.cloudwatch2.CloudWatchMeterRegistry  : error sending metric data.
+          This triggers a bunch of error messages.
+          I am not sure how to fix this error. The cloudwatch widgets seems to work normally.
+          After calling the endpoints, metrics seems to work just fine. Widgets gets the data and updates. The alarm works fine too.
 
 
 ---

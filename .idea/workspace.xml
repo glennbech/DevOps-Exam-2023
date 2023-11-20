@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="pom.xml update">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="README_BESVARELSER.md update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
     </list>
@@ -28,12 +28,12 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "TobiasLiu1990"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;TobiasLiu1990&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -114,15 +114,8 @@
       <workItem from="1700340226731" duration="4342000" />
       <workItem from="1700396261914" duration="24511000" />
       <workItem from="1700440623939" duration="19000" />
-      <workItem from="1700483273270" duration="8687000" />
-    </task>
-    <task id="LOCAL-00112" summary="Updated cloudwatch.tf to show violation alarms as gauge">
-      <option name="closed" value="true" />
-      <created>1700249867337</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1700249867337</updated>
+      <workItem from="1700483273270" duration="8726000" />
+      <workItem from="1700502036915" duration="707000" />
     </task>
     <task id="LOCAL-00113" summary="Updated cloudwatch.tf to show violation alarms as gauge">
       <option name="closed" value="true" />
@@ -508,7 +501,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700501194090</updated>
     </task>
-    <option name="localTasksCounter" value="161" />
+    <task id="LOCAL-00161" summary="README_BESVARELSER.md update">
+      <option name="closed" value="true" />
+      <created>1700501975201</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1700501975201</updated>
+    </task>
+    <option name="localTasksCounter" value="162" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,7 +527,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="testing out application.properties file to set namespace name in java" />
     <MESSAGE value="Fixed namespace, forgot to remove &quot;&quot; around variable name.." />
     <MESSAGE value="Fixed/changed logic on gauge widget.&#10;If violations &gt; 30% of people scanned, add to gauge. if gauge &gt;= 5 trigger alarm" />
     <MESSAGE value="Added logging for people scanned and violations" />
@@ -551,7 +551,8 @@
     <MESSAGE value="Fixing violation and valid counters." />
     <MESSAGE value="Removing unncessary code, fixing comments. Removed code for using latest rev instead of latest for ECR -&gt; apprunner. Seems to work now fine." />
     <MESSAGE value="pom.xml update" />
-    <option name="LAST_COMMIT_MESSAGE" value="pom.xml update" />
+    <MESSAGE value="README_BESVARELSER.md update" />
+    <option name="LAST_COMMIT_MESSAGE" value="README_BESVARELSER.md update" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
