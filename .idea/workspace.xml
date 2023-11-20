@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Fixed type. forgot a &quot;)&quot;">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Remaning readmes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/PPEResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/PPEResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,23 +115,9 @@
       <workItem from="1700396261914" duration="24511000" />
       <workItem from="1700440623939" duration="19000" />
       <workItem from="1700483273270" duration="8726000" />
-      <workItem from="1700502036915" duration="4246000" />
-    </task>
-    <task id="LOCAL-00118" summary="try again without  changes">
-      <option name="closed" value="true" />
-      <created>1700256430504</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1700256430504</updated>
-    </task>
-    <task id="LOCAL-00119" summary="try again without  changes">
-      <option name="closed" value="true" />
-      <created>1700256596657</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1700256596657</updated>
+      <workItem from="1700502036915" duration="5433000" />
+      <workItem from="1700510438943" duration="11000" />
+      <workItem from="1700511019126" duration="736000" />
     </task>
     <task id="LOCAL-00120" summary="Shit. forgot to add .value on &quot;exceeded_violation_alarm&quot; ......">
       <option name="closed" value="true" />
@@ -510,7 +495,23 @@
       <option name="project" value="LOCAL" />
       <updated>1700507500539</updated>
     </task>
-    <option name="localTasksCounter" value="167" />
+    <task id="LOCAL-00167" summary="Removing some unused things from PPEResponse. Using local variables instead again">
+      <option name="closed" value="true" />
+      <created>1700508110424</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1700508110424</updated>
+    </task>
+    <task id="LOCAL-00168" summary="Remaning readmes">
+      <option name="closed" value="true" />
+      <created>1700510096869</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1700510096869</updated>
+    </task>
+    <option name="localTasksCounter" value="169" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,8 +529,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updating workflows" />
-    <MESSAGE value="Forgot to uncomment main.tf. Also pushing a application.properties file this time, but it does not contain sensitive data" />
     <MESSAGE value="Updating README_BESVARELSER.md" />
     <MESSAGE value="Try again with :latest" />
     <MESSAGE value="Test without latency" />
@@ -553,7 +552,9 @@
     <MESSAGE value="Updated README_BESVARELSER.md" />
     <MESSAGE value="Forgot to add increment by the violation and valid" />
     <MESSAGE value="Fixed type. forgot a &quot;)&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed type. forgot a &quot;)&quot;" />
+    <MESSAGE value="Removing some unused things from PPEResponse. Using local variables instead again" />
+    <MESSAGE value="Remaning readmes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remaning readmes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -29,6 +29,7 @@ import java.util.logging.Logger;
 
 @RestController
 public class RekognitionController implements ApplicationListener<ApplicationReadyEvent> {
+    private final Map<String, Integer> scanResult = new HashMap<>();
     private int exceededViolationCounter = 0;
     private AtomicInteger exceededViolationGauge;
     private final int violationLimit = 5;               // Change this value for when to reset Gauge
@@ -101,6 +102,9 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
             PPEClassificationResponse classification = new PPEClassificationResponse(image.getKey(), personCount, violation);
             classificationResponses.add(classification);
         }
+
+        scanResult.put("Violations", violationCounter);
+        scanResult.put("Valid", validCounter);
 
         // To Cloudwatch - want to put these 2 in a single graph.
         meterRegistry.counter("total_violations").increment(violationCounter);
@@ -202,7 +206,13 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
+        Gauge.builder("total_violations", scanResult,
+                        violation -> violation.getOrDefault("Violations", 0))
+                .register(meterRegistry);
 
+        Gauge.builder("total_valid", scanResult,
+                        valid -> valid.getOrDefault("Valid", 0))
+                .register(meterRegistry);
     }
 
 }
