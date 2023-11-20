@@ -206,13 +206,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
-        Gauge.builder("total_violations", scanResult,
-                        violation -> violation.getOrDefault("Violations", 0))
-                .register(meterRegistry);
 
-        Gauge.builder("total_valid", scanResult,
-                        valid -> valid.getOrDefault("Valid", 0))
-                .register(meterRegistry);
     }
 
 }
