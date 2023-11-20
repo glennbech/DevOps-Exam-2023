@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Fixing line graph so it shows data correctly again">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Removed Gauge builder again. should not need this...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
     </list>
@@ -117,15 +117,7 @@
       <workItem from="1700483273270" duration="8726000" />
       <workItem from="1700502036915" duration="5433000" />
       <workItem from="1700510438943" duration="11000" />
-      <workItem from="1700511019126" duration="1890000" />
-    </task>
-    <task id="LOCAL-00121" summary="Metrics now sending/showing correctly on cloudwatch">
-      <option name="closed" value="true" />
-      <created>1700302465670</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1700302465671</updated>
+      <workItem from="1700511019126" duration="1961000" />
     </task>
     <task id="LOCAL-00122" summary="Added latency metric for scanForPPE">
       <option name="closed" value="true" />
@@ -511,7 +503,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700511787591</updated>
     </task>
-    <option name="localTasksCounter" value="170" />
+    <task id="LOCAL-00170" summary="Removed Gauge builder again. should not need this...">
+      <option name="closed" value="true" />
+      <created>1700512950128</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1700512950128</updated>
+    </task>
+    <option name="localTasksCounter" value="171" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,7 +529,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Try again with :latest" />
     <MESSAGE value="Test without latency" />
     <MESSAGE value="Test without latency. typo" />
     <MESSAGE value="Test without latency. Test to change 5 to 10s on how often app sends data to cloudwatch" />
@@ -554,7 +553,8 @@
     <MESSAGE value="Removing some unused things from PPEResponse. Using local variables instead again" />
     <MESSAGE value="Remaning readmes" />
     <MESSAGE value="Fixing line graph so it shows data correctly again" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing line graph so it shows data correctly again" />
+    <MESSAGE value="Removed Gauge builder again. should not need this..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed Gauge builder again. should not need this..." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
