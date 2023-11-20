@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Removing unncessary code, fixing comments. Removed code for using latest rev instead of latest for ECR -&gt; apprunner. Seems to work now fine.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,15 +114,7 @@
       <workItem from="1700340226731" duration="4342000" />
       <workItem from="1700396261914" duration="24511000" />
       <workItem from="1700440623939" duration="19000" />
-      <workItem from="1700483273270" duration="5469000" />
-    </task>
-    <task id="LOCAL-00110" summary="Create condition to count number of times violations &gt;= valids and send to widget. Should later send alarm too">
-      <option name="closed" value="true" />
-      <created>1700249108858</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1700249108858</updated>
+      <workItem from="1700483273270" duration="7856000" />
     </task>
     <task id="LOCAL-00111" summary="Create condition to count number of times violations &gt;= valids and send to widget. Should later send alarm too">
       <option name="closed" value="true" />
@@ -508,7 +500,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700498259655</updated>
     </task>
-    <option name="localTasksCounter" value="159" />
+    <task id="LOCAL-00159" summary="Removing unncessary code, fixing comments. Removed code for using latest rev instead of latest for ECR -&gt; apprunner. Seems to work now fine.">
+      <option name="closed" value="true" />
+      <created>1700499082953</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1700499082953</updated>
+    </task>
+    <option name="localTasksCounter" value="160" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
