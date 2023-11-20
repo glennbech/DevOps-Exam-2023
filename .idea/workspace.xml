@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Extracted code for check for gauge">
-      <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Updated README_BESVARELSER.md">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,15 +114,7 @@
       <workItem from="1700396261914" duration="24511000" />
       <workItem from="1700440623939" duration="19000" />
       <workItem from="1700483273270" duration="8726000" />
-      <workItem from="1700502036915" duration="2160000" />
-    </task>
-    <task id="LOCAL-00115" summary="fix on metric for violation limit">
-      <option name="closed" value="true" />
-      <created>1700253230217</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1700253230217</updated>
+      <workItem from="1700502036915" duration="3434000" />
     </task>
     <task id="LOCAL-00116" summary="dont know why apprunner fails now... comment out changes">
       <option name="closed" value="true" />
@@ -508,7 +500,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700503973197</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="Updated README_BESVARELSER.md">
+      <option name="closed" value="true" />
+      <created>1700504860386</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1700504860386</updated>
+    </task>
+    <option name="localTasksCounter" value="165" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,7 +528,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added logging for people scanned and violations" />
     <MESSAGE value="Now seems to work as it should!" />
-    <MESSAGE value="Updated README_BESVARELSER.md" />
     <MESSAGE value="Updating workflows" />
     <MESSAGE value="Forgot to uncomment main.tf. Also pushing a application.properties file this time, but it does not contain sensitive data" />
     <MESSAGE value="Updating README_BESVARELSER.md" />
@@ -551,7 +550,8 @@
     <MESSAGE value="README_BESVARELSER.md update" />
     <MESSAGE value="Testing if error happens with just 2 metrics to 1 widget" />
     <MESSAGE value="Extracted code for check for gauge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Extracted code for check for gauge" />
+    <MESSAGE value="Updated README_BESVARELSER.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated README_BESVARELSER.md" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
