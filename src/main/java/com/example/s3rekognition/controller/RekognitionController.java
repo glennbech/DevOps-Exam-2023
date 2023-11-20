@@ -29,11 +29,11 @@ import java.util.logging.Logger;
 
 @RestController
 public class RekognitionController implements ApplicationListener<ApplicationReadyEvent> {
-    private final Map<String, Integer> scanResult = new HashMap<>();
+//    private final Map<String, Integer> scanResult = new HashMap<>();
     private int exceededViolationCounter = 0;
     AtomicInteger exceededViolationGauge;
-    private final int violationLimit = 5;
-    private final double violationPercentage = 0.3;
+    private final int violationLimit = 5;               // Change this value for when to reset Gauge
+    private final double violationPercentage = 0.3;     // Change this value for sensitivity to increment to Gauge
     private final AmazonS3 s3Client;
     private final AmazonRekognition rekognitionClient;
     private final MeterRegistry meterRegistry;
@@ -108,8 +108,8 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         ppeResponse.setNumberOfViolations(violationCounter);
         ppeResponse.setNumberOfValid(validCounter);
 
-        scanResult.put("Violations", ppeResponse.getNumberOfViolations());
-        scanResult.put("Valid", ppeResponse.getNumberOfValid());
+//        scanResult.put("Violations", ppeResponse.getNumberOfViolations());
+//        scanResult.put("Valid", ppeResponse.getNumberOfValid());
 
 
 //        To Cloudwatch - want to put these 4 in a single graph.
@@ -169,26 +169,11 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
 
 
 
-
+        // This should check if 30% of the scanned people are violations, it should increment by 1 to the widget.
+        // If it reaches 5 times, it should send off an alarm.
         if (ppeResponse.getNumberOfViolations() >= totalPersonCount * violationPercentage) {
             exceededViolationCounter++;
             exceededViolationGauge.getAndIncrement();
-        }
-
-        if (exceededViolationCounter > violationLimit) {
-            exceededViolationCounter = 1;
-            exceededViolationGauge.set(1);
-        }
-
-
-
-
-        // This should check if 30% of the scanned people are violations, it should increment by 1 to the widget.
-        // If it reaches 5 times, it should send off an alarm.
-        /*
-        if (ppeResponse.getNumberOfViolations() >= totalPersonCount * violationPercentage) {
-            exceededViolationCounter++;
-            meterRegistry.counter("exceeded_violation_alarm").increment();
         }
 
         // If it reaches 5, alarm should be triggered.
@@ -196,9 +181,8 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         // The alarm set for this widget has evaluation_period = 1.
         if (exceededViolationCounter > violationLimit) {
             exceededViolationCounter = 1;
-            meterRegistry.gauge("exceeded_violation_alarm", exceededViolationCounter);
+            exceededViolationGauge.set(1);
         }
-        */
 
 
         logger.info("Number of people scanned: " + totalPersonCount + ". Number of violations: " + ppeResponse.getNumberOfViolations());
@@ -243,7 +227,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
 //                        valid -> valid.getOrDefault("Valid", 0))
 //                .register(meterRegistry);
 
-        Gauge.builder("exceeded_violation_alarm", this, obj -> obj.exceededViolationCounter).register(meterRegistry);
+//        Gauge.builder("exceeded_violation_alarm", this, obj -> obj.exceededViolationCounter).register(meterRegistry);
     }
 
 }
