@@ -96,20 +96,17 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
             }
 
             logger.info("scanning " + image.getKey() + ", violation result " + violation);
-            // Categorize the current image as a violation or not.
+
             int personCount = result.getPersons().size();
             PPEClassificationResponse classification = new PPEClassificationResponse(image.getKey(), personCount, violation);
             classificationResponses.add(classification);
         }
 
-        PPEResponse ppeResponse = new PPEResponse(bucketName, classificationResponses);
-        ppeResponse.setNumberOfViolations(violationCounter);
-        ppeResponse.setNumberOfValid(validCounter);
-
         // To Cloudwatch - want to put these 2 in a single graph.
         meterRegistry.counter("total_violations").increment(violationCounter);
         meterRegistry.counter("total_valid").increment(validCounter);
 
+        PPEResponse ppeResponse = new PPEResponse(bucketName, classificationResponses);
         return ResponseEntity.ok(ppeResponse);
     }
 
@@ -118,7 +115,6 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
     @ResponseBody
     public ResponseEntity<PPEResponse> scanFullPPE(@RequestParam String bucketName) {
         int violationCounter = 0;
-        int validCounter = 0;
         int totalPersonCount = 0;
 
         ListObjectsV2Result imageList = s3Client.listObjectsV2(bucketName);             // Get content from bucket
@@ -142,11 +138,8 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
             DetectProtectiveEquipmentResult result = rekognitionClient.detectProtectiveEquipment(request);
 
             boolean violation = isStrictViolation(result);
-            if (violation) {
-                violationCounter++;
-            } else {
-                validCounter++;
-            }
+            if (violation) violationCounter++;
+
             logger.info("Scanning " + image.getKey() + ", Protection analysis: " + violation);
 
             int personCount = result.getPersons().size();
@@ -156,22 +149,17 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
             classificationResponses.add(classification);
         }
 
-        PPEResponse ppeResponse = new PPEResponse(bucketName, classificationResponses);
-        ppeResponse.setNumberOfViolations(violationCounter);
-        ppeResponse.setNumberOfValid(validCounter);
-
         // Update Gauge metrics if condition are met.
-        updateGaugeMetric(ppeResponse, totalPersonCount);
+        updateGaugeMetric(violationCounter, totalPersonCount);
 
-        logger.info("Number of people scanned: " + totalPersonCount + ". Number of violations: " + ppeResponse.getNumberOfViolations());
-        logger.info("Current violation counter: " + exceededViolationCounter);
+        PPEResponse ppeResponse = new PPEResponse(bucketName, classificationResponses);
         return ResponseEntity.ok(ppeResponse);
     }
 
-    private void updateGaugeMetric(PPEResponse ppeResponse, int totalPersonCount) {
+    private void updateGaugeMetric(int violationCounter, int totalPersonCount) {
         // This should check if 30% of the scanned people are violations, it should increment by 1 to the widget.
         // If it reaches 5 times, it should send off an alarm.
-        if (ppeResponse.getNumberOfViolations() >= totalPersonCount * violationPercentage) {
+        if (violationCounter >= totalPersonCount * violationPercentage) {
             exceededViolationCounter++;
             exceededViolationGauge.getAndIncrement();
         }

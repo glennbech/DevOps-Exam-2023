@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Updated README_BESVARELSER.md">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Fixed type. forgot a &quot;)&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/PPEResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/PPEResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,23 +116,7 @@
       <workItem from="1700396261914" duration="24511000" />
       <workItem from="1700440623939" duration="19000" />
       <workItem from="1700483273270" duration="8726000" />
-      <workItem from="1700502036915" duration="3434000" />
-    </task>
-    <task id="LOCAL-00116" summary="dont know why apprunner fails now... comment out changes">
-      <option name="closed" value="true" />
-      <created>1700254201849</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1700254201849</updated>
-    </task>
-    <task id="LOCAL-00117" summary="forgot to remove the gauge that wasnt working">
-      <option name="closed" value="true" />
-      <created>1700255351065</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1700255351065</updated>
+      <workItem from="1700502036915" duration="4246000" />
     </task>
     <task id="LOCAL-00118" summary="try again without  changes">
       <option name="closed" value="true" />
@@ -508,7 +494,23 @@
       <option name="project" value="LOCAL" />
       <updated>1700504860386</updated>
     </task>
-    <option name="localTasksCounter" value="165" />
+    <task id="LOCAL-00165" summary="Forgot to add increment by the violation and valid">
+      <option name="closed" value="true" />
+      <created>1700507312613</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1700507312613</updated>
+    </task>
+    <task id="LOCAL-00166" summary="Fixed type. forgot a &quot;)&quot;">
+      <option name="closed" value="true" />
+      <created>1700507500539</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1700507500539</updated>
+    </task>
+    <option name="localTasksCounter" value="167" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,8 +528,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added logging for people scanned and violations" />
-    <MESSAGE value="Now seems to work as it should!" />
     <MESSAGE value="Updating workflows" />
     <MESSAGE value="Forgot to uncomment main.tf. Also pushing a application.properties file this time, but it does not contain sensitive data" />
     <MESSAGE value="Updating README_BESVARELSER.md" />
@@ -551,7 +551,9 @@
     <MESSAGE value="Testing if error happens with just 2 metrics to 1 widget" />
     <MESSAGE value="Extracted code for check for gauge" />
     <MESSAGE value="Updated README_BESVARELSER.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated README_BESVARELSER.md" />
+    <MESSAGE value="Forgot to add increment by the violation and valid" />
+    <MESSAGE value="Fixed type. forgot a &quot;)&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed type. forgot a &quot;)&quot;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
