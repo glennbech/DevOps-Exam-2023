@@ -108,7 +108,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
 
         // To Cloudwatch - want to put these 2 in a single graph.
         meterRegistry.counter("total_violations").increment(violationCounter);
-        meterRegistry.counter("total_valid").increment(validCounter;
+        meterRegistry.counter("total_valid").increment(validCounter);
 
         return ResponseEntity.ok(ppeResponse);
     }
