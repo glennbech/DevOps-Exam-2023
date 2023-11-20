@@ -113,8 +113,8 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
 
 
 //        To Cloudwatch - want to put these 4 in a single graph.
-        meterRegistry.counter("violations").increment();
-        meterRegistry.counter("valid").increment();
+        meterRegistry.counter("total_violations").increment();
+        meterRegistry.counter("total_valid").increment();
 
         return ResponseEntity.ok(ppeResponse);
     }
@@ -235,13 +235,13 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
-        Gauge.builder("total_violations", scanResult,
-                        violation -> violation.getOrDefault("Violations", 0))
-                .register(meterRegistry);
-
-        Gauge.builder("total_valid", scanResult,
-                        valid -> valid.getOrDefault("Valid", 0))
-                .register(meterRegistry);
+//        Gauge.builder("total_violations", scanResult,
+//                        violation -> violation.getOrDefault("Violations", 0))
+//                .register(meterRegistry);
+//
+//        Gauge.builder("total_valid", scanResult,
+//                        valid -> valid.getOrDefault("Valid", 0))
+//                .register(meterRegistry);
 
         Gauge.builder("exceeded_violation_alarm", this, obj -> obj.exceededViolationCounter).register(meterRegistry);
     }

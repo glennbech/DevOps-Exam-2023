@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Fixed metric name for gauge">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Fixing gauge">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
     </list>
@@ -100,15 +100,7 @@
       <workItem from="1700340226731" duration="4342000" />
       <workItem from="1700396261914" duration="24511000" />
       <workItem from="1700440623939" duration="19000" />
-      <workItem from="1700483273270" duration="1952000" />
-    </task>
-    <task id="LOCAL-00106" summary="I dont get it. apprunner shows errors on cloudwatch sometimes and sometimes not with SAAAMMEEEEEE re-deployment. trying again without ref and use latest again">
-      <option name="closed" value="true" />
-      <created>1700177625053</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1700177625053</updated>
+      <workItem from="1700483273270" duration="3024000" />
     </task>
     <task id="LOCAL-00107" summary="I dont get it. apprunner shows errors on cloudwatch sometimes and sometimes not with SAAAMMEEEEEE re-deployment. trying again try with ref again">
       <option name="closed" value="true" />
@@ -494,7 +486,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700483700123</updated>
     </task>
-    <option name="localTasksCounter" value="155" />
+    <task id="LOCAL-00155" summary="Fixing gauge">
+      <option name="closed" value="true" />
+      <created>1700485308418</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1700485308418</updated>
+    </task>
+    <option name="localTasksCounter" value="156" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,7 +512,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed error in cloudwatch for scanFullPPE widget" />
     <MESSAGE value="Adding alarm module in terraform" />
     <MESSAGE value="Add reset condition for exceededViolationCounter for the gauge widget" />
     <MESSAGE value="Fixed email" />
@@ -537,7 +536,8 @@
     <MESSAGE value="Oppgave 5. updating README_BESVARELSER.md + fixed naming" />
     <MESSAGE value="Oppgave 5. updating README_BESVARELSER.md" />
     <MESSAGE value="Fixed metric name for gauge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed metric name for gauge" />
+    <MESSAGE value="Fixing gauge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing gauge" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
