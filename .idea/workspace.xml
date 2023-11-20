@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Re-added some code for the PPEResonse object for using number of violation/valid fields. Changed how metrics are registered. Combined the widgets for response rate (My changes somehow broke the metrics it seems)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Oppgave 3 - CloudWatch Dashboard - Widgets.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Oppgave 3 - CloudWatch Dashboard - Widgets.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/cloudwatch.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/cloudwatch.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/variables.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/PPEResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/PPEResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
-    </list>
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Re-added some code for the PPEResonse object for using number of violation/valid fields. Changed how metrics are registered. Combined the widgets for response rate (My changes somehow broke the metrics it seems)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,15 +115,7 @@
       <workItem from="1700502036915" duration="5433000" />
       <workItem from="1700510438943" duration="11000" />
       <workItem from="1700511019126" duration="3577000" />
-      <workItem from="1700514610391" duration="3931000" />
-    </task>
-    <task id="LOCAL-00126" summary="Adding alarm module in terraform">
-      <option name="closed" value="true" />
-      <created>1700314090211</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1700314090211</updated>
+      <workItem from="1700514610391" duration="3958000" />
     </task>
     <task id="LOCAL-00127" summary="Add reset condition for exceededViolationCounter for the gauge widget">
       <option name="closed" value="true" />
@@ -517,7 +501,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700514652490</updated>
     </task>
-    <option name="localTasksCounter" value="175" />
+    <task id="LOCAL-00175" summary="Re-added some code for the PPEResonse object for using number of violation/valid fields. Changed how metrics are registered. Combined the widgets for response rate (My changes somehow broke the metrics it seems)">
+      <option name="closed" value="true" />
+      <created>1700518565399</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1700518565399</updated>
+    </task>
+    <option name="localTasksCounter" value="176" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
