@@ -145,13 +145,18 @@
 
 ### NOTES:
     * Sometimes i get a deploymeny error regarding port used. But i cant find the reason why as it should be free. When re-running it, everything works.
+
     * In Apprunner, i get some errors i am not able to fix:
       - i.m.cloudwatch2.CloudWatchMeterRegistry  : error sending metric data.
           This triggers a bunch of error messages and i havent succeeded in fixing this.
           But everything seems to work perfectly fine. Calling the endpoints sends data successfully to the widgets in cloudwatch.
           The alarm also works fine.
 
-
+    * In variables.tf i used many default values to avoid repeating myself when doing terraform apply, when updating things (locally).
+      Ive kept them, but commented out just to keep them and show how ive done.
+      When running GitHub actions, these values needs to be changed anyways, otherwise it will use my default values in there.
+      
+      
 
 
 ---
@@ -170,8 +175,7 @@
 - [x] Minst tre ulike måleinstrumenter.
   - [x] Widget 1 - 
   - [x] Widget 2 - .
-  - [x] Widget 3 - Average response time for Single PPE-piece scan.
-  - [x] Widget 4 - Average response time for Full PPE scan.
+  - [x] Widget 3 - Average Response Time for single/full PPE analysis.
 ![Oppgave 3 - CloudWatch Dashboard - Widgets.png](images%2FOppgave%203%20-%20CloudWatch%20Dashboard%20-%20Widgets.png)
 
 
@@ -202,16 +206,11 @@
         This is easily changed, more in B. about alarms.
 
 
-      Widget 3 - Average response time for Single PPE-piece scan
-        Shows the response time for calling the scanForPPE endpoint.
+      Widget 3 - Average Response Time for single/full PPE analysis
+        Shows the response tiem for calling the scanForPPE and scanFullPPE endpoint.
         It can be important to know the response time because of performance-checking and debugging.
         For example stress test to see how well it handles multiple calls. If it runs too slow, it might need improvement.
         If it takes very very long, it might point to some error.
-
-
-      Widget 4 - Average response time for Full PPE scan
-        Same as described in Widget 3.
-        Additionally, it also shows that a full PPE scan does take longer than just checking face.
 
 
     I used applicaton.properties for an envionment variable to set the cloudwatch.namespace in MetricsConfig.java.

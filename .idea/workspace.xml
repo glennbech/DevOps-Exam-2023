@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Seems like gauge did not update correctly after refactoring out the update/check? Moving it back...">
-      <change afterPath="$PROJECT_DIR$/infra/.terraform.lock.hcl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/.terraform/modules/modules.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/.terraform/providers/registry.terraform.io/hashicorp/aws/5.25.0/windows_amd64/terraform-provider-aws_v5.25.0_x5.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/.terraform/terraform.tfstate" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Re-added some code for the PPEResonse object for using number of violation/valid fields. Changed how metrics are registered. Combined the widgets for response rate (My changes somehow broke the metrics it seems)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Oppgave 3 - CloudWatch Dashboard - Widgets.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Oppgave 3 - CloudWatch Dashboard - Widgets.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/cloudwatch.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/cloudwatch.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/PPEResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/PPEResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,14 +123,7 @@
       <workItem from="1700502036915" duration="5433000" />
       <workItem from="1700510438943" duration="11000" />
       <workItem from="1700511019126" duration="3577000" />
-    </task>
-    <task id="LOCAL-00125" summary="Fixed error in cloudwatch for scanFullPPE widget">
-      <option name="closed" value="true" />
-      <created>1700312763463</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1700312763463</updated>
+      <workItem from="1700514610391" duration="3931000" />
     </task>
     <task id="LOCAL-00126" summary="Adding alarm module in terraform">
       <option name="closed" value="true" />
@@ -519,7 +509,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700514553277</updated>
     </task>
-    <option name="localTasksCounter" value="174" />
+    <task id="LOCAL-00174" summary="Seems like gauge did not update correctly after refactoring out the update/check? Moving it back...">
+      <option name="closed" value="true" />
+      <created>1700514652490</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1700514652490</updated>
+    </task>
+    <option name="localTasksCounter" value="175" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,7 +535,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test without latency. typo" />
     <MESSAGE value="Test without latency. Test to change 5 to 10s on how often app sends data to cloudwatch" />
     <MESSAGE value="Changing back values to before" />
     <MESSAGE value="Trying to set max connections to see if it fixes apprunner error" />
@@ -562,7 +559,8 @@
     <MESSAGE value="Fixing line graph so it shows data correctly again" />
     <MESSAGE value="Removed Gauge builder again. should not need this..." />
     <MESSAGE value="Seems like gauge did not update correctly after refactoring out the update/check? Moving it back..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Seems like gauge did not update correctly after refactoring out the update/check? Moving it back..." />
+    <MESSAGE value="Re-added some code for the PPEResonse object for using number of violation/valid fields. Changed how metrics are registered. Combined the widgets for response rate (My changes somehow broke the metrics it seems)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Re-added some code for the PPEResonse object for using number of violation/valid fields. Changed how metrics are registered. Combined the widgets for response rate (My changes somehow broke the metrics it seems)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

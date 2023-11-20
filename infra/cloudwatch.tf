@@ -54,32 +54,19 @@ resource "aws_cloudwatch_dashboard" "main" {
             "${var.prefix}", "scanforPPE-response-time.avg",
             "exception", "none",
             "method", "scanForPPE",
-            "class", "com.example.s3rekognition.controller.RekognitionController"]
-        ],
-        "period": 300,
-        "stat": "Average",
-        "region": "eu-west-1",
-        "title": "Average Response Time for Single PPE-piece scan"
-      }
-    },
-    {
-      "type": "metric",
-      "x": 0,
-      "y": 12,
-      "width": 12,
-      "height": 6,
-      "properties": {
-        "metrics": [
+            "class", "com.example.s3rekognition.controller.RekognitionController"
+          ],
           [
             "${var.prefix}", "scanFullPPE-response-time.avg",
             "exception", "none",
             "method", "scanFullPPE",
-            "class", "com.example.s3rekognition.controller.RekognitionController"]
+            "class", "com.example.s3rekognition.controller.RekognitionController"
+          ]
         ],
         "period": 300,
         "stat": "Average",
         "region": "eu-west-1",
-        "title": "Average Response Time for Full PPE scan"
+        "title": "Average Response Time for single/full PPE analysis"
       }
     }
   ]
