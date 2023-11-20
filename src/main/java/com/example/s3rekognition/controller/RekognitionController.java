@@ -12,6 +12,7 @@ import com.example.s3rekognition.PPEResponse;
 import io.micrometer.core.annotation.Timed;
 import io.micrometer.core.instrument.Gauge;
 import io.micrometer.core.instrument.MeterRegistry;
+import io.micrometer.core.instrument.Tags;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
 
 
@@ -29,6 +31,7 @@ import java.util.logging.Logger;
 public class RekognitionController implements ApplicationListener<ApplicationReadyEvent> {
     private final Map<String, Integer> scanResult = new HashMap<>();
     private int exceededViolationCounter = 0;
+    AtomicInteger exceededViolationGauge;
     private final int violationLimit = 5;
     private final double violationPercentage = 0.3;
     private final AmazonS3 s3Client;
@@ -42,6 +45,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         this.meterRegistry = meterRegistry;
         this.s3Client = AmazonS3ClientBuilder.standard().build();
         this.rekognitionClient = AmazonRekognitionClientBuilder.standard().build();
+        this.exceededViolationGauge = meterRegistry.gauge("exceeded_violation_alarm", new AtomicInteger(0));
     }
 
     /**
@@ -163,8 +167,25 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         ppeResponse.setNumberOfViolations(violationCounter);
         ppeResponse.setNumberOfValid(validCounter);
 
+
+
+
+        if (ppeResponse.getNumberOfViolations() >= totalPersonCount * violationPercentage) {
+            exceededViolationCounter++;
+            exceededViolationGauge.getAndIncrement();
+        }
+
+        if (exceededViolationCounter > violationLimit) {
+            exceededViolationCounter = 1;
+            exceededViolationGauge.set(1);
+        }
+
+
+
+
         // This should check if 30% of the scanned people are violations, it should increment by 1 to the widget.
         // If it reaches 5 times, it should send off an alarm.
+        /*
         if (ppeResponse.getNumberOfViolations() >= totalPersonCount * violationPercentage) {
             exceededViolationCounter++;
             meterRegistry.counter("exceeded_violation_alarm").increment();
@@ -177,6 +198,8 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
             exceededViolationCounter = 1;
             meterRegistry.gauge("exceeded_violation_alarm", exceededViolationCounter);
         }
+        */
+
 
         logger.info("Number of people scanned: " + totalPersonCount + ". Number of violations: " + ppeResponse.getNumberOfViolations());
         logger.info("Current violation counter: " + exceededViolationCounter);
