@@ -10,19 +10,18 @@ import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.example.s3rekognition.PPEClassificationResponse;
 import com.example.s3rekognition.PPEResponse;
 import io.micrometer.core.annotation.Timed;
-import io.micrometer.core.instrument.Gauge;
 import io.micrometer.core.instrument.MeterRegistry;
-import io.micrometer.core.instrument.Tags;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
 
@@ -149,14 +148,6 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
             classificationResponses.add(classification);
         }
 
-        // Update Gauge metrics if condition are met.
-        updateGaugeMetric(violationCounter, totalPersonCount);
-
-        PPEResponse ppeResponse = new PPEResponse(bucketName, classificationResponses);
-        return ResponseEntity.ok(ppeResponse);
-    }
-
-    private void updateGaugeMetric(int violationCounter, int totalPersonCount) {
         // This should check if 30% of the scanned people are violations, it should increment by 1 to the widget.
         // If it reaches 5 times, it should send off an alarm.
         if (violationCounter >= totalPersonCount * violationPercentage) {
@@ -171,6 +162,9 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
             exceededViolationCounter = 1;
             exceededViolationGauge.set(1);
         }
+
+        PPEResponse ppeResponse = new PPEResponse(bucketName, classificationResponses);
+        return ResponseEntity.ok(ppeResponse);
     }
 
     /**

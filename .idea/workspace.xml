@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Removed Gauge builder again. should not need this...">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Seems like gauge did not update correctly after refactoring out the update/check? Moving it back...">
+      <change afterPath="$PROJECT_DIR$/infra/.terraform.lock.hcl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra/.terraform/modules/modules.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra/.terraform/providers/registry.terraform.io/hashicorp/aws/5.25.0/windows_amd64/terraform-provider-aws_v5.25.0_x5.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra/.terraform/terraform.tfstate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
     </list>
@@ -117,31 +125,7 @@
       <workItem from="1700483273270" duration="8726000" />
       <workItem from="1700502036915" duration="5433000" />
       <workItem from="1700510438943" duration="11000" />
-      <workItem from="1700511019126" duration="1961000" />
-    </task>
-    <task id="LOCAL-00122" summary="Added latency metric for scanForPPE">
-      <option name="closed" value="true" />
-      <created>1700309951041</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1700309951041</updated>
-    </task>
-    <task id="LOCAL-00123" summary="Added latency metric for scanFullPPE as well">
-      <option name="closed" value="true" />
-      <created>1700310106451</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1700310106451</updated>
-    </task>
-    <task id="LOCAL-00124" summary="Updating README_BESVARELSER.md a little">
-      <option name="closed" value="true" />
-      <created>1700310639918</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1700310639918</updated>
+      <workItem from="1700511019126" duration="3577000" />
     </task>
     <task id="LOCAL-00125" summary="Fixed error in cloudwatch for scanFullPPE widget">
       <option name="closed" value="true" />
@@ -511,7 +495,31 @@
       <option name="project" value="LOCAL" />
       <updated>1700512950128</updated>
     </task>
-    <option name="localTasksCounter" value="171" />
+    <task id="LOCAL-00171" summary="Removed Gauge builder again. should not need this...">
+      <option name="closed" value="true" />
+      <created>1700512987583</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1700512987583</updated>
+    </task>
+    <task id="LOCAL-00172" summary="Seems like gauge did not update correctly after refactoring out the update/check? Moving it back...">
+      <option name="closed" value="true" />
+      <created>1700514145918</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1700514145918</updated>
+    </task>
+    <task id="LOCAL-00173" summary="Seems like gauge did not update correctly after refactoring out the update/check? Moving it back...">
+      <option name="closed" value="true" />
+      <created>1700514553277</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1700514553277</updated>
+    </task>
+    <option name="localTasksCounter" value="174" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,7 +537,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test without latency" />
     <MESSAGE value="Test without latency. typo" />
     <MESSAGE value="Test without latency. Test to change 5 to 10s on how often app sends data to cloudwatch" />
     <MESSAGE value="Changing back values to before" />
@@ -554,7 +561,8 @@
     <MESSAGE value="Remaning readmes" />
     <MESSAGE value="Fixing line graph so it shows data correctly again" />
     <MESSAGE value="Removed Gauge builder again. should not need this..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed Gauge builder again. should not need this..." />
+    <MESSAGE value="Seems like gauge did not update correctly after refactoring out the update/check? Moving it back..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Seems like gauge did not update correctly after refactoring out the update/check? Moving it back..." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
