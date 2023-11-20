@@ -274,9 +274,7 @@ vennligst inkluder:
 - [x] Hvordan jobber vi med CI i GitHub rent praktisk? For eskempel i et utviklingsteam på fire/fem utivklere?
 
 
-    Continuous integration, as the name suggests, is the practice of frequent integrations of new code (updates for example)
-    to the main branch.
-    This helps avoiding big changes which can cause harder times to debug eventual errors.
+    Continuous integration, is the practice of having automated and frequent updates or fixes for deployment.
     Many and smaller commits and merges of updates to the main branch introduces small changes at a time, which will be much easier to debug if error happens.
     It is also easier to do changes upon.
     For example if many developers work on the same project, if huge code changes are commited each time, it will most likely lead to conflicts.
@@ -301,13 +299,9 @@ vennligst inkluder:
 
     Scrum is used for agile methodology which have been shown to work well for software develpoment.
     It is an iterative process to progressively work towards the projects goal.
-    A product backlog which contain a list of tasks to be done. This can change from sprint to sprint by adding/removing
-    tasks.
-
-    In a scrum there are different roles:
-      - Product owner.
-      - Scrum master.
-      - Development team.
+    But the way to the goal or even the goal can sometimes change along the way.
+    It uses a so called product backlog, which contain a list of tasks to be done.
+    This can change from sprint to sprint by adding/removing tasks.
 
     Scrum/Agile is a very efficient way of working.
     Strengths:
@@ -342,11 +336,12 @@ vennligst inkluder:
     DevOps encourages close working culture between developers and operations to make the development process as efficient as possible.
     This means that both shares the responsiblity for everything.
     By having this, it ensures a smoother and more efficient development process and supports continuous delivery of software.
+    
 
     The three main princples are:
       Flow: 
         CI as explained above is a big part of this.
-        Pipelining and automation is important to identify errors fast to keep improving the software.
+        Pipelining and automation is important to identify errors fast to keep improving the software. For example using GitHub Actions.
         Continuous delivery is another aspect that ensures that the software is always ready for deployment and release.
 
       Feedback:

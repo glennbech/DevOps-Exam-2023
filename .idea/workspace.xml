@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Removing unncessary code, fixing comments. Removed code for using latest rev instead of latest for ECR -&gt; apprunner. Seems to work now fine.">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="pom.xml update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README_BESVARELSER.md" beforeDir="false" afterPath="$PROJECT_DIR$/README_BESVARELSER.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,15 +114,7 @@
       <workItem from="1700340226731" duration="4342000" />
       <workItem from="1700396261914" duration="24511000" />
       <workItem from="1700440623939" duration="19000" />
-      <workItem from="1700483273270" duration="7856000" />
-    </task>
-    <task id="LOCAL-00111" summary="Create condition to count number of times violations &gt;= valids and send to widget. Should later send alarm too">
-      <option name="closed" value="true" />
-      <created>1700249566882</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1700249566882</updated>
+      <workItem from="1700483273270" duration="8687000" />
     </task>
     <task id="LOCAL-00112" summary="Updated cloudwatch.tf to show violation alarms as gauge">
       <option name="closed" value="true" />
@@ -508,7 +500,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700499082953</updated>
     </task>
-    <option name="localTasksCounter" value="160" />
+    <task id="LOCAL-00160" summary="pom.xml update">
+      <option name="closed" value="true" />
+      <created>1700501194090</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1700501194090</updated>
+    </task>
+    <option name="localTasksCounter" value="161" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,7 +526,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed email" />
     <MESSAGE value="testing out application.properties file to set namespace name in java" />
     <MESSAGE value="Fixed namespace, forgot to remove &quot;&quot; around variable name.." />
     <MESSAGE value="Fixed/changed logic on gauge widget.&#10;If violations &gt; 30% of people scanned, add to gauge. if gauge &gt;= 5 trigger alarm" />
@@ -551,7 +550,8 @@
     <MESSAGE value="Fixing gauge" />
     <MESSAGE value="Fixing violation and valid counters." />
     <MESSAGE value="Removing unncessary code, fixing comments. Removed code for using latest rev instead of latest for ECR -&gt; apprunner. Seems to work now fine." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removing unncessary code, fixing comments. Removed code for using latest rev instead of latest for ECR -&gt; apprunner. Seems to work now fine." />
+    <MESSAGE value="pom.xml update" />
+    <option name="LAST_COMMIT_MESSAGE" value="pom.xml update" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
