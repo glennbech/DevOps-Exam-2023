@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Added last endpoint for checking PPE on hands and metrics for it.">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Should now correctly identify if hands exist in image and then scan for PPE (valid is only if both hands have PPE). Are some eventual flaws in the labeling api. see comment in code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infra/dashboard.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/dashboard.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,15 +125,7 @@
       <workItem from="1700605749423" duration="786000" />
       <workItem from="1700666146261" duration="29000" />
       <workItem from="1700762082432" duration="18000" />
-      <workItem from="1700912272833" duration="16194000" />
-    </task>
-    <task id="LOCAL-00133" summary="Now seems to work as it should!">
-      <option name="closed" value="true" />
-      <created>1700321800555</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1700321800555</updated>
+      <workItem from="1700912272833" duration="17590000" />
     </task>
     <task id="LOCAL-00134" summary="Updated README_BESVARELSER.md">
       <option name="closed" value="true" />
@@ -520,7 +511,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700925288007</updated>
     </task>
-    <option name="localTasksCounter" value="182" />
+    <task id="LOCAL-00182" summary="Should now correctly identify if hands exist in image and then scan for PPE (valid is only if both hands have PPE). Are some eventual flaws in the labeling api. see comment in code">
+      <option name="closed" value="true" />
+      <created>1700928859507</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1700928859507</updated>
+    </task>
+    <option name="localTasksCounter" value="183" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -538,7 +537,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Back to original version" />
     <MESSAGE value="Oppgave 5. updating README_BESVARELSER.md + fixed naming" />
     <MESSAGE value="Oppgave 5. updating README_BESVARELSER.md" />
     <MESSAGE value="Fixed metric name for gauge" />
@@ -563,7 +561,8 @@
     <MESSAGE value="Changed violationCounter and validCounter to private fields + added reset method to use" />
     <MESSAGE value="Added endpoint for Head PPE. isViolations takes in another string for checking." />
     <MESSAGE value="Added last endpoint for checking PPE on hands and metrics for it." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added last endpoint for checking PPE on hands and metrics for it." />
+    <MESSAGE value="Should now correctly identify if hands exist in image and then scan for PPE (valid is only if both hands have PPE). Are some eventual flaws in the labeling api. see comment in code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Should now correctly identify if hands exist in image and then scan for PPE (valid is only if both hands have PPE). Are some eventual flaws in the labeling api. see comment in code" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
