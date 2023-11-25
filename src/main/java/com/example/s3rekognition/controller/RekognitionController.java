@@ -27,6 +27,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Supplier;
 import java.util.logging.Logger;
 
+/**
+ * Endpoints:
+ *      /scan-ppe
+ *      /scan-face-ppe
+ *      /scan-head-ppe
+ *      /scan-hands-ppe
+ *
+ */
 
 @RestController
 public class RekognitionController implements ApplicationListener<ApplicationReadyEvent> {
