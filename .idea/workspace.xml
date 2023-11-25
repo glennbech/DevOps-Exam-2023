@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Re-added some code for the PPEResonse object for using number of violation/valid fields. Changed how metrics are registered. Combined the widgets for response rate (My changes somehow broke the metrics it seems)">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Works now. Commenting default values in variables.tf">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,14 +121,12 @@
       <workItem from="1700510438943" duration="11000" />
       <workItem from="1700511019126" duration="3577000" />
       <workItem from="1700514610391" duration="5251000" />
-    </task>
-    <task id="LOCAL-00128" summary="Fixed email">
-      <option name="closed" value="true" />
-      <created>1700315353950</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1700315353950</updated>
+      <workItem from="1700551348996" duration="139000" />
+      <workItem from="1700583158616" duration="246000" />
+      <workItem from="1700605749423" duration="786000" />
+      <workItem from="1700666146261" duration="29000" />
+      <workItem from="1700762082432" duration="18000" />
+      <workItem from="1700912272833" duration="2111000" />
     </task>
     <task id="LOCAL-00129" summary="testing out application.properties file to set namespace name in java">
       <option name="closed" value="true" />
@@ -511,7 +512,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700518596810</updated>
     </task>
-    <option name="localTasksCounter" value="177" />
+    <task id="LOCAL-00177" summary="Works now. Commenting default values in variables.tf">
+      <option name="closed" value="true" />
+      <created>1700551422299</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1700551422300</updated>
+    </task>
+    <option name="localTasksCounter" value="178" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,7 +538,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test without latency. Test to change 5 to 10s on how often app sends data to cloudwatch" />
     <MESSAGE value="Changing back values to before" />
     <MESSAGE value="Trying to set max connections to see if it fixes apprunner error" />
     <MESSAGE value="See if retry works" />
@@ -554,7 +562,8 @@
     <MESSAGE value="Removed Gauge builder again. should not need this..." />
     <MESSAGE value="Seems like gauge did not update correctly after refactoring out the update/check? Moving it back..." />
     <MESSAGE value="Re-added some code for the PPEResonse object for using number of violation/valid fields. Changed how metrics are registered. Combined the widgets for response rate (My changes somehow broke the metrics it seems)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Re-added some code for the PPEResonse object for using number of violation/valid fields. Changed how metrics are registered. Combined the widgets for response rate (My changes somehow broke the metrics it seems)" />
+    <MESSAGE value="Works now. Commenting default values in variables.tf" />
+    <option name="LAST_COMMIT_MESSAGE" value="Works now. Commenting default values in variables.tf" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

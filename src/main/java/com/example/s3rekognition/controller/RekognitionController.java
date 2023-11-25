@@ -22,16 +22,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Supplier;
 import java.util.logging.Logger;
 
 
 @RestController
 public class RekognitionController implements ApplicationListener<ApplicationReadyEvent> {
-    private final Map<String, Integer> scanResult = new HashMap<>();
+    private PPEResponse ppeResponse = new PPEResponse();
+    private final Supplier<PPEResponse> ppeResponseSupplier = () -> ppeResponse;
     private int exceededViolationCounter = 0;
     private final AtomicInteger exceededViolationGauge;
     private final int violationLimit = 5;               // Change this value for when to reset Gauge
@@ -106,12 +106,10 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
             classificationResponses.add(classification);
         }
 
-        PPEResponse ppeResponse = new PPEResponse(bucketName, classificationResponses);
+        ppeResponse = new PPEResponse(bucketName, classificationResponses);
         ppeResponse.setNumberOfViolations(violationCounter);
         ppeResponse.setNumberOfValid(validCounter);
 
-        scanResult.put("Violations", ppeResponse.getNumberOfViolations());
-        scanResult.put("Valid", ppeResponse.getNumberOfValid());
 
         return ResponseEntity.ok(ppeResponse);
     }
@@ -214,13 +212,9 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
-        Gauge.builder("total_violations", scanResult,
-                        violation -> violation.getOrDefault("Violations", 0))
-                .register(meterRegistry);
+        Gauge.builder("total_violations", ppeResponseSupplier, supplier -> supplier.get().getNumberOfViolations()).register(meterRegistry);
+        Gauge.builder("total_valid", ppeResponseSupplier, supplier -> supplier.get().getNumberOfValid()).register(meterRegistry);
 
-        Gauge.builder("total_valid", scanResult,
-                        valid -> valid.getOrDefault("Valid", 0))
-                .register(meterRegistry);
 
         Gauge.builder("exceeded_violation_alarm", this, obj -> obj.exceededViolationCounter).register(meterRegistry);
     }
