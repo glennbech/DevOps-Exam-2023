@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Removed variables needed to be set manually in terraform to use mostly the &quot;prefix&quot; one now. changed workflows file too">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/oppgave-2-3-workflow.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/oppgave-2-3-workflow.yaml" afterDir="false" />
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Updated README.md, variable names in terraform">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Oppgave 3 - CloudWatch Dashboard - Widgets.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Oppgave 3 - CloudWatch Dashboard - Widgets.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/alarm_module/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/alarm_module/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/dashboard.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/dashboard.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/variables.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,15 +127,7 @@
       <workItem from="1700762082432" duration="18000" />
       <workItem from="1700912272833" duration="22240000" />
       <workItem from="1700943711955" duration="1163000" />
-      <workItem from="1700944885921" duration="3454000" />
-    </task>
-    <task id="LOCAL-00137" summary="Updating README_BESVARELSER.md">
-      <option name="closed" value="true" />
-      <created>1700331571606</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1700331571606</updated>
+      <workItem from="1700944885921" duration="4675000" />
     </task>
     <task id="LOCAL-00138" summary="Updating README_BESVARELSER.md">
       <option name="closed" value="true" />
@@ -528,7 +513,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700943513183</updated>
     </task>
-    <option name="localTasksCounter" value="186" />
+    <task id="LOCAL-00186" summary="Updated README.md, variable names in terraform">
+      <option name="closed" value="true" />
+      <created>1700948445182</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1700948445182</updated>
+    </task>
+    <option name="localTasksCounter" value="187" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -546,7 +539,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixing gauge" />
     <MESSAGE value="Fixing violation and valid counters." />
     <MESSAGE value="Removing unncessary code, fixing comments. Removed code for using latest rev instead of latest for ECR -&gt; apprunner. Seems to work now fine." />
     <MESSAGE value="pom.xml update" />
@@ -571,7 +563,8 @@
     <MESSAGE value="Moved around widgets" />
     <MESSAGE value="Extracted getDetectProtectiveEquipmentRequest for AWS rekognition api" />
     <MESSAGE value="Removed variables needed to be set manually in terraform to use mostly the &quot;prefix&quot; one now. changed workflows file too" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed variables needed to be set manually in terraform to use mostly the &quot;prefix&quot; one now. changed workflows file too" />
+    <MESSAGE value="Updated README.md, variable names in terraform" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated README.md, variable names in terraform" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

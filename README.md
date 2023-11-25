@@ -145,7 +145,8 @@
       Then it should work fine.
 
 ### NOTES:
-    * Sometimes i get a deploymeny error regarding port used. But i cant find the reason why as it should be free. When re-running it, everything works.
+    * Sometimes i get a deploymeny error on "Health check failed on port 8080". But if i re-run it it seems to work.
+      So i am not sure how to fix this since it only happens sometimes.
 
     * In Apprunner, i get some errors i am not able to fix:
       - i.m.cloudwatch2.CloudWatchMeterRegistry  : error sending metric data.
