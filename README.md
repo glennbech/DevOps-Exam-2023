@@ -98,18 +98,18 @@
 - [x] Reduser CPU til 256, og Memory til 1024 (defaultverdiene er høyere).
 
 
-    Added some variables that uses variables.tf
-      - service_name
-      - aws_iam_role_name
-      - aws_iam_policy_name
-      - port
-      - image_tag
-
-    Many of the values here uses a default value, to make it more practical for this exam.
-    Otherwise, it would most likely be more practical without them if someone else used it.
-    But it can be overridden with -var="<the_variable>=<your_name>"
-    These variables are overridden in the GitHub Actions workflow file.
-    Port might usually not be changed. But if it is used already, it can be practical to be able to change here.
+    Added variables.tf to use:
+      - port (set to 8080 by default)
+      - name
+          Example:
+            - aws_apprunner_service -> "app-runner-${var.name}"
+            - aws_iam_role          -> "iam-role-${var.name}"
+            - aws_iam_policy_name   -> "iam-policy-${var.name}"
+      - prefix
+          Used for dashboard and alarm namespace
+    
+    The "name" default value used here is "kandidatnr-2038"
+    The "prefix" default value used here is "cloudwatch-kandidatnr-2038"
 
     Changed ecr from kjell to my ECR.
 
@@ -131,13 +131,14 @@
       Change S3 Bucket in provider.tf (if not using the provided one)
 
       Apprunner, IAM Role and IAM Policy needs to have a unique name.
-        Change the following env. in the workflow file:
-          env:
-            ECR_REPO: <your-ecr-repo>
-            SERVICE_NAME: <you-appr-name>
-            AWS_IAM_ROLE_NAME: <you-role-name>
-            AWS_IAM_POLICY_NAME: <you-policy-name>
-            PORT: <port>, (could most stay as 8080, but added this in case)
+        GitHub Actions workflow file uses:
+          - PREFIX
+          - NAME
+          - EMAIL
+          - PORT
+
+        Will need to change them manually if needed, to fit ones own name
+        Then the run command for terraform apply will use those values.
       
       Also check so the ECR is correct under the step: "Login to AWS ECR"
 
@@ -152,10 +153,9 @@
           But everything seems to work perfectly fine. Calling the endpoints sends data successfully to the widgets in cloudwatch.
           The alarm also works fine.
 
-    * In variables.tf i used many default values to avoid repeating myself when doing terraform apply, when updating things (locally).
-      Ive kept them, but commented out just to keep them and show how ive done.
-      When running GitHub actions, these values needs to be changed anyways, otherwise it will use my default values in there.
-      
+    * In variables.tf i re-use the "name" variable in many places to avoid having to set too many variables.
+      At first i set one variable for each thing (apprunner, role, policy) But it felt like too much.
+ 
       
 
 
@@ -173,50 +173,66 @@
   - [x] Konfigurer for leveranse av Metrics til CloudWatch.
 - [x] Dere skal skrive en kort begrunnelse for hvorfor dere har valgt måleinstrumentene dere har gjort, og valgene må være relevante.
 - [x] Minst tre ulike måleinstrumenter.
-  - [x] Widget 1 - 
-  - [x] Widget 2 - .
-  - [x] Widget 3 - Average Response Time for single/full PPE analysis.
+
 ![Oppgave 3 - CloudWatch Dashboard - Widgets.png](images%2FOppgave%203%20-%20CloudWatch%20Dashboard%20-%20Widgets.png)
 
 
-    New endpoint: scanFullPPE:
-      Scans head, face and both hands for PPE.
+    Modified endpoint scanForPPE to check PPE on face, hands, head.
+
+    Added new endpoints:
+      - scanForFacePPE (/scan-face-ppe)
+          Checks PPE on face.
+
+      - scanForHeadPPE (/scan-head-ppe)
+          Checks PPE on head
+
+      - scanForHandsPPE (/scan-hands-ppe)
+          Check PPE on hands.
+          This took a little more to make because another API from Rekognition had to be used to find labels in an image.
+          But i could not find a complete list of standard labels from AWS.
+          So first it has to see if hands exist in the image by labels (i used "Hand" and "Glove" here)
+          Otherwise the method isViolation would return false value: "false" if no hands at all were detected, which in my
+          api would count as a "valid" PPE.
+
+          In reality the solution might not be that good, because there could be many other labels can identify hands.
 
     Widget choice:
-      Widget 1 - Face PPE Detection analysis:
-        This widget uses the scanForPPE endpoint.
-        The graph shows the number of violations and number of valid PPE-detections in one graph.
-        It could be relevant for statistics to measure how many that fails, which would probably need some changes in a system to improve this.
-        Having both in one graph makes it easier to see this.
+      Widget 1 - Face PPE Detection analysis
+      Widget 2 - Head PPE Detection analysis
+      Widget 3 - Hands PPE Detection analysis
 
+    Widget 1-3 does in a way the same thing but for different parts.
+      All 3 will show the number of violations and number of valid PPE from the images.
+      Violations and valid will show in the same 
+      It could be relevant for statistics to measure how many that fails, which would probably need some changes in a system to improve this.
+      Having both in one graph makes it easier to see this.
 
-      Widget 2 - Full PPE Violation counter:
-        This widget is only for the scanFullPPE endpoint, which considers face, head and both hands.
-        The condition for this gauge to update is:
-          After finding the total numbers of people in all images in a bucket, if 30% of them violates the PPE detection,
-          the gauge will increment by 1.
-          When the gauge reaches 5, it will trigger an alarm.
-          After reaching 6, it will reset to 1.
-            I chose to not reset when reaching 5 because then the gauge would never show 5. It would go to 4 and then to 0.
+    Widget 4 - Full PPE Violation counter:
+      This widget is only for the scanFullPPE endpoint, which considers face, head and both hands.
+      The condition for this gauge to update is:
+        After finding the total numbers of people in all images in a bucket, if 30% of them violates the PPE detection,
+        the gauge will increment by 1.
+        When the gauge reaches 5, it will trigger an alarm.
+        After reaching 6, it will reset to 1.
+          I chose to not reset when reaching 5 because then the gauge would never show 5. It would go to 4 and then to 0.
 ![Oppgave 3-4 - Max value 5.png](images%2FOppgave%203-4%20-%20Max%20value%205.png)
 
-        The idea is that this could be used for very strict environments where PPE is very important, which means 
-        compliance must be good. So for example if violations happen x times a day, thats very bad.
-        Limit is set to 5 in this exam, but this is a very small number, which likely spams the email inbox.
-        This is easily changed, more in B. about alarms.
+      The idea is that this could be used for very strict environments where PPE is very important, which means 
+      compliance must be good. So for example if violations happen x times a day, thats very bad.
+      Limit is set to 5 in this exam, but this is a very small number, which likely spams the email inbox.
+      This is easily changed, more in B. about alarms.
 
-
-      Widget 3 - Average Response Time for single/full PPE analysis
-        Shows the response tiem for calling the scanForPPE and scanFullPPE endpoint.
-        It can be important to know the response time because of performance-checking and debugging.
-        For example stress test to see how well it handles multiple calls. If it runs too slow, it might need improvement.
-        If it takes very very long, it might point to some error.
+    Widget 5 - Average Response Time for PPE analysis.
+      This widget will show the response time of all 4 endpoints.
+      This can be important to measure because of both performance and for troubleshooting.
+      for example if one endpoint takes very long, it could indicate that something is wrong.
+      It would be effective for improving and fixing the issue.
 
 
     I used applicaton.properties for an envionment variable to set the cloudwatch.namespace in MetricsConfig.java.
     Since it didnt otherwise contain secret/sensitive data, its pushed to GitHub.
     ***
-    IMPORTANT! The cloudwatch namespace must be same here and in the Terraform code to be able to connect and send data correctly.
+    IMPORTANT! The cloudwatch namespace must be same here and in the Terraform code for the alarm to be able to connect and send data correctly.
     ***
 
 

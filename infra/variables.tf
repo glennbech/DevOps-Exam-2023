@@ -1,11 +1,15 @@
-variable "port" {
-  default = "8080"
+# Used for both namespace for CloudWatch dashboard and alarm.
+variable "prefix" {
+  default = "cloudwatch-kandidatnr-2038"
   type = string
 }
 
-# Used for both namespace for CloudWatch dashboard and alarm.
-variable "prefix" {
+variable "name" {
   default = "kandidatnr-2038"
+  type = string
+}
+variable "port" {
+  default = "8080"
   type = string
 }
 

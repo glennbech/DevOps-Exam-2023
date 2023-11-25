@@ -1,5 +1,5 @@
 resource "aws_apprunner_service" "service" {
-  service_name = "${var.prefix}-app-runner"
+  service_name = "app-runner-${var.name}"
 
   instance_configuration {
     instance_role_arn = aws_iam_role.role_for_apprunner_service.arn
@@ -24,7 +24,7 @@ resource "aws_apprunner_service" "service" {
 
 
 resource "aws_iam_role" "role_for_apprunner_service" {
-  name               = "${var.prefix}-policy-app-service"
+  name               = "iam-role-${var.name}"
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 
@@ -62,8 +62,8 @@ data "aws_iam_policy_document" "policy" {
 }
 
 resource "aws_iam_policy" "policy" {
-  name        = "${var.prefix}-iam-role"
-  description = "Policy for App Runner"
+  name        = "iam-policy-${var.name}"
+  description = "IAM Policy"
   policy      = data.aws_iam_policy_document.policy.json
 }
 
@@ -71,4 +71,3 @@ resource "aws_iam_role_policy_attachment" "attachment" {
   role       = aws_iam_role.role_for_apprunner_service.name
   policy_arn = aws_iam_policy.policy.arn
 }
-

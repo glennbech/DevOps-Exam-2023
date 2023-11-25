@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ECR_REPO: 244530008913.dkr.ecr.eu-west-1.amazonaws.com/ecr-kandidatnr-2038    # Change to your ECR Repository
-      PREFIX: kandidatnr-2038                                                       # Change to your name
-      CLOUDWATCH_NAMESPACE: kandidatnr-2038-cloudwatch                              # Change to your name
+      PREFIX: cloudwatch-kandidatnr-2038                                            # Change to your name
+      NAME: kandidatnr-2038                                                         # Change to your name
       EMAIL: tobias.liu@live.se                                                     # Change to your email
       PORT: 8080                                                                    # Change if necessary.
 
@@ -60,6 +60,6 @@ jobs:
 
       - name: Terraform apply on push to main
         if: github.ref == 'refs/heads/main'
-        run: terraform apply -var="prefix=$PREFIX" -var="prefix=$CLOUDWATCH_NAMESPACE" -var="alarm_email=$EMAIL" -var="port=$PORT" -auto-approve
+        run: terraform apply -var="prefix=$PREFIX" -var="name=$NAME" -var="alarm_email=$EMAIL" -var="port=$PORT" -auto-approve
 
         working-directory: ./infra
