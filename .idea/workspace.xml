@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Changed violationCounter and validCounter to private fields + added reset method to use">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Added endpoint for Head PPE. isViolations takes in another string for checking.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/cloudwatch.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/dashboard.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/dashboard.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/dashboard.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,15 +126,7 @@
       <workItem from="1700605749423" duration="786000" />
       <workItem from="1700666146261" duration="29000" />
       <workItem from="1700762082432" duration="18000" />
-      <workItem from="1700912272833" duration="11334000" />
-    </task>
-    <task id="LOCAL-00131" summary="Fixed/changed logic on gauge widget.&#10;If violations &gt; 30% of people scanned, add to gauge. if gauge &gt;= 5 trigger alarm">
-      <option name="closed" value="true" />
-      <created>1700319536313</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1700319536313</updated>
+      <workItem from="1700912272833" duration="12636000" />
     </task>
     <task id="LOCAL-00132" summary="Added logging for people scanned and violations">
       <option name="closed" value="true" />
@@ -520,7 +512,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700916117843</updated>
     </task>
-    <option name="localTasksCounter" value="180" />
+    <task id="LOCAL-00180" summary="Added endpoint for Head PPE. isViolations takes in another string for checking.">
+      <option name="closed" value="true" />
+      <created>1700924266653</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1700924266653</updated>
+    </task>
+    <option name="localTasksCounter" value="181" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -538,7 +538,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="See if retry works" />
     <MESSAGE value="Revert. Testing newer 1.x version of aws java sdk" />
     <MESSAGE value="Back to original version" />
     <MESSAGE value="Oppgave 5. updating README_BESVARELSER.md + fixed naming" />
@@ -563,7 +562,8 @@
     <MESSAGE value="Works now. Commenting default values in variables.tf" />
     <MESSAGE value="Using PPEResponse object and Supplier interface for updating metrics" />
     <MESSAGE value="Changed violationCounter and validCounter to private fields + added reset method to use" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed violationCounter and validCounter to private fields + added reset method to use" />
+    <MESSAGE value="Added endpoint for Head PPE. isViolations takes in another string for checking." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added endpoint for Head PPE. isViolations takes in another string for checking." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -38,6 +38,23 @@ resource "aws_cloudwatch_dashboard" "main" {
       }
     },
     {
+      "type": "metric",
+      "x": 0,
+      "y": 0,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          ["${var.prefix}", "hands_total_violations.value"],
+          ["${var.prefix}", "hands_total_valid.value"]
+        ],
+        "period": 300,
+        "stat": "Maximum",
+        "region": "eu-west-1",
+        "title": "Hands PPE Detection analysis"
+      }
+    },
+    {
      "type": "metric",
      "x": 18,
      "y": 60,

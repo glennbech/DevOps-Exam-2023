@@ -32,8 +32,10 @@ import java.util.logging.Logger;
 public class RekognitionController implements ApplicationListener<ApplicationReadyEvent> {
     private PPEResponse ppeFaceResponse = new PPEResponse();
     private PPEResponse ppeHeadResponse = new PPEResponse();
+    private PPEResponse ppeHandsResponse = new PPEResponse();
     private final Supplier<PPEResponse> ppeFaceResponseSupplier = () -> ppeFaceResponse;
     private final Supplier<PPEResponse> ppeHeadResponseSupplier = () -> ppeHeadResponse;
+    private final Supplier<PPEResponse> ppeHandsResponseSupplier = () -> ppeHandsResponse;
     private final int violationLimit = 5;               // Change this value for when to reset Gauge
     private final double violationPercentage = 0.3;     // Change this value for sensitivity to increment to Gauge
     private final AtomicInteger exceededViolationGauge;
@@ -217,8 +219,55 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         return ResponseEntity.ok(ppeHeadResponse);
     }
 
+    // HANDS SCAN
+    @GetMapping(value = "/scan-hands-ppe", consumes = "*/*", produces = "application/json")
+    @ResponseBody
+    @Timed(value = "scanForHandsPPE_response_time", description = "response time of hands ppe scan")
+    public ResponseEntity<PPEResponse> scanForHandsPPE(@RequestParam String bucketName) {
+        resetViolationCounter();
+        resetValidCounter();
 
+        ListObjectsV2Result imageList = s3Client.listObjectsV2(bucketName);
+        List<PPEClassificationResponse> classificationResponses = new ArrayList<>();
+        List<S3ObjectSummary> images = imageList.getObjectSummaries();
 
+        for (S3ObjectSummary image : images) {
+            logger.info("scanning " + image.getKey());
+
+            DetectProtectiveEquipmentRequest request = new DetectProtectiveEquipmentRequest()
+                    .withImage(new Image()
+                            .withS3Object(new S3Object()
+                                    .withBucket(bucketName)
+                                    .withName(image.getKey())))
+                    .withSummarizationAttributes(new ProtectiveEquipmentSummarizationAttributes()
+                            .withMinConfidence(80f)
+                            .withRequiredEquipmentTypes("HAND_COVER"));
+
+            DetectProtectiveEquipmentResult result = rekognitionClient.detectProtectiveEquipment(request);
+
+            boolean violationRightHand = isViolation(result, "RIGHT_HAND");
+            boolean violationLeftHand = isViolation(result, "LEFT_HAND");
+            boolean violation = true;
+
+            if (!violationRightHand && !violationLeftHand) {
+                validCounter++;
+                violation = false;
+            } else {
+                violationCounter++;
+            }
+
+            logger.info("scanning " + image.getKey() + ", violation result " + violation);
+
+            int personCount = result.getPersons().size();
+            PPEClassificationResponse classification = new PPEClassificationResponse(image.getKey(), personCount, violation);
+            classificationResponses.add(classification);
+        }
+
+        ppeHandsResponse = new PPEResponse(bucketName, classificationResponses);
+        ppeHandsResponse.setNumberOfViolations(violationCounter);
+        ppeHandsResponse.setNumberOfValid(validCounter);
+        return ResponseEntity.ok(ppeHandsResponse);
+    }
 
     private void updateOrResetGaugeMetric(PPEResponse ppeResponse, int totalPersonCount) {
         // This should check if 30% of the scanned people are violations, it should increment by 1 to the widget.
@@ -283,6 +332,9 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
 
         Gauge.builder("head_total_violations", ppeHeadResponseSupplier, supplier -> supplier.get().getNumberOfViolations()).register(meterRegistry);
         Gauge.builder("head_total_valid", ppeHeadResponseSupplier, supplier -> supplier.get().getNumberOfValid()).register(meterRegistry);
+
+        Gauge.builder("hands_total_violations", ppeHandsResponseSupplier, supplier -> supplier.get().getNumberOfViolations()).register(meterRegistry);
+        Gauge.builder("hands_total_valid", ppeHandsResponseSupplier, supplier -> supplier.get().getNumberOfValid()).register(meterRegistry);
 
         Gauge.builder("exceeded_violation_alarm", this, obj -> obj.exceededViolationCounter).register(meterRegistry);
     }
