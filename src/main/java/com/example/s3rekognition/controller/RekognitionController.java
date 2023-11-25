@@ -36,6 +36,8 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
     private final AtomicInteger exceededViolationGauge;
     private final int violationLimit = 5;               // Change this value for when to reset Gauge
     private final double violationPercentage = 0.3;     // Change this value for sensitivity to increment to Gauge
+    private int violationCounter = 0;
+    private int validCounter = 0;
     private final AmazonS3 s3Client;
     private final AmazonRekognition rekognitionClient;
     private final MeterRegistry meterRegistry;
@@ -62,8 +64,8 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
     @Timed(value = "scanforPPE-response-time", description = "single piece scan response time")
     public ResponseEntity<PPEResponse> scanForPPE(@RequestParam String bucketName) {
         // Used for metrics
-        int violationCounter = 0;
-        int validCounter = 0;
+        resetViolationCounter();
+        resetValidCounter();
 
         // List all objects in the S3 bucket
         ListObjectsV2Result imageList = s3Client.listObjectsV2(bucketName);
@@ -208,6 +210,14 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
                                 || bodyPart.getName().equals("RIGHT_HAND")
                                 || bodyPart.getName().equals("HEAD"))
                                 && bodyPart.getEquipmentDetections().isEmpty());
+    }
+
+    private void resetValidCounter() {
+        validCounter = 0;
+    }
+
+    private void resetViolationCounter() {
+        violationCounter = 0;
     }
 
     @Override
