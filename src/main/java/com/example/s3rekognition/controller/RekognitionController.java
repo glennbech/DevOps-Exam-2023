@@ -113,7 +113,6 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         updateOrResetGaugeMetric(ppeResponse, totalPersonCount);
 
         logger.info("Number of people scanned: " + totalPersonCount + ". Number of violations: " + ppeResponse.getNumberOfViolations());
-        logger.info("Current violation counter: " + exceededViolationCounter);
         return ResponseEntity.ok(ppeResponse);
     }
 
@@ -140,15 +139,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
             logger.info("scanning " + image.getKey());
 
             // This is where the magic happens, use AWS rekognition to detect PPE
-            DetectProtectiveEquipmentRequest request = new DetectProtectiveEquipmentRequest()
-                    .withImage(new Image()
-                            .withS3Object(new S3Object()
-                                    .withBucket(bucketName)
-                                    .withName(image.getKey())))
-                    .withSummarizationAttributes(new ProtectiveEquipmentSummarizationAttributes()
-                            .withMinConfidence(80f)
-                            .withRequiredEquipmentTypes("FACE_COVER"));
-
+            DetectProtectiveEquipmentRequest request = getDetectProtectiveEquipmentRequest(bucketName, image, "FACE_COVER");
             DetectProtectiveEquipmentResult result = rekognitionClient.detectProtectiveEquipment(request);
 
             // If any person on an image lacks PPE on the face, it's a violation of regulations
@@ -188,15 +179,7 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         for (S3ObjectSummary image : images) {
             logger.info("scanning " + image.getKey());
 
-            DetectProtectiveEquipmentRequest request = new DetectProtectiveEquipmentRequest()
-                    .withImage(new Image()
-                            .withS3Object(new S3Object()
-                                    .withBucket(bucketName)
-                                    .withName(image.getKey())))
-                    .withSummarizationAttributes(new ProtectiveEquipmentSummarizationAttributes()
-                            .withMinConfidence(80f)
-                            .withRequiredEquipmentTypes("HEAD_COVER"));
-
+            DetectProtectiveEquipmentRequest request = getDetectProtectiveEquipmentRequest(bucketName, image, "HEAD_COVER");
             DetectProtectiveEquipmentResult result = rekognitionClient.detectProtectiveEquipment(request);
 
             boolean violation = isViolation(result, "HEAD");
@@ -253,20 +236,9 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
             boolean handsDetected = detectHandsResult.getLabels().stream()
                     .anyMatch(label -> label.getName().equals("Hand") ||label.getName().equals("Glove"));
 
-//            logger.info("Hands detected: " + handsDetected + "\n");
-//            logger.info("All labels found: " + detectHandsResult + "\n");
-
             // If hands are detected
             if (handsDetected) {
-                DetectProtectiveEquipmentRequest request = new DetectProtectiveEquipmentRequest()
-                        .withImage(new Image()
-                                .withS3Object(new S3Object()
-                                        .withBucket(bucketName)
-                                        .withName(image.getKey())))
-                        .withSummarizationAttributes(new ProtectiveEquipmentSummarizationAttributes()
-                                .withMinConfidence(80f)
-                                .withRequiredEquipmentTypes("HAND_COVER"));
-
+                DetectProtectiveEquipmentRequest request = getDetectProtectiveEquipmentRequest(bucketName, image, "HAND_COVER");
                 DetectProtectiveEquipmentResult result = rekognitionClient.detectProtectiveEquipment(request);
 
                 boolean violationRightHand = isViolation(result, "RIGHT_HAND");
@@ -295,6 +267,17 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         ppeHandsResponse.setNumberOfViolations(violationCounter);
         ppeHandsResponse.setNumberOfValid(validCounter);
         return ResponseEntity.ok(ppeHandsResponse);
+    }
+
+    private DetectProtectiveEquipmentRequest getDetectProtectiveEquipmentRequest(String bucketName, S3ObjectSummary image, String typeOfPPE) {
+        return new DetectProtectiveEquipmentRequest()
+                .withImage(new Image()
+                        .withS3Object(new S3Object()
+                                .withBucket(bucketName)
+                                .withName(image.getKey())))
+                .withSummarizationAttributes(new ProtectiveEquipmentSummarizationAttributes()
+                        .withMinConfidence(80f)
+                        .withRequiredEquipmentTypes(typeOfPPE));
     }
 
     private void updateOrResetGaugeMetric(PPEResponse ppeResponse, int totalPersonCount) {
@@ -327,13 +310,6 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         return result.getPersons().stream()
                 .flatMap(p -> p.getBodyParts().stream())
                 .anyMatch(bodyPart -> bodyPart.getName().equals(typeOfPPE)
-                        && bodyPart.getEquipmentDetections().isEmpty());
-    }
-
-    private static boolean isViolationForHands(DetectProtectiveEquipmentResult result) {
-        return result.getPersons().stream()
-                .flatMap(p -> p.getBodyParts().stream())
-                .anyMatch(bodyPart -> (bodyPart.getName().equals("LEFT_HAND") || (bodyPart.getName().equals("RIGHT_HAND")))
                         && bodyPart.getEquipmentDetections().isEmpty());
     }
 
