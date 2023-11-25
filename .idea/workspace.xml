@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Moved around widgets">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Extracted getDetectProtectiveEquipmentRequest for AWS rekognition api">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/oppgave-2-3-workflow.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/oppgave-2-3-workflow.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/dashboard.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/dashboard.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,15 +129,7 @@
       <workItem from="1700605749423" duration="786000" />
       <workItem from="1700666146261" duration="29000" />
       <workItem from="1700762082432" duration="18000" />
-      <workItem from="1700912272833" duration="18637000" />
-    </task>
-    <task id="LOCAL-00135" summary="Updating workflows">
-      <option name="closed" value="true" />
-      <created>1700323393907</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1700323393907</updated>
+      <workItem from="1700912272833" duration="22025000" />
     </task>
     <task id="LOCAL-00136" summary="Forgot to uncomment main.tf. Also pushing a application.properties file this time, but it does not contain sensitive data">
       <option name="closed" value="true" />
@@ -519,7 +515,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700930791249</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="Extracted getDetectProtectiveEquipmentRequest for AWS rekognition api">
+      <option name="closed" value="true" />
+      <created>1700938955748</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1700938955748</updated>
+    </task>
+    <option name="localTasksCounter" value="185" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,7 +541,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Oppgave 5. updating README_BESVARELSER.md" />
     <MESSAGE value="Fixed metric name for gauge" />
     <MESSAGE value="Fixing gauge" />
     <MESSAGE value="Fixing violation and valid counters." />
@@ -562,7 +565,8 @@
     <MESSAGE value="Added last endpoint for checking PPE on hands and metrics for it." />
     <MESSAGE value="Should now correctly identify if hands exist in image and then scan for PPE (valid is only if both hands have PPE). Are some eventual flaws in the labeling api. see comment in code" />
     <MESSAGE value="Moved around widgets" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved around widgets" />
+    <MESSAGE value="Extracted getDetectProtectiveEquipmentRequest for AWS rekognition api" />
+    <option name="LAST_COMMIT_MESSAGE" value="Extracted getDetectProtectiveEquipmentRequest for AWS rekognition api" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

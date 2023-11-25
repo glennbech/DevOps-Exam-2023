@@ -9,15 +9,13 @@ on:
       - '**'
 
 jobs:
-  dockerize-ecr-terraform:
+  docker-ecr-terraform:
     name: Push Docker image to ECR repository
     runs-on: ubuntu-latest
     env:
       ECR_REPO: 244530008913.dkr.ecr.eu-west-1.amazonaws.com/ecr-kandidatnr-2038    # Change to your ECR Repository
-      SERVICE_NAME: app-runner-kandidatnr-2038                                      # Change to your name
-      AWS_IAM_ROLE_NAME: iam-role-2038                                              # Change to your name
-      AWS_IAM_POLICY_NAME: policy-app-service-2038                                  # Change to your name
-      CLOUDWATCH_NAMESPACE: cloudwatch-kandidatnr-2038                              # Change to your name
+      PREFIX: kandidatnr-2038                                                       # Change to your name
+      CLOUDWATCH_NAMESPACE: kandidatnr-2038-cloudwatch                              # Change to your name
       EMAIL: tobias.liu@live.se                                                     # Change to your email
       PORT: 8080                                                                    # Change if necessary.
 
@@ -62,5 +60,6 @@ jobs:
 
       - name: Terraform apply on push to main
         if: github.ref == 'refs/heads/main'
-        run: terraform apply -var="service_name=$SERVICE_NAME" -var="aws_iam_role_name=$AWS_IAM_ROLE_NAME" -var="aws_iam_policy_name=$AWS_IAM_POLICY_NAME" -var="prefix=$CLOUDWATCH_NAMESPACE" -var="alarm_email=$EMAIL" -var="port=$PORT" -auto-approve
+        run: terraform apply -var="prefix=$PREFIX" -var="prefix=$CLOUDWATCH_NAMESPACE" -var="alarm_email=$EMAIL" -var="port=$PORT" -auto-approve
+
         working-directory: ./infra

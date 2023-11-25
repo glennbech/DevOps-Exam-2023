@@ -1,5 +1,5 @@
 resource "aws_cloudwatch_dashboard" "main" {
-  dashboard_name = var.prefix
+  dashboard_name = "${var.prefix}-cloudwatch"
   dashboard_body = <<DASHBOARD
 {
   "widgets": [
