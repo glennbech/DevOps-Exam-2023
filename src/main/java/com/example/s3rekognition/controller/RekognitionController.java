@@ -219,7 +219,13 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         return ResponseEntity.ok(ppeHeadResponse);
     }
 
-    // HANDS SCAN
+    // HANDS SCAN.
+
+    /**
+     * There is an issue with how the api detects hands. With the labeling api, it does detect "Glove" as PPE, by checking
+     * the label outputs. But i could not find a complete list of hand-related protection etc from AWS.
+     * So in reality, this wouldnt work 100% for checking PPE, but does work for this purpose here so far.
+     */
     @GetMapping(value = "/scan-hands-ppe", consumes = "*/*", produces = "application/json")
     @ResponseBody
     @Timed(value = "scanForHandsPPE_response_time", description = "response time of hands ppe scan")
@@ -234,33 +240,55 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         for (S3ObjectSummary image : images) {
             logger.info("scanning " + image.getKey());
 
-            DetectProtectiveEquipmentRequest request = new DetectProtectiveEquipmentRequest()
+            // First check if hands exist by AWS labeling api
+            DetectLabelsRequest detectHandsRequest  = new DetectLabelsRequest()
                     .withImage(new Image()
                             .withS3Object(new S3Object()
                                     .withBucket(bucketName)
                                     .withName(image.getKey())))
-                    .withSummarizationAttributes(new ProtectiveEquipmentSummarizationAttributes()
-                            .withMinConfidence(80f)
-                            .withRequiredEquipmentTypes("HAND_COVER"));
+                    .withMinConfidence(70f);
 
-            DetectProtectiveEquipmentResult result = rekognitionClient.detectProtectiveEquipment(request);
+            DetectLabelsResult detectHandsResult = rekognitionClient.detectLabels(detectHandsRequest);
 
-            boolean violationRightHand = isViolation(result, "RIGHT_HAND");
-            boolean violationLeftHand = isViolation(result, "LEFT_HAND");
-            boolean violation = true;
+            boolean handsDetected = detectHandsResult.getLabels().stream()
+                    .anyMatch(label -> label.getName().equals("Hand") ||label.getName().equals("Glove"));
 
-            if (!violationRightHand && !violationLeftHand) {
-                validCounter++;
-                violation = false;
+//            logger.info("Hands detected: " + handsDetected + "\n");
+//            logger.info("All labels found: " + detectHandsResult + "\n");
+
+            // If hands are detected
+            if (handsDetected) {
+                DetectProtectiveEquipmentRequest request = new DetectProtectiveEquipmentRequest()
+                        .withImage(new Image()
+                                .withS3Object(new S3Object()
+                                        .withBucket(bucketName)
+                                        .withName(image.getKey())))
+                        .withSummarizationAttributes(new ProtectiveEquipmentSummarizationAttributes()
+                                .withMinConfidence(80f)
+                                .withRequiredEquipmentTypes("HAND_COVER"));
+
+                DetectProtectiveEquipmentResult result = rekognitionClient.detectProtectiveEquipment(request);
+
+                boolean violationRightHand = isViolation(result, "RIGHT_HAND");
+                boolean violationLeftHand = isViolation(result, "LEFT_HAND");
+                boolean violation = true;
+
+                // Both hands must have PPE for it to be valid.
+                if (!violationRightHand && !violationLeftHand) {
+                    validCounter++;
+                    violation = false;
+                } else {
+                    violationCounter++;
+                }
+
+                logger.info("scanning " + image.getKey() + ", violation result " + violation);
+
+                int personCount = result.getPersons().size();
+                PPEClassificationResponse classification = new PPEClassificationResponse(image.getKey(), personCount, violation);
+                classificationResponses.add(classification);
             } else {
                 violationCounter++;
             }
-
-            logger.info("scanning " + image.getKey() + ", violation result " + violation);
-
-            int personCount = result.getPersons().size();
-            PPEClassificationResponse classification = new PPEClassificationResponse(image.getKey(), personCount, violation);
-            classificationResponses.add(classification);
         }
 
         ppeHandsResponse = new PPEResponse(bucketName, classificationResponses);
@@ -299,6 +327,13 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         return result.getPersons().stream()
                 .flatMap(p -> p.getBodyParts().stream())
                 .anyMatch(bodyPart -> bodyPart.getName().equals(typeOfPPE)
+                        && bodyPart.getEquipmentDetections().isEmpty());
+    }
+
+    private static boolean isViolationForHands(DetectProtectiveEquipmentResult result) {
+        return result.getPersons().stream()
+                .flatMap(p -> p.getBodyParts().stream())
+                .anyMatch(bodyPart -> (bodyPart.getName().equals("LEFT_HAND") || (bodyPart.getName().equals("RIGHT_HAND")))
                         && bodyPart.getEquipmentDetections().isEmpty());
     }
 

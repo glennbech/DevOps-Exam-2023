@@ -101,6 +101,12 @@ resource "aws_cloudwatch_dashboard" "main" {
             "exception", "none",
             "method", "scanForHeadPPE",
             "class", "com.example.s3rekognition.controller.RekognitionController"
+          ],
+          [
+            "${var.prefix}", "scanForHandsPPE_response_time.avg",
+            "exception", "none",
+            "method", "scanForHandsPPE",
+            "class", "com.example.s3rekognition.controller.RekognitionController"
           ]
         ],
         "period": 300,

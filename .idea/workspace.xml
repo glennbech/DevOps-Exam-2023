@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Added endpoint for Head PPE. isViolations takes in another string for checking.">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Added last endpoint for checking PPE on hands and metrics for it.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infra/dashboard.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/dashboard.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
@@ -126,15 +126,7 @@
       <workItem from="1700605749423" duration="786000" />
       <workItem from="1700666146261" duration="29000" />
       <workItem from="1700762082432" duration="18000" />
-      <workItem from="1700912272833" duration="12636000" />
-    </task>
-    <task id="LOCAL-00132" summary="Added logging for people scanned and violations">
-      <option name="closed" value="true" />
-      <created>1700319682808</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1700319682808</updated>
+      <workItem from="1700912272833" duration="16194000" />
     </task>
     <task id="LOCAL-00133" summary="Now seems to work as it should!">
       <option name="closed" value="true" />
@@ -520,7 +512,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700924266653</updated>
     </task>
-    <option name="localTasksCounter" value="181" />
+    <task id="LOCAL-00181" summary="Added last endpoint for checking PPE on hands and metrics for it.">
+      <option name="closed" value="true" />
+      <created>1700925288007</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1700925288007</updated>
+    </task>
+    <option name="localTasksCounter" value="182" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -538,7 +538,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Revert. Testing newer 1.x version of aws java sdk" />
     <MESSAGE value="Back to original version" />
     <MESSAGE value="Oppgave 5. updating README_BESVARELSER.md + fixed naming" />
     <MESSAGE value="Oppgave 5. updating README_BESVARELSER.md" />
@@ -563,7 +562,8 @@
     <MESSAGE value="Using PPEResponse object and Supplier interface for updating metrics" />
     <MESSAGE value="Changed violationCounter and validCounter to private fields + added reset method to use" />
     <MESSAGE value="Added endpoint for Head PPE. isViolations takes in another string for checking." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added endpoint for Head PPE. isViolations takes in another string for checking." />
+    <MESSAGE value="Added last endpoint for checking PPE on hands and metrics for it." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added last endpoint for checking PPE on hands and metrics for it." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
