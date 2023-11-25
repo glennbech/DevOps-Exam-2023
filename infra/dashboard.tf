@@ -11,13 +11,30 @@ resource "aws_cloudwatch_dashboard" "main" {
       "height": 6,
       "properties": {
         "metrics": [
-          ["${var.prefix}", "total_violations.value"],
-          ["${var.prefix}", "total_valid.value"]
+          ["${var.prefix}", "face_total_violations.value"],
+          ["${var.prefix}", "face_total_valid.value"]
         ],
         "period": 300,
         "stat": "Maximum",
         "region": "eu-west-1",
         "title": "Face PPE Detection analysis"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 0,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          ["${var.prefix}", "head_total_violations.value"],
+          ["${var.prefix}", "head_total_valid.value"]
+        ],
+        "period": 300,
+        "stat": "Maximum",
+        "region": "eu-west-1",
+        "title": "Head PPE Detection analysis"
       }
     },
     {
@@ -51,22 +68,28 @@ resource "aws_cloudwatch_dashboard" "main" {
       "properties": {
         "metrics": [
           [
-            "${var.prefix}", "scanforPPE-response-time.avg",
+            "${var.prefix}", "scanFullPPE_response_time.avg",
             "exception", "none",
             "method", "scanForPPE",
             "class", "com.example.s3rekognition.controller.RekognitionController"
           ],
           [
-            "${var.prefix}", "scanFullPPE-response-time.avg",
+            "${var.prefix}", "scanForFacePPE_response_time.avg",
             "exception", "none",
-            "method", "scanFullPPE",
+            "method", "scanForFacePPE",
+            "class", "com.example.s3rekognition.controller.RekognitionController"
+          ],
+          [
+            "${var.prefix}", "scanForHeadPPE_response_time.avg",
+            "exception", "none",
+            "method", "scanForHeadPPE",
             "class", "com.example.s3rekognition.controller.RekognitionController"
           ]
         ],
         "period": 300,
         "stat": "Average",
         "region": "eu-west-1",
-        "title": "Average Response Time for single/full PPE analysis"
+        "title": "Average Response Time for PPE analysis"
       }
     }
   ]

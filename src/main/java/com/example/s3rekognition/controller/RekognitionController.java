@@ -30,14 +30,17 @@ import java.util.logging.Logger;
 
 @RestController
 public class RekognitionController implements ApplicationListener<ApplicationReadyEvent> {
-    private PPEResponse ppeResponse = new PPEResponse();
-    private final Supplier<PPEResponse> ppeResponseSupplier = () -> ppeResponse;
-    private int exceededViolationCounter = 0;
-    private final AtomicInteger exceededViolationGauge;
+    private PPEResponse ppeFaceResponse = new PPEResponse();
+    private PPEResponse ppeHeadResponse = new PPEResponse();
+    private final Supplier<PPEResponse> ppeFaceResponseSupplier = () -> ppeFaceResponse;
+    private final Supplier<PPEResponse> ppeHeadResponseSupplier = () -> ppeHeadResponse;
     private final int violationLimit = 5;               // Change this value for when to reset Gauge
     private final double violationPercentage = 0.3;     // Change this value for sensitivity to increment to Gauge
+    private final AtomicInteger exceededViolationGauge;
+    private int exceededViolationCounter = 0;
     private int violationCounter = 0;
     private int validCounter = 0;
+    private int totalPersonCount = 0;
     private final AmazonS3 s3Client;
     private final AmazonRekognition rekognitionClient;
     private final MeterRegistry meterRegistry;
@@ -59,69 +62,13 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
      * @param bucketName
      * @return
      */
+    // FACE, HEAD, HANDS SCAN
     @GetMapping(value = "/scan-ppe", consumes = "*/*", produces = "application/json")
     @ResponseBody
-    @Timed(value = "scanforPPE-response-time", description = "single piece scan response time")
+    @Timed(value = "scanFullPPE_response_time", description = "response time of full ppe scan")
     public ResponseEntity<PPEResponse> scanForPPE(@RequestParam String bucketName) {
-        // Used for metrics
         resetViolationCounter();
-        resetValidCounter();
-
-        // List all objects in the S3 bucket
-        ListObjectsV2Result imageList = s3Client.listObjectsV2(bucketName);
-
-        // This will hold all of our classifications
-        List<PPEClassificationResponse> classificationResponses = new ArrayList<>();
-
-        // This is all the images in the bucket
-        List<S3ObjectSummary> images = imageList.getObjectSummaries();
-
-        // Iterate over each object and scan for PPE
-        for (S3ObjectSummary image : images) {
-            logger.info("scanning " + image.getKey());
-
-            // This is where the magic happens, use AWS rekognition to detect PPE
-            DetectProtectiveEquipmentRequest request = new DetectProtectiveEquipmentRequest()
-                    .withImage(new Image()
-                            .withS3Object(new S3Object()
-                                    .withBucket(bucketName)
-                                    .withName(image.getKey())))
-                    .withSummarizationAttributes(new ProtectiveEquipmentSummarizationAttributes()
-                            .withMinConfidence(80f)
-                            .withRequiredEquipmentTypes("FACE_COVER"));
-
-            DetectProtectiveEquipmentResult result = rekognitionClient.detectProtectiveEquipment(request);
-
-            // If any person on an image lacks PPE on the face, it's a violation of regulations
-            boolean violation = isViolation(result);
-            if (violation) {
-                violationCounter++;
-            } else {
-                validCounter++;
-            }
-
-            logger.info("scanning " + image.getKey() + ", violation result " + violation);
-
-            // Categorize the current image as a violation or not.
-            int personCount = result.getPersons().size();
-            PPEClassificationResponse classification = new PPEClassificationResponse(image.getKey(), personCount, violation);
-            classificationResponses.add(classification);
-        }
-
-        ppeResponse = new PPEResponse(bucketName, classificationResponses);
-        ppeResponse.setNumberOfViolations(violationCounter);
-        ppeResponse.setNumberOfValid(validCounter);
-
-
-        return ResponseEntity.ok(ppeResponse);
-    }
-
-    @GetMapping(value = "/scan-full-ppe", consumes = "*/*", produces = "application/json")
-    @Timed(value = "scanFullPPE-response-time", description = "full ppe scan response time")
-    @ResponseBody
-    public ResponseEntity<PPEResponse> scanFullPPE(@RequestParam String bucketName) {
-        int violationCounter = 0;
-        int totalPersonCount = 0;
+        resetTotalPersonCount();
 
         ListObjectsV2Result imageList = s3Client.listObjectsV2(bucketName);             // Get content from bucket
         List<PPEClassificationResponse> classificationResponses = new ArrayList<>();
@@ -161,14 +108,119 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
         ppeResponse.setNumberOfViolations(violationCounter);
 
         // Update Gauge metrics if condition are met.
-        updateGaugeMetric(ppeResponse, totalPersonCount);
+        updateOrResetGaugeMetric(ppeResponse, totalPersonCount);
 
         logger.info("Number of people scanned: " + totalPersonCount + ". Number of violations: " + ppeResponse.getNumberOfViolations());
         logger.info("Current violation counter: " + exceededViolationCounter);
         return ResponseEntity.ok(ppeResponse);
     }
 
-    private void updateGaugeMetric(PPEResponse ppeResponse, int totalPersonCount) {
+    // FACE SCAN
+    @GetMapping(value = "/scan-face-ppe", consumes = "*/*", produces = "application/json")
+    @ResponseBody
+    @Timed(value = "scanForFacePPE_response_time", description = "response time of face ppe scan")
+    public ResponseEntity<PPEResponse> scanForFacePPE(@RequestParam String bucketName) {
+        // Used for metrics
+        resetViolationCounter();
+        resetValidCounter();
+
+        // List all objects in the S3 bucket
+        ListObjectsV2Result imageList = s3Client.listObjectsV2(bucketName);
+
+        // This will hold all of our classifications
+        List<PPEClassificationResponse> classificationResponses = new ArrayList<>();
+
+        // This is all the images in the bucket
+        List<S3ObjectSummary> images = imageList.getObjectSummaries();
+
+        // Iterate over each object and scan for PPE
+        for (S3ObjectSummary image : images) {
+            logger.info("scanning " + image.getKey());
+
+            // This is where the magic happens, use AWS rekognition to detect PPE
+            DetectProtectiveEquipmentRequest request = new DetectProtectiveEquipmentRequest()
+                    .withImage(new Image()
+                            .withS3Object(new S3Object()
+                                    .withBucket(bucketName)
+                                    .withName(image.getKey())))
+                    .withSummarizationAttributes(new ProtectiveEquipmentSummarizationAttributes()
+                            .withMinConfidence(80f)
+                            .withRequiredEquipmentTypes("FACE_COVER"));
+
+            DetectProtectiveEquipmentResult result = rekognitionClient.detectProtectiveEquipment(request);
+
+            // If any person on an image lacks PPE on the face, it's a violation of regulations
+            boolean violation = isViolation(result, "FACE");
+            if (violation) {
+                violationCounter++;
+            } else {
+                validCounter++;
+            }
+
+            logger.info("scanning " + image.getKey() + ", violation result " + violation);
+
+            // Categorize the current image as a violation or not.
+            int personCount = result.getPersons().size();
+            PPEClassificationResponse classification = new PPEClassificationResponse(image.getKey(), personCount, violation);
+            classificationResponses.add(classification);
+        }
+
+        ppeFaceResponse = new PPEResponse(bucketName, classificationResponses);
+        ppeFaceResponse.setNumberOfViolations(violationCounter);
+        ppeFaceResponse.setNumberOfValid(validCounter);
+        return ResponseEntity.ok(ppeFaceResponse);
+    }
+
+    // HEAD SCAN
+    @GetMapping(value = "/scan-head-ppe", consumes = "*/*", produces = "application/json")
+    @ResponseBody
+    @Timed(value = "scanForHeadPPE_response_time", description = "response time of head ppe scan")
+    public ResponseEntity<PPEResponse> scanForHeadPPE(@RequestParam String bucketName) {
+        resetViolationCounter();
+        resetValidCounter();
+
+        ListObjectsV2Result imageList = s3Client.listObjectsV2(bucketName);
+        List<PPEClassificationResponse> classificationResponses = new ArrayList<>();
+        List<S3ObjectSummary> images = imageList.getObjectSummaries();
+
+        for (S3ObjectSummary image : images) {
+            logger.info("scanning " + image.getKey());
+
+            DetectProtectiveEquipmentRequest request = new DetectProtectiveEquipmentRequest()
+                    .withImage(new Image()
+                            .withS3Object(new S3Object()
+                                    .withBucket(bucketName)
+                                    .withName(image.getKey())))
+                    .withSummarizationAttributes(new ProtectiveEquipmentSummarizationAttributes()
+                            .withMinConfidence(80f)
+                            .withRequiredEquipmentTypes("HEAD_COVER"));
+
+            DetectProtectiveEquipmentResult result = rekognitionClient.detectProtectiveEquipment(request);
+
+            boolean violation = isViolation(result, "HEAD");
+            if (violation) {
+                violationCounter++;
+            } else {
+                validCounter++;
+            }
+
+            logger.info("scanning " + image.getKey() + ", violation result " + violation);
+
+            int personCount = result.getPersons().size();
+            PPEClassificationResponse classification = new PPEClassificationResponse(image.getKey(), personCount, violation);
+            classificationResponses.add(classification);
+        }
+
+        ppeHeadResponse = new PPEResponse(bucketName, classificationResponses);
+        ppeHeadResponse.setNumberOfViolations(violationCounter);
+        ppeHeadResponse.setNumberOfValid(validCounter);
+        return ResponseEntity.ok(ppeHeadResponse);
+    }
+
+
+
+
+    private void updateOrResetGaugeMetric(PPEResponse ppeResponse, int totalPersonCount) {
         // This should check if 30% of the scanned people are violations, it should increment by 1 to the widget.
         // If it reaches 5 times, it should send off an alarm.
         if (ppeResponse.getNumberOfViolations() >= totalPersonCount * violationPercentage) {
@@ -194,10 +246,10 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
      * @param result
      * @return
      */
-    private static boolean isViolation(DetectProtectiveEquipmentResult result) {
+    private static boolean isViolation(DetectProtectiveEquipmentResult result, String typeOfPPE) {
         return result.getPersons().stream()
                 .flatMap(p -> p.getBodyParts().stream())
-                .anyMatch(bodyPart -> bodyPart.getName().equals("FACE")
+                .anyMatch(bodyPart -> bodyPart.getName().equals(typeOfPPE)
                         && bodyPart.getEquipmentDetections().isEmpty());
     }
 
@@ -212,19 +264,25 @@ public class RekognitionController implements ApplicationListener<ApplicationRea
                                 && bodyPart.getEquipmentDetections().isEmpty());
     }
 
-    private void resetValidCounter() {
-        validCounter = 0;
-    }
-
     private void resetViolationCounter() {
         violationCounter = 0;
     }
 
+    private void resetValidCounter() {
+        validCounter = 0;
+    }
+
+    private void resetTotalPersonCount() {
+        totalPersonCount = 0;
+    }
+
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
-        Gauge.builder("total_violations", ppeResponseSupplier, supplier -> supplier.get().getNumberOfViolations()).register(meterRegistry);
-        Gauge.builder("total_valid", ppeResponseSupplier, supplier -> supplier.get().getNumberOfValid()).register(meterRegistry);
+        Gauge.builder("face_total_violations", ppeFaceResponseSupplier, supplier -> supplier.get().getNumberOfViolations()).register(meterRegistry);
+        Gauge.builder("face_total_valid", ppeFaceResponseSupplier, supplier -> supplier.get().getNumberOfValid()).register(meterRegistry);
 
+        Gauge.builder("head_total_violations", ppeHeadResponseSupplier, supplier -> supplier.get().getNumberOfViolations()).register(meterRegistry);
+        Gauge.builder("head_total_valid", ppeHeadResponseSupplier, supplier -> supplier.get().getNumberOfValid()).register(meterRegistry);
 
         Gauge.builder("exceeded_violation_alarm", this, obj -> obj.exceededViolationCounter).register(meterRegistry);
     }

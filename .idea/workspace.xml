@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Using PPEResponse object and Supplier interface for updating metrics">
+    <list default="true" id="5b131e04-ff37-4bd8-91af-1f403ce36d5c" name="Changes" comment="Changed violationCounter and validCounter to private fields + added reset method to use">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/cloudwatch.tf" beforeDir="false" afterPath="$PROJECT_DIR$/infra/dashboard.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/s3rekognition/controller/RekognitionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,26 +56,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tobia/Desktop/HK 2021/Semester 5/PGR301-1 23H DevOps/DevOps-cloudwatch_alarms_terraform&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.29655173&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;aws&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "last_opened_file_path": "C:/Users/tobia/Desktop/HK 2021/Semester 5/PGR301-1 23H DevOps/DevOps-cloudwatch_alarms_terraform",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.29655173",
+    "settings.editor.selected.configurable": "aws",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\tobia\Desktop\HK 2021\Semester 5\PGR301-1 23H DevOps\DevOps_Exam_2023\images" />
@@ -124,15 +126,7 @@
       <workItem from="1700605749423" duration="786000" />
       <workItem from="1700666146261" duration="29000" />
       <workItem from="1700762082432" duration="18000" />
-      <workItem from="1700912272833" duration="3680000" />
-    </task>
-    <task id="LOCAL-00130" summary="Fixed namespace, forgot to remove &quot;&quot; around variable name..">
-      <option name="closed" value="true" />
-      <created>1700317785949</created>
-      <option name="number" value="00130" />
-      <option name="presentableId" value="LOCAL-00130" />
-      <option name="project" value="LOCAL" />
-      <updated>1700317785949</updated>
+      <workItem from="1700912272833" duration="11334000" />
     </task>
     <task id="LOCAL-00131" summary="Fixed/changed logic on gauge widget.&#10;If violations &gt; 30% of people scanned, add to gauge. if gauge &gt;= 5 trigger alarm">
       <option name="closed" value="true" />
@@ -518,7 +512,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700915205299</updated>
     </task>
-    <option name="localTasksCounter" value="179" />
+    <task id="LOCAL-00179" summary="Changed violationCounter and validCounter to private fields + added reset method to use">
+      <option name="closed" value="true" />
+      <created>1700916117843</created>
+      <option name="number" value="00179" />
+      <option name="presentableId" value="LOCAL-00179" />
+      <option name="project" value="LOCAL" />
+      <updated>1700916117843</updated>
+    </task>
+    <option name="localTasksCounter" value="180" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -536,7 +538,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Trying to set max connections to see if it fixes apprunner error" />
     <MESSAGE value="See if retry works" />
     <MESSAGE value="Revert. Testing newer 1.x version of aws java sdk" />
     <MESSAGE value="Back to original version" />
@@ -561,7 +562,8 @@
     <MESSAGE value="Re-added some code for the PPEResonse object for using number of violation/valid fields. Changed how metrics are registered. Combined the widgets for response rate (My changes somehow broke the metrics it seems)" />
     <MESSAGE value="Works now. Commenting default values in variables.tf" />
     <MESSAGE value="Using PPEResponse object and Supplier interface for updating metrics" />
-    <option name="LAST_COMMIT_MESSAGE" value="Using PPEResponse object and Supplier interface for updating metrics" />
+    <MESSAGE value="Changed violationCounter and validCounter to private fields + added reset method to use" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed violationCounter and validCounter to private fields + added reset method to use" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
