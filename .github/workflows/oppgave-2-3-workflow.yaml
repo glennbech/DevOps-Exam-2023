@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ECR_REPO: 244530008913.dkr.ecr.eu-west-1.amazonaws.com/ecr-kandidatnr-2038    # Change to your ECR Repository
-      PREFIX: cloudwatch-kandidatnr-2038                                            # Change to your name
-      NAME: kandidatnr-2038                                                         # Change to your name
+      PREFIX: cloudwatch-kandidatnr-2038-sensur                                     # Change to your name
+      NAME: kandidatnr-2038-sensur                                                  # Change to your name
       EMAIL: tobias.liu@live.se                                                     # Change to your email
       PORT: 8080                                                                    # Change if necessary.
 
