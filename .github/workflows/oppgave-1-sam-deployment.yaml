@@ -17,8 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       S3_ARTIFACT_BUCKET_NAME: pgr301-sam-bucket    # Using this as default bucket for exam
-      SAM_APP: sam-app-ppe-detection                # Name of your sam app
-      MY_BUCKET_NAME: "kandidatnr-2038"             # Bucket used here is the one used for exam with kandidatnr
+      SAM_APP: sam-app-ppe-detection-sensur         # Name of your sam app
+      MY_BUCKET_NAME: "kandidatnr-2038s"             # Bucket used here is the one used for exam with kandidatnr
 
     steps:
       - uses: actions/checkout@v2
